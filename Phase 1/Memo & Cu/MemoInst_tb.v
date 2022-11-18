@@ -12,9 +12,23 @@ always #(PERIOD/2) clk=~clk;
 
 initial begin
 	clk = 0;
-    	rst = 1; 
-	#PERIOD rst = 0;
+    	rst = 0;
+	#PERIOD
+	pc=32'h0000_0000;
+
+	#PERIOD
 	pc=32'h0000_0001;
+
+	#PERIOD
+	pc=32'h0000_0002;
+
+	#PERIOD rst = 1;
+
+	#PERIOD rst = 0;
+	pc=32'h0000_0000;
+
+	#PERIOD
+	pc=32'h0000_0002;
 
 end
 endmodule
