@@ -15,9 +15,9 @@ inst
 input clk;
 input[31:0] pc;
 integer i;
-output reg [15:0] inst;
+output reg [15:0]inst;
 
-reg [1048575:0] memory [0:15];
+reg [15:0]memory [0:1048575];
 	
 always @ (posedge clk) begin
   inst=memory[pc];

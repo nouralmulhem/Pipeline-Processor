@@ -8,7 +8,6 @@ inputs:
   - memorywrite
   - Readaddress
   - writedata
-  - reset
 output:
   - Data
 */
@@ -17,24 +16,17 @@ memoryRead,
 memorywrite,
 Readaddress,
 writedata,
-reset,
 Data
 );
-input clk,reset;
+input clk;
 input memoryRead,memorywrite;
 input [15:0]Readaddress,writedata;
-output reg [15:0] Data;
+output reg [15:0]Data;
 
-reg [2047:0] memory [0:15];
+reg [15:0]memory [0:2047];
 integer i;
-wire r=reset||clk;
-always @ (posedge r) begin
-  if(reset==1'b1)begin
-	for(i=0;i<2048;i=i+1)begin
-		memory[i]='b0;	
-	end
-  end
-  else if(Readaddress >16'b0000_0111_1111_1111)begin
+always @ (posedge clk) begin
+  if(Readaddress >16'b0000_0111_1111_1111)begin
     Data='bz;
   end
   else if(memorywrite == 1'b1) begin

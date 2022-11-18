@@ -14,19 +14,19 @@ initial begin
 	clk = 0;
 
 	#PERIOD
-	pc=32'h0000_0000;
+	pc=32'h0000_0020;
 
 	#PERIOD
-	pc=32'h0000_0001;
+	pc=32'h0000_0021;
 
 	#PERIOD
-	pc=32'h0000_0002;
+	pc=32'h0000_0022;
 
 	#PERIOD 
-	pc=32'h0000_0000;
+	pc=32'h0000_0020;
 
 	#PERIOD
-	pc=32'h0000_0002;
+	pc=32'h0000_0022;
 
 end
 endmodule
