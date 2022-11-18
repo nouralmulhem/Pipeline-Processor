@@ -1,0 +1,57 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+vnext_pc
+Z0 !s110 1668785713
+!i10b 1
+!s100 6eoLgH[23VXRn]@@EnC][1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IWNR:ZlRWhVe@39]KnJTC@1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/Asus/Documents/GitHub/Pipeline-Processor/Phase 1/add pc 1
+w1668785693
+8C:/Users/Asus/Documents/GitHub/Pipeline-Processor/Phase 1/add pc 1/next_pc.v
+FC:/Users/Asus/Documents/GitHub/Pipeline-Processor/Phase 1/add pc 1/next_pc.v
+!i122 0
+L0 1 13
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1668785712.000000
+!s107 C:/Users/Asus/Documents/GitHub/Pipeline-Processor/Phase 1/add pc 1/next_pc.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Asus/Documents/GitHub/Pipeline-Processor/Phase 1/add pc 1/next_pc.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vnext_pc_tb
+R0
+!i10b 1
+!s100 OF?Sj<ka;MAe?lYh__dBN0
+R1
+IUzO:mzESCHK]FWGcc99oh3
+R2
+R3
+w1668785689
+8C:/Users/Asus/Documents/GitHub/Pipeline-Processor/Phase 1/add pc 1/next_pc_tb.v
+FC:/Users/Asus/Documents/GitHub/Pipeline-Processor/Phase 1/add pc 1/next_pc_tb.v
+!i122 1
+L0 1 31
+R4
+r1
+!s85 0
+31
+!s108 1668785713.000000
+!s107 C:/Users/Asus/Documents/GitHub/Pipeline-Processor/Phase 1/add pc 1/next_pc_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Asus/Documents/GitHub/Pipeline-Processor/Phase 1/add pc 1/next_pc_tb.v|
+!i113 1
+R5
+R6
