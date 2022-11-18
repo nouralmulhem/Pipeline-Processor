@@ -1,18 +1,18 @@
 
 module MemoInst_tb();
-reg clk, rst;
+reg clk;
 reg[31:0] pc;
 wire[15:0] inst;
 
 localparam PERIOD = 20;
 
-MemoInst mem(clk, pc, rst, inst);
+MemoInst mem(clk, pc, inst);
 
 always #(PERIOD/2) clk=~clk;
 
 initial begin
 	clk = 0;
-    	rst = 0;
+
 	#PERIOD
 	pc=32'h0000_0000;
 
@@ -22,9 +22,7 @@ initial begin
 	#PERIOD
 	pc=32'h0000_0002;
 
-	#PERIOD rst = 1;
-
-	#PERIOD rst = 0;
+	#PERIOD 
 	pc=32'h0000_0000;
 
 	#PERIOD

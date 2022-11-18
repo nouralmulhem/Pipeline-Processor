@@ -10,28 +10,17 @@ output:
 */
 module MemoInst(clk,
 pc,
-reset,
 inst
 );
-input clk,reset;
+input clk;
 input[31:0] pc;
 integer i;
 output reg [15:0] inst;
 
 reg [1048575:0] memory [0:15];
 	
-wire r =clk||reset;
-always @ (posedge r) begin
-  $display("hi hosny1");
-  if(reset==1'b1)begin
-	$display("hi hosny2");
-	for(i=0;i<1048576;i=i+1)begin
-		memory[i]='b0;	
-	end
-  end
-  else begin
-  	inst=memory[pc];
-  end
+always @ (posedge clk) begin
+  inst=memory[pc];
 end
 
 endmodule
