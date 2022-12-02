@@ -14,6 +14,6 @@ output reg [31:0]instruction_out;
 
 always @(posedge clk)
 begin
-instruction_out=instruction_in;
+instruction_out = instruction_in;
 end
 endmodule
