@@ -23,7 +23,7 @@ input memoryRead,memorywrite;
 input [15:0]Readaddress,writedata;
 output reg [15:0]Data;
 
-reg [15:0]memory [0:2047];
+reg [15:0] memory [0:2047];
 integer i;
 always @ (posedge clk) begin
   if(Readaddress >16'b0000_0111_1111_1111)begin

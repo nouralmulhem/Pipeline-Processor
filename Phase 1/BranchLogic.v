@@ -1,24 +1,58 @@
-//Mux 
+`include "MemoInst.v"
+//Fetch
 /*
-Branch logic combinational logic
+Fetch Stage in the 5 Stages of the pipline
 inputs:
-  -zf:zero flag
-  -cf:carry flag
-  -nf:negative flag
-  -branch:branch control signal
+  -branch (1 bit):Select bit of there is a branch to select Branch Address to be loaded to PC not PC+1
+  -branchAdd (16 bit):New address to be Written in PC(After Sign Extend)
+  -clk:clock
+
 output:
-  -branch_out:bit for either branch or not       
+  -instruction (16 bit):Instruction that has been fetched (Enter next stage Decode)  
+
+Edges:
++ve=>PC
+-ve=>Code Memory    
 */
-module BranchLogic (zf,cf,nf,sel,branch,branch_out);
-input zf,cf,nf,branch;
-input [1:0]sel;
-output branch_out;
+module Fetch (branch,branchAdd,clk,instruction);
 
-wire flag;
-assign flag = ( sel == 2'b00 )? zf :
-( sel == 2'b01) ? cf :
-( sel == 2'b10) ? nf :
-( sel == 2'b11) ? 1 : 1'bx ;
+//inputs and outputs
+input branch;
+input [15:0] branchAdd;
+input clk;
+output [16:0] instruction;
 
-assign branch_out=branch&flag;
+//Instances
+//PC 32-bit Reg (Program Counter) 
+reg [31:0] PC;
+
+//Code Memory Instance
+MemoInst instMemory(.clk(clk),.pc(PC),.inst(instruction));
+
+//wires
+wire PC_Mux_Out;//Selection of PC
+wire Adder_Out;//Adder Result (PC+1)
+wire Branch_Address_32bit;//Extend 16 bit Branch Address to be 32 bit 
+
+//Combinational
+//Adder
+assign Adder_Out=PC+1;
+//Address Sign Extend
+assign Branch_Address_32bit={16{branchAdd[15]},branchAdd}
+//Multiplixer
+assign PC_Mux_Out=(branch==1'b0)?Adder_Out:branchAdd;
+
+
+
+//Sequential
+//+ve Edge (Upadate PC)
+always @(posedge clk)
+begin
+PC= PC_Mux_Out;
+end
+
+//-ve Edge(Read from code Memory)
+//pass to it ~clk
+
+
 endmodule
