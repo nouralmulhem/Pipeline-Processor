@@ -9,10 +9,10 @@ z2
 cModel Technology
 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Integration
 vBuffer
-Z0 !s110 1670016885
+Z0 !s110 1670017167
 !i10b 1
 !s100 ef?jDf:LZR;8FSfJ^SS;h1
-IE?zo?X9`P]^9l;aBbaILg0
+IVfn0Fn1P`BRaoKJ;b8iO>2
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration
 w1670015005
@@ -23,17 +23,18 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1670016885.000000
-Z5 !s107 DE_Buffer.v|RegFile.v|Controle_Signal.v|Decode.v|FD_Buffer.v|MemoInst.v|Fetch.v|Buffer.v|Processor.v|
-Z6 !s90 -reportprogress|300|Processor.v|
+Z4 !s108 1670017167.000000
+Z5 !s107 DE_Buffer.v|RegFile.v|Controle_Signal.v|Decode.v|FD_Buffer.v|MemoInst.v|Fetch.v|Buffer.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration/Processor.v|
+Z6 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration/Processor.v|
 !i113 1
-Z7 tCvgOpt 0
+Z7 o-work work
+Z8 tCvgOpt 0
 n@buffer
 vCU
 R0
 !i10b 1
 !s100 ncWehS1nfJkDlNI<FYzIb3
-I9D6:Km>D9Ch:ghURL3N_g1
+ImCC7ioXk6k^mATAMi3z?H2
 R1
 R2
 w1670016760
@@ -49,18 +50,19 @@ R5
 R6
 !i113 1
 R7
+R8
 n@c@u
 vDE_Buffer
 R0
 !i10b 1
 !s100 ^RTK;1ZAOCeeHaeY;Dz6N1
-ISIQj?Xi95ni]YHfdJ::kG2
+Ib>SiC[;93Ni2h@jglQ[:d1
 R1
 R2
 w1670016030
 8DE_Buffer.v
 FDE_Buffer.v
-Z8 L0 18
+Z9 L0 18
 R3
 r1
 !s85 0
@@ -70,12 +72,13 @@ R5
 R6
 !i113 1
 R7
+R8
 n@d@e_@buffer
 vDecode
 R0
 !i10b 1
 !s100 2GP_eP[]g<Tj3zi_Vo=JL3
-IgZ=lCYYSgd;Ole7PRnNF11
+I0U2S4>@0dan;Y>haMj[XK1
 R1
 R2
 w1670016768
@@ -91,12 +94,13 @@ R5
 R6
 !i113 1
 R7
+R8
 n@decode
 vFD_Buffer
 R0
 !i10b 1
 !s100 PYLV?I9F<kEWOS_7J>:R=2
-I`ZeAJZXkKA0aLNWHIJgHh1
+IWYMUBD1iWh3Rfn`P8SUb02
 R1
 R2
 w1670011920
@@ -112,18 +116,19 @@ R5
 R6
 !i113 1
 R7
+R8
 n@f@d_@buffer
 vFetch
 R0
 !i10b 1
 !s100 3TRzc3=j1fmUPP61_jQYk2
-IjQ@N=f1ff6dzj?7m?W92d3
+I@mmhUF];C`K8hmd4TH2YJ0
 R1
 R2
 w1670011353
 8Fetch.v
 FFetch.v
-R8
+R9
 R3
 r1
 !s85 0
@@ -133,12 +138,13 @@ R5
 R6
 !i113 1
 R7
+R8
 n@fetch
 vMemoInst
 R0
 !i10b 1
 !s100 5GB@l3@4ejgIF[5G76Az]0
-ISdNob8X^HYXabK@k;:LBb3
+Ib00@7>m?9<hR4NYWLdQHh0
 R1
 R2
 w1670008546
@@ -154,17 +160,18 @@ R5
 R6
 !i113 1
 R7
+R8
 n@memo@inst
 vProcessor
 R0
 !i10b 1
 !s100 h;>@:V]1_z]9_HZiZaOgf3
-IV_MNX^h940982SegBe]Cg0
+IP@=:Yf]ige:H4gI`=e5^[3
 R1
 R2
 w1670016304
-8Processor.v
-FProcessor.v
+8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration/Processor.v
+FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration/Processor.v
 L0 8
 R3
 r1
@@ -175,18 +182,19 @@ R5
 R6
 !i113 1
 R7
+R8
 n@processor
 vRegFile
 R0
 !i10b 1
 !s100 Ob8knjPQkR=hJ_12BLZ1e2
-IH6T944EjK0V<P:4QV24T12
+IGZDO6zKW4?:Ggh9BbUH=B0
 R1
 R2
 w1668759509
 8RegFile.v
 FRegFile.v
-R8
+R9
 R3
 r1
 !s85 0
@@ -196,4 +204,5 @@ R5
 R6
 !i113 1
 R7
+R8
 n@reg@file
