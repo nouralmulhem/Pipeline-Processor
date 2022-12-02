@@ -1,0 +1,178 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Integration
+vCU
+Z0 !s110 1670011394
+!i10b 1
+!s100 5ACOzl5Y<7j?VH1?z9fBQ2
+IdDBSa0dIZWcaC[i[@DW^M0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration
+w1669211413
+8Controle_Signal.v
+FControle_Signal.v
+L0 23
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1670011394.000000
+!s107 Controle_Signal.v|
+!s90 -reportprogress|300|Controle_Signal.v|
+!i113 1
+Z5 tCvgOpt 0
+n@c@u
+vDE_Buffer
+R0
+!i10b 1
+!s100 oOcPZdD>HmnW7>T86PC`O0
+In<[C1co57h1>2HcXeQb]Y1
+R1
+R2
+w1669218859
+8DE_Buffer.v
+FDE_Buffer.v
+Z6 L0 18
+R3
+r1
+!s85 0
+31
+R4
+!s107 DE_Buffer.v|
+!s90 -reportprogress|300|DE_Buffer.v|
+!i113 1
+R5
+n@d@e_@buffer
+vDecode
+Z7 !s110 1670011393
+!i10b 1
+!s100 6:fFiQ^9UzNM7L^W`?hSP2
+I06@Q]jGR85^^gz8nkQimS3
+R1
+R2
+w1670009480
+8Decode.v
+FDecode.v
+L0 4
+R3
+r1
+!s85 0
+31
+Z8 !s108 1670011393.000000
+Z9 !s107 RegFile.v|Controle_Signal.v|Decode.v|
+Z10 !s90 -reportprogress|300|Decode.v|
+!i113 1
+R5
+n@decode
+vFD_Buffer
+R7
+!i10b 1
+!s100 KPR8JNh5Fd<mn@7:RiVPh2
+IL1T<8`?>f;h3W;HI6Mzoi1
+R1
+R2
+w1669215489
+8FD_Buffer.v
+FFD_Buffer.v
+L0 10
+R3
+r1
+!s85 0
+31
+R8
+!s107 FD_Buffer.v|
+!s90 -reportprogress|300|FD_Buffer.v|
+!i113 1
+R5
+n@f@d_@buffer
+vFetch
+R0
+!i10b 1
+!s100 3TRzc3=j1fmUPP61_jQYk2
+IjQ@N=f1ff6dzj?7m?W92d3
+R1
+R2
+w1670011353
+8Fetch.v
+FFetch.v
+R6
+R3
+r1
+!s85 0
+31
+R4
+Z11 !s107 MemoInst.v|Fetch.v|Processor.v|
+Z12 !s90 -reportprogress|300|Processor.v|
+!i113 1
+R5
+n@fetch
+vMemoInst
+R0
+!i10b 1
+!s100 5GB@l3@4ejgIF[5G76Az]0
+ISdNob8X^HYXabK@k;:LBb3
+R1
+R2
+w1670008546
+8MemoInst.v
+FMemoInst.v
+L0 9
+R3
+r1
+!s85 0
+31
+R4
+R11
+R12
+!i113 1
+R5
+n@memo@inst
+vProcessor
+R0
+!i10b 1
+!s100 80oNF8CB]=9J38Q[dKjD33
+I_fZIRa7ckL`6Ue:Ade?gS1
+R1
+R2
+w1670011370
+8Processor.v
+FProcessor.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R11
+R12
+!i113 1
+R5
+n@processor
+vRegFile
+R7
+!i10b 1
+!s100 Ob8knjPQkR=hJ_12BLZ1e2
+IH6T944EjK0V<P:4QV24T12
+R1
+R2
+w1668759509
+8RegFile.v
+FRegFile.v
+R6
+R3
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+n@reg@file

@@ -1,4 +1,4 @@
-`include "Cu/Controle_Signal.v"
+`include "Controle_Signal.v"
 `include "RegFile.v"
 
 module Decode(clk, Instruction, WriteAddress, WriteEnable, WriteData, ControlSignal, ReadData1, ReadData2);
