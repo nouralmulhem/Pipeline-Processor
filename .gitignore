@@ -3,7 +3,6 @@
 *.mti
 *.wlf
 *.qdb
-*transcript
 *.qtl
 *.qpg
 *_info
@@ -11,5 +10,3 @@
 
 Phase 1/work/
 Phase1 Integration/work/
-
-Phase1 Integration/work/_vmake
