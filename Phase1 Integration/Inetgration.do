@@ -11,6 +11,12 @@ vlog Decode.v
 vlog Controle_Signal.v
 vlog DE_Buffer.v
 
+# Execute
+vlog Execute.v
+vlog ALUControl.v
+vlog ALU.v
+vlog EM_Buffer.v
+
 # Processor
 vlog Processor.v
 

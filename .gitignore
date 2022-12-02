@@ -1,12 +1,15 @@
 
 *.bak
 *.mti
-Phase 1/transcript
 *.wlf
 *.qdb
-Phase 1/work/_vmake
+*transcript
 *.qtl
 *.qpg
 *_info
 *.vstf
 
+Phase 1/work/
+Phase1 Integration/work/
+
+Phase1 Integration/work/_vmake
