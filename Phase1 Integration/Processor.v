@@ -1,4 +1,9 @@
+`include "Buffer.v"
 `include "Fetch.v"
+`include "FD_Buffer.v"
+`include "Decode.v"
+`include "DE_Buffer.v"
+
 
 module Processor();
 
@@ -6,6 +11,7 @@ module Processor();
     // clk2 --> buffers
     reg clk1, clk2;
 
+/*-------------------------------------------------------------------------------------------------------------------------*/
     // reset PC value to zero
     reg fetchReset;
 
@@ -13,6 +19,49 @@ module Processor();
     wire [15:0] fetchedInstOut;
 
     Fetch FetchModule(.branch(1'b0),.branchAdd({16{1'b0}}),.reset(fetchReset),.clk(clk1),.instruction(fetchedInstOut));
+/*-------------------------------------------------------------------------------------------------------------------------*/
+    //instruction in fetch/decode buffer
+    wire [15:0] FDBufferInstOut; 
+
+    FD_Buffer FD_BufferModule(.instruction_in(fetchedInstOut),.clk(clk2),.instruction_out(FDBufferInstOut));
+ /*-------------------------------------------------------------------------------------------------------------------------*/
+    //control signal generated from decode stage
+    wire [10:0] controlSignalDecodeOut;
+
+    //output data from register file
+    wire [15:0] readDataDecodeOut1, readDataDecodeOut2;
+
+    wire [15:0] decodeBufferOut;
+
+    Decode DecodeModule(.clk(clk1),
+                        .instruction(FDBufferInstOut), 
+                        .writeAddress(3'b000), 
+                        .writeEnable(1'b0), 
+                        .writeData({16{1'b0}}), 
+                        .controlSignal(controlSignalDecodeOut), 
+                        .readData1(readDataDecodeOut1), 
+                        .readData2(readDataDecodeOut2));
+    
+    //10 bits 0s - 3 bits write address - 3 bits function
+    Buffer DecodeBufferModule(.clk(clk1),.in({{10{1'b0}},FDBufferInstOut[9:7],FDBufferInstOut[2:0]}),.out(decodeBufferOut));
+/*-------------------------------------------------------------------------------------------------------------------------*/
+    wire [10:0] controlSignalDEOut;
+    wire [15:0] readDataDEOut1, readDataDEOut2;
+    wire [2:0] writeAddressDEOut, functionDEOut;
+
+    DE_Buffer DE_BufferModule(.clk(clk2),
+                            .controlSignals_in(controlSignalDecodeOut), 
+                            .readData1_in(readDataDecodeOut1), 
+                            .readData2_in(readDataDecodeOut2), 
+                            .writeAdd_in(decodeBufferOut[5:3]), 
+                            .function_in(decodeBufferOut[2:0]), 
+                            .controlSignals_out(controlSignalDEOut), 
+                            .readData1_out(readDataDEOut1), 
+                            .readData2_out(readDataDEOut2), 
+                            .writeAdd_out(writeAddressDEOut), 
+                            .function_out(functionDEOut));
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
 
     initial begin
         clk1 = 1;

@@ -3,7 +3,6 @@
 /*
 Controle Unit which send controle signals 
 inputs:
-  - clk:clock
   - opcode
 output:
   - all output signals
@@ -20,7 +19,7 @@ output:
   -Stack op
   -Push
 */
-module CU(clk,
+module CU(
 opcode,
 ALU_OP,
 ALU_src,
@@ -34,12 +33,11 @@ Out,
 Stack_op,
 Push,
 );
-input clk;
 input [2:0] opcode;
 
 output reg ALU_OP,ALU_src,MEMW,MEMR,MTR,reg_write,Branch,In,Out,Stack_op,Push;
 
-always @ (posedge clk) begin
+always @ (*) begin
   if(opcode == 3'b001) begin   
 //LDD
     ALU_OP=1'b1;
