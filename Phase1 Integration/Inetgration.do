@@ -27,8 +27,9 @@ vlog WriteBack.v
 
 # Processor
 vlog Processor.v
+vlog Processor_TB.v
 
-vsim Processor
+vsim Processor_TB
 # read initial Code Memory
 mem load -i {./codeMemory.mem} /Processor/FetchModule/instMemory/memory
 
