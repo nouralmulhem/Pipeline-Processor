@@ -29,22 +29,24 @@ input clk;
 output [15:0] aluResult;
 
 //wires
-wire [2:0] AluOperation;//Out of Control Unit and Alu Operation in
+wire [2:0] aluOperation;//Out of Control Unit and Alu Operation in
 
 //Instances
 //Flag Ref 3-bit Reg 
-reg [2:0] Flag;
+wire [2:0] aluFlagOut;
+reg [2:0] flagReg;
 
 //Alu Control Instance
-ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(AluOperation));
+ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(aluOperation));
 
 //Alu Instance
-ALU ALUModule (.in1(readData1),.in2(readData2),.aluControl(AluOperation),.out(aluResult),.flag(Flag));
+ALU ALUModule (.in1(readData1),.in2(readData2),.aluControl(aluOperation),.out(aluResult),.flag(aluFlagOut));
 
 
 //Sequential
-//Edge Flag Reg Assign
-// always @(negedge clk)
-// end
+always @(negedge clk)
+begin
+flagReg=aluFlagOut;
+end
 
 endmodule

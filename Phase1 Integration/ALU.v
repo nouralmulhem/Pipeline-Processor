@@ -13,6 +13,9 @@ input [2:0]aluControl;
 output [15:0] out;
 output [2:0] flag;
 
+// assign out={16{1'b0}};
+// assign flag=3'b101;
+
 
 
 // wire [15:0]sum;
@@ -63,11 +66,10 @@ output [2:0] flag;
 // end
 
 assign {flag[1], out} = 
-        (aluControl == 3'b001) ? in1 + in2:                
-        (aluControl == 3'b010) ? {flag[1],~in2}:                     
-        (aluControl == 3'b011) ? {flag[1],in1}: 
-        (aluControl == 3'b100) ? {flag[1],in2}: {flag[1], out};   // Add : Not : Nop(ALUOp is 0) 
-
+        (aluControl == 3'b011) ? in1 + in2:                
+        (aluControl == 3'b100) ? {flag[1],~in2}:                     
+        (aluControl == 3'b001) ? {flag[1],in1}: 
+        (aluControl == 3'b010) ? {flag[1],in2}: {flag[1], out};   // Add : Not : Nop(ALUOp is 0) 
 
 /*
 assign out = 
