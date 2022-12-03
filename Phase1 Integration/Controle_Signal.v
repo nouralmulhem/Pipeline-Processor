@@ -31,7 +31,7 @@ Branch,
 In,
 Out,
 Stack_op,
-Push,
+Push
 );
 input [2:0] opcode;
 

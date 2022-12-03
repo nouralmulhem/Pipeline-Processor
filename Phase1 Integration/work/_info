@@ -10,7 +10,7 @@ z2
 cModel Technology
 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Integration
 vALU
-Z0 !s110 1670090702
+Z0 !s110 1670090887
 !i10b 1
 !s100 gP6@b1LB7_I6^M1IQc8663
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ Z3 dD:/Pipeline-Processor/Phase1 Integration
 w1670087918
 8ALU.v
 FALU.v
-!i122 1216
+!i122 1233
 L0 9 76
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1670090702.000000
+Z5 !s108 1670090887.000000
 !s107 WriteBack.v|MW_Buffer.v|Memory.v|MemoryStage.v|EM_Buffer.v|ALU.v|ALUControl.v|Execute.v|DE_Buffer.v|RegFile.v|Controle_Signal.v|Decode.v|FD_Buffer.v|MemoInst.v|Fetch.v|Buffer.v|Processor.v|Processor_TB.v|
 Z6 !s90 -reportprogress|300|Processor_TB.v|
 !i113 1
@@ -67,7 +67,7 @@ R3
 w1670067529
 8ALUControl.v
 FALUControl.v
-!i122 1216
+!i122 1233
 L0 2 12
 R4
 r1
@@ -111,7 +111,7 @@ R3
 w1670026434
 8Buffer.v
 FBuffer.v
-!i122 1216
+!i122 1233
 L0 1 11
 R4
 r1
@@ -126,15 +126,15 @@ n@buffer
 vCU
 R0
 !i10b 1
-!s100 YV]4:hi:c9`86dOfR[@MK0
+!s100 2;K`lI_z5`j@mJK6F7SA;1
 R1
-I5G>46JV^9j:8Dn7TX:I=>0
+IaQMn?^dn>zo8TSz@WBE883
 R2
 R3
-w1670069630
+w1670090881
 8Controle_Signal.v
 FControle_Signal.v
-!i122 1216
+!i122 1233
 L0 22 118
 R4
 r1
@@ -157,7 +157,7 @@ R3
 Z10 w1670064713
 8Memory.v
 FMemory.v
-!i122 1216
+!i122 1233
 L0 14 27
 R4
 r1
@@ -180,7 +180,7 @@ R3
 Z11 w1670018930
 8DE_Buffer.v
 FDE_Buffer.v
-!i122 1216
+!i122 1233
 L0 18 20
 R4
 r1
@@ -203,7 +203,7 @@ R3
 w1670074620
 8Decode.v
 FDecode.v
-!i122 1216
+!i122 1233
 L0 4 35
 R4
 r1
@@ -249,7 +249,7 @@ R3
 w1670007012
 8EM_Buffer.v
 FEM_Buffer.v
-!i122 1216
+!i122 1233
 L0 10 17
 R4
 r1
@@ -272,7 +272,7 @@ R3
 w1670068007
 8Execute.v
 FExecute.v
-!i122 1216
+!i122 1233
 L0 22 37
 R4
 r1
@@ -319,7 +319,7 @@ R3
 R11
 8FD_Buffer.v
 FFD_Buffer.v
-!i122 1216
+!i122 1233
 L0 10 10
 R4
 r1
@@ -342,7 +342,7 @@ R3
 R11
 8Fetch.v
 FFetch.v
-!i122 1216
+!i122 1233
 L0 18 41
 R4
 r1
@@ -365,7 +365,7 @@ R3
 R11
 8MemoInst.v
 FMemoInst.v
-!i122 1216
+!i122 1233
 L0 9 12
 R4
 r1
@@ -388,7 +388,7 @@ R3
 R10
 8MemoryStage.v
 FMemoryStage.v
-!i122 1216
+!i122 1233
 L0 3 30
 R4
 r1
@@ -411,7 +411,7 @@ R3
 R12
 8MW_Buffer.v
 FMW_Buffer.v
-!i122 1216
+!i122 1233
 L0 1 18
 R4
 r1
@@ -434,7 +434,7 @@ R3
 w1670069414
 8Processor.v
 FProcessor.v
-!i122 1216
+!i122 1233
 L0 14 130
 R4
 r1
@@ -457,7 +457,7 @@ R3
 w1670090657
 8Processor_TB.v
 FProcessor_TB.v
-!i122 1216
+!i122 1233
 L0 5 28
 R4
 r1
@@ -480,7 +480,7 @@ R3
 R11
 8RegFile.v
 FRegFile.v
-!i122 1216
+!i122 1233
 L0 18 25
 R4
 r1
@@ -503,7 +503,7 @@ R3
 R10
 8WriteBack.v
 FWriteBack.v
-!i122 1216
+!i122 1233
 L0 1 16
 R4
 r1
