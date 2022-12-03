@@ -10,27 +10,27 @@ z2
 cModel Technology
 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Integration
 vALU
-Z0 !s110 1670066396
+Z0 !s110 1670076054
 !i10b 1
-!s100 @B_`M>z>>9Ln1aIoSDO0d1
+!s100 M2=fdf;m8h^Cla1^90zZ83
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-ImNUQZRn3U>Od<oL<D]KPM2
+II:Ce03V>DRUVHU004UQKK2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 dD:/Pipeline-Processor/Phase1 Integration
-Z4 w1670064712
+w1670067625
 8ALU.v
 FALU.v
-!i122 114
-L0 9 74
-Z5 OV;L;2020.1;71
+!i122 483
+L0 9 76
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1670066395.000000
-!s107 WriteBack.v|MW_Buffer.v|Memory.v|MemoryStage.v|EM_Buffer.v|ALU.v|ALUControl.v|Execute.v|DE_Buffer.v|RegFile.v|Controle_Signal.v|Decode.v|FD_Buffer.v|MemoInst.v|Fetch.v|Buffer.v|Processor.v|
-Z7 !s90 -reportprogress|300|Processor.v|
+Z5 !s108 1670076054.000000
+!s107 WriteBack.v|MW_Buffer.v|Memory.v|MemoryStage.v|EM_Buffer.v|ALU.v|ALUControl.v|Execute.v|DE_Buffer.v|RegFile.v|Controle_Signal.v|Decode.v|FD_Buffer.v|MemoInst.v|Fetch.v|Buffer.v|Processor.v|Processor_TB.v|
+Z6 !s90 -reportprogress|300|Processor_TB.v|
 !i113 1
-Z8 tCvgOpt 0
+Z7 tCvgOpt 0
 n@a@l@u
 vALU_TB
 !s110 1670064803
@@ -45,7 +45,7 @@ w1669032291
 FD:/Pipeline-Processor/Phase1 Integration/ALU_TB.v
 !i122 1
 L0 5 35
-R5
+R4
 r1
 !s85 0
 31
@@ -53,31 +53,31 @@ r1
 !s107 ALU.v|D:/Pipeline-Processor/Phase1 Integration/ALU_TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Pipeline-Processor/Phase1 Integration/ALU_TB.v|
 !i113 1
-Z9 o-work work
-R8
+Z8 o-work work
+R7
 n@a@l@u_@t@b
 vALUControl
 R0
 !i10b 1
-!s100 <o^b0aYIL9[8mZ]5;OSVo0
+!s100 icmQNN^^OZ9TO[DGNkiM63
 R1
-IJFY@EMjUQ]15mJ9E]cmeg1
+Iz9Hn9jco96_3CPCdnJ_WH2
 R2
 R3
-Z10 w1670026434
+w1670067529
 8ALUControl.v
 FALUControl.v
-!i122 114
-L0 2 11
-R5
+!i122 483
+L0 2 12
+R4
 r1
 !s85 0
 31
+R5
+Z9 !s107 WriteBack.v|MW_Buffer.v|Memory.v|MemoryStage.v|EM_Buffer.v|ALU.v|ALUControl.v|Execute.v|DE_Buffer.v|RegFile.v|Controle_Signal.v|Decode.v|FD_Buffer.v|MemoInst.v|Fetch.v|Buffer.v|Processor.v|Processor_TB.v|
 R6
-Z11 !s107 WriteBack.v|MW_Buffer.v|Memory.v|MemoryStage.v|EM_Buffer.v|ALU.v|ALUControl.v|Execute.v|DE_Buffer.v|RegFile.v|Controle_Signal.v|Decode.v|FD_Buffer.v|MemoInst.v|Fetch.v|Buffer.v|Processor.v|
-R7
 !i113 1
-R8
+R7
 n@a@l@u@control
 vALUControl_TB
 !s110 1670064542
@@ -98,53 +98,53 @@ r1
 !s107 ALUControl.v|ALUControl_TB.v|
 !s90 -reportprogress|300|ALUControl_TB.v|
 !i113 1
-R8
+R7
 n@a@l@u@control_@t@b
 vBuffer
-Z12 !s110 1670066395
+R0
 !i10b 1
 !s100 9A5hhTC=V7iJiWPSgP_Q71
 R1
 IV<UN5Tg3^f]z8DR3dO^650
 R2
 R3
-R10
+w1670026434
 8Buffer.v
 FBuffer.v
-!i122 114
+!i122 483
 L0 1 11
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@buffer
 vCU
-R12
+R0
 !i10b 1
-!s100 6UCT5=Td2^SI`0YnK^3f;2
+!s100 YV]4:hi:c9`86dOfR[@MK0
 R1
-IC<5=0?TV1^2cALjQQS@]42
+I5G>46JV^9j:8Dn7TX:I=>0
 R2
 R3
-w1670065221
+w1670069630
 8Controle_Signal.v
 FControle_Signal.v
-!i122 114
-L0 22 102
-R5
+!i122 483
+L0 22 118
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@c@u
 vDataMemo
 R0
@@ -154,67 +154,90 @@ R1
 IL^5?^<XSj:[WmmVK[PJ^13
 R2
 R3
-Z13 w1670064713
+Z10 w1670064713
 8Memory.v
 FMemory.v
-!i122 114
+!i122 483
 L0 14 27
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@data@memo
 vDE_Buffer
-R12
+R0
 !i10b 1
 !s100 3Pg;PbD:?REfRE_2XliC`3
 R1
 I2<R=VVB4jJkoQ[=5:f^D;0
 R2
 R3
-Z14 w1670018930
+Z11 w1670018930
 8DE_Buffer.v
 FDE_Buffer.v
-!i122 114
+!i122 483
 L0 18 20
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@d@e_@buffer
 vDecode
-R12
+R0
 !i10b 1
-!s100 RcKmJKKHoEJ^4BSlc=]Ua0
+!s100 <L]DLa<RZml5Jj2F^IIDe1
 R1
-IO46eR?H?g`MI:R_SgQ:I[1
+IB<1S_2A6[M48F?MQVP@8o1
 R2
 R3
-R4
+w1670074620
 8Decode.v
 FDecode.v
-!i122 114
-L0 4 24
-R5
+!i122 483
+L0 4 35
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@decode
+vDecode_TB
+!s110 1670074291
+!i10b 1
+!s100 VzT>HVJ=145U[l3gb4?Bn1
+R1
+IQ:QNLb25D[XLD7UCoBYzP2
+R2
+R3
+w1670072689
+8Decode_TB.v
+FDecode_TB.v
+!i122 311
+L0 3 31
+R4
+r1
+!s85 0
+31
+!s108 1670074290.000000
+!s107 RegFile.v|Controle_Signal.v|Decode.v|Decode_TB.v|
+!s90 -reportprogress|300|Decode_TB.v|
+!i113 1
+R7
+n@decode_@t@b
 vEM_Buffer
 R0
 !i10b 1
@@ -226,40 +249,40 @@ R3
 w1670007012
 8EM_Buffer.v
 FEM_Buffer.v
-!i122 114
+!i122 483
 L0 10 17
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@e@m_@buffer
 vExecute
 R0
 !i10b 1
-!s100 9EQT:i4S4DzMUP>Z:?4MF0
+!s100 3zdao2;8bfAh]]VnPjVQc0
 R1
-I=lZnKAH0oD2GillMMW[J70
+IE:k^7EjH_Fl<bnzQSSGHi3
 R2
 R3
-w1670064973
+w1670068007
 8Execute.v
 FExecute.v
-!i122 114
-L0 21 38
-R5
+!i122 483
+L0 22 37
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@execute
 vExecute_TB
 !s110 1670064806
@@ -269,12 +292,12 @@ R1
 I=CW:4@DX>Bha`I5W<T><[2
 R2
 R3
-R4
+Z12 w1670064712
 8D:/Pipeline-Processor/Phase1 Integration/Execute_TB.v
 FD:/Pipeline-Processor/Phase1 Integration/Execute_TB.v
 !i122 9
 L0 5 18
-R5
+R4
 r1
 !s85 0
 31
@@ -282,77 +305,77 @@ r1
 !s107 ALU.v|ALUControl.v|Execute.v|D:/Pipeline-Processor/Phase1 Integration/Execute_TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|D:/Pipeline-Processor/Phase1 Integration/Execute_TB.v|
 !i113 1
-R9
 R8
+R7
 n@execute_@t@b
 vFD_Buffer
-R12
+R0
 !i10b 1
 !s100 d;n<l1a>>Heb0@ommD@[h2
 R1
 I>117XEIcUo6QT]Do^RVEz1
 R2
 R3
-R14
+R11
 8FD_Buffer.v
 FFD_Buffer.v
-!i122 114
+!i122 483
 L0 10 10
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@f@d_@buffer
 vFetch
-R12
+R0
 !i10b 1
 !s100 ^^LGe[H2;eUXlZcE_:9j]0
 R1
 ICi?z1dUlEE@P^<Sg4h5b^3
 R2
 R3
-R14
+R11
 8Fetch.v
 FFetch.v
-!i122 114
+!i122 483
 L0 18 41
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@fetch
 vMemoInst
-R12
+R0
 !i10b 1
 !s100 `hKmB0LS_e^=_KGX=C2IY2
 R1
 IHc30V1RbHSTED:Sdk<oiE2
 R2
 R3
-R14
+R11
 8MemoInst.v
 FMemoInst.v
-!i122 114
+!i122 483
 L0 9 12
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@memo@inst
 vMemoryStage
 R0
@@ -362,20 +385,20 @@ R1
 I7G>6VCUMe<KT=26;bad=<3
 R2
 R3
-R13
+R10
 8MemoryStage.v
 FMemoryStage.v
-!i122 114
+!i122 483
 L0 3 30
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@memory@stage
 vMW_Buffer
 R0
@@ -385,66 +408,89 @@ R1
 I3DO2cG:9o27GgDWHRbKPN2
 R2
 R3
-R4
+R12
 8MW_Buffer.v
 FMW_Buffer.v
-!i122 114
+!i122 483
 L0 1 18
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@m@w_@buffer
 vProcessor
 R0
 !i10b 1
-!s100 =hGIffBAdg;QPMFo92]WW0
+!s100 5ad8eTz[ADbNeZ7S9;@Ul3
 R1
-I9nJ]WZW0<aCG379=H5?:_3
+IDeXR4SXAR=Z[O@D9M4@<K0
 R2
 R3
-w1670066214
+w1670069414
 8Processor.v
 FProcessor.v
-!i122 114
-L0 14 125
-R5
+!i122 483
+L0 14 130
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@processor
+vProcessor_TB
+R0
+!i10b 1
+!s100 L@P>me3:RnQ;?FOKP`:bE1
+R1
+Il_0Sf@ImBQRPoU;cI:>o82
+R2
+R3
+w1670066347
+8Processor_TB.v
+FProcessor_TB.v
+!i122 483
+L0 5 28
+R4
+r1
+!s85 0
+31
+R5
+R9
+R6
+!i113 1
+R7
+n@processor_@t@b
 vRegFile
-R12
+R0
 !i10b 1
 !s100 T5`6X<GdnKYN:9WKoAn>C2
 R1
 I9W`6E040dSo>P0EikK0_L1
 R2
 R3
-R14
+R11
 8RegFile.v
 FRegFile.v
-!i122 114
+!i122 483
 L0 18 25
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@reg@file
 vWriteBack
 R0
@@ -454,18 +500,18 @@ R1
 IjYaz3M4iNGaa?Ai787b]R2
 R2
 R3
-R13
+R10
 8WriteBack.v
 FWriteBack.v
-!i122 114
+!i122 483
 L0 1 16
-R5
+R4
 r1
 !s85 0
 31
+R5
+R9
 R6
-R11
-R7
 !i113 1
-R8
+R7
 n@write@back

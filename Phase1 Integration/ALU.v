@@ -66,10 +66,12 @@ output [2:0] flag;
 // end
 
 assign {flag[1], out} = 
-        (aluControl == 3'b011) ? in1 + in2:                
-        (aluControl == 3'b100) ? {flag[1],~in2}:                     
-        (aluControl == 3'b001) ? {flag[1],in1}: 
-        (aluControl == 3'b010) ? {flag[1],in1}: {flag[1], out};   // Add : Not : Nop(ALUOp is 0) 
+        (aluControl == 3'b011) ? in1 + in2:            //ADD     
+        (aluControl == 3'b100) ? {flag[1],~in2}:       //NOT               
+        (aluControl == 3'b001) ? {flag[1],in1}:        //LDD
+        (aluControl == 3'b111) ? {flag[1],in1}:        //LDM
+        (aluControl == 3'b010) ? {flag[1],in1}:        //STD
+        {flag[1], out};                                //NOP
 
 /*
 assign out = 

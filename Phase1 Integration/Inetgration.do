@@ -31,13 +31,13 @@ vlog Processor_TB.v
 
 vsim Processor_TB
 # read initial Code Memory
-mem load -i {./codeMemory.mem} /Processor/FetchModule/instMemory/memory
+mem load -i {./codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
 
 # read initial Data Memory
-mem load -i {./dataMemory.mem} /Processor/MemoryModule/memory_inst/memory
+mem load -i {./dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 
 # read initial Register File
-mem load -i {./RegFile.mem} -format mti /Processor/DecodeModule/RegFileModule/memory
+mem load -i {./RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 
 add wave *
-run 1000
+#run 1000

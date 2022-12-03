@@ -54,6 +54,22 @@ always @ (*) begin
     Push=1'b0;
 
   end
+  else if(opcode == 3'b111) begin
+  //LDM
+    ALU_OP=1'b1;
+    ALU_src=1'b1;
+    MEMW=1'b0;
+    MEMR=1'b0;
+    MTR=1'b0;
+    reg_write=1'b1;
+
+    Branch=1'b0;
+    In=1'b0;
+    Out=1'b0;
+    Stack_op=1'b0;
+    Push=1'b0;
+
+  end
   else if(opcode == 3'b010) begin
 //STD
     ALU_OP=1'b1;

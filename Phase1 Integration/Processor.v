@@ -36,12 +36,16 @@ module Processor(clk1,clk2,fetchReset);
     wire regWriteBack;
     wire [15:0] writeDataWriteBackOut;
     wire [2:0] writeAddressWriteBackOut;
+    
+    wire [10:0] controlSignalDEOut;// [Output from DE_BufferModule]
+
 
     Decode DecodeModule(.clk(clk1),
                         .instruction(FDBufferInstOut), 
                         .writeAddress(writeAddressWriteBackOut), 
                         .writeEnable(regWriteBack), 
                         .writeData(writeDataWriteBackOut), 
+                        .aluSrc(controlSignalDEOut[1]),//alusrc of previous instruction Immediate Case
                         .controlSignal(controlSignalDecodeOut), 
                         .readData1(readDataDecodeOut1), 
                         .readData2(readDataDecodeOut2));
@@ -49,7 +53,7 @@ module Processor(clk1,clk2,fetchReset);
     //10 bits 0s - 3 bits write address - 3 bits function
     Buffer #(6) DecodeBufferModule(.clk(clk1),.in({FDBufferInstOut[9:7],FDBufferInstOut[2:0]}),.out(decodeBufferOut));
 /*-------------------------------------------------------------------------------------------------------------------------*/
-    wire [10:0] controlSignalDEOut;
+    // wire [10:0] controlSignalDEOut; Moved Above
     wire [15:0] readDataDEOut1, readDataDEOut2;
     wire [2:0] writeAddressDEOut, functionDEOut;
 
@@ -75,6 +79,7 @@ module Processor(clk1,clk2,fetchReset);
                         .readData1(readDataDEOut1),
                         .readData2(readDataDEOut2),
                         .func(functionDEOut),//010
+                        .immediateValue(FDBufferInstOut),
                         .aluResult(aluResultExecuteOut));
 
     //8 bits control signals[MEMW-MEMR-MTR-reg write-In-Out-Stack op-Push] - 16 bits read data 2 - 3 bits write address
