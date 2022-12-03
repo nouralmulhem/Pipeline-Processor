@@ -3,6 +3,8 @@
 `include "FD_Buffer.v"
 `include "Decode.v"
 `include "DE_Buffer.v"
+`include "Execute.v"
+`include "EM_Buffer.v"
 
 
 module Processor();
@@ -31,7 +33,7 @@ module Processor();
     //output data from register file
     wire [15:0] readDataDecodeOut1, readDataDecodeOut2;
 
-    wire [15:0] decodeBufferOut;
+    wire [5:0] decodeBufferOut;
 
     Decode DecodeModule(.clk(clk1),
                         .instruction(FDBufferInstOut), 
@@ -43,7 +45,7 @@ module Processor();
                         .readData2(readDataDecodeOut2));
     
     //10 bits 0s - 3 bits write address - 3 bits function
-    Buffer DecodeBufferModule(.clk(clk1),.in({{10{1'b0}},FDBufferInstOut[9:7],FDBufferInstOut[2:0]}),.out(decodeBufferOut));
+    Buffer #(6) DecodeBufferModule(.clk(clk1),.in({FDBufferInstOut[9:7],FDBufferInstOut[2:0]}),.out(decodeBufferOut));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     wire [10:0] controlSignalDEOut;
     wire [15:0] readDataDEOut1, readDataDEOut2;
@@ -61,7 +63,43 @@ module Processor();
                             .writeAdd_out(writeAddressDEOut), 
                             .function_out(functionDEOut));
 /*-------------------------------------------------------------------------------------------------------------------------*/
+    wire [15:0] aluResultExecuteOut;
+    wire [26:0] executeBufferOut;
+    Execute ExecuteModule(.aluOp(controlSignalDEOut[0]),
+                        .branch(controlSignalDEOut[6]),
+                        .aluSrc(controlSignalDEOut[1]),
+                        .clk(clk1),
+                        .readData1(readDataDEOut1),
+                        .readData2(readDataDEOut2),
+                        .func(functionDEOut),
+                        .aluResult(aluResultExecuteOut));
+//    -MEMW *
+//   -MEMR *
+//   -Memory to Reg(MTR) *
+//   -reg write *
+// -In *
+//   -Out *
+//   -Stack op *
+//   -Push *
 
+
+    //8 bits control signals - 16 bits read data 2 - 3 bits write address
+    Buffer #(27) ExecuteBufferModule(.clk(clk1),.in({controlSignalDEOut[10:6],controlSignalDEOut[4:2],readDataDEOut2,writeAddressDEOut}),.out(executeBufferOut));
+/*-------------------------------------------------------------------------------------------------------------------------*/
+    wire [7:0] controlSignalEMOut;
+    wire [15:0] aluResultEMOut, readDataEMOut2;
+    wire [2:0] writeAddressEMOut;
+    
+    EM_Buffer EM_BufferModule(.controlSignals_in(executeBufferOut[26:19]),
+                            .ALUData_in(aluResultExecuteOut),
+                            .ReadData2_in(executeBufferOut[18:3]),
+                            .WriteAdd_in(executeBufferOut[2:0]),
+                            .clk(clk2),
+                            .controlSignals_out(controlSignalEMOut),
+                            .ALUData_out(aluResultEMOut),
+                            .ReadData2_out(readDataEMOut2),
+                            .WriteAdd_out(writeAddressEMOut));
+/*-------------------------------------------------------------------------------------------------------------------------*/
 
     initial begin
         clk1 = 1;

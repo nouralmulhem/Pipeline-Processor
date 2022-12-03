@@ -1,8 +1,8 @@
 // memory data file (do not edit the following line - required for mem load use)
 // instance=/RegFile_TB/RegFileModule/memory
 // format=mti addressradix=d dataradix=s version=1.0 wordsperline=1
-0: 0000000000000000
-1: 0101010101010101
+0: 0000000000000001
+1: 0000000000000010
 2: 1111000011110000
 3: 1010101010101010
 4: 1111111111111111

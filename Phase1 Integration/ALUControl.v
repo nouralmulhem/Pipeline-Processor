@@ -4,20 +4,6 @@ module ALUControl (ALUOp, Funct, Operation);
     input [2:0] Funct;
     output [2:0] Operation;
 
-    // if sequential circuit
-    // always @(posedge clk) begin
-    //     if(ALUOp) begin
-    //     case (Funct)
-    //         3'b001 : Operation = 3'b001;      //Load
-    //         3'b010 : Operation = 3'b010;      //Store
-    //         3'b011 : Operation = 3'b011;      //Add
-    //         3'b100 : Operation = 3'b100;      //Not
-    //         // 3'b101 : Operation = 3'b101;      //No Operation
-    //         default: Operation = 3'b101;      //No Operation
-    //     endcase
-    // end
-    // end
-
     // if combinational circuit
     assign Operation = 
         (ALUOp == 1) ? ((Funct == 3'b001) ? 3'b001:                     //Load

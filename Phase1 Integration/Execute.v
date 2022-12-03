@@ -18,12 +18,12 @@ Edges:
 Assign Flag Reg (pending)
 
 */
-module Execute (controlSignals,readData1,readData2,func,clk,aluResult);
+module Execute (clk,aluOp,branch,aluSrc,readData1,readData2,func,aluResult);
 
 //inputs and outputs
-input [10:0] controlSignals;
-input [15:0] readData1,readData2;
-input [2:0] fucntion;
+input aluOp, branch, aluSrc; //will bw used in phase 2 
+input [15:0] readData1, readData2;
+input [2:0] func;
 input clk;
 
 output [15:0] aluResult;
@@ -36,7 +36,7 @@ wire [2:0] AluOperation;//Out of Control Unit and Alu Operation in
 reg [2:0] Flag;
 
 //Alu Control Instance
-ALUControl ALUControlModule(.ALUOp(controlSignals[0]),.Funct(fucntion),.Operation(AluOperation));
+ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(AluOperation));
 
 //Alu Instance
 ALU ALUModule (.in1(readData1),.in2(readData2),.aluControl(AluOperation),.out(aluResult),.flag(Flag));

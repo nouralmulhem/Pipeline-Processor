@@ -8,33 +8,74 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Integration
-vBuffer
-Z0 !s110 1670017167
+vALU
+Z0 !s110 1670026294
 !i10b 1
-!s100 ef?jDf:LZR;8FSfJ^SS;h1
-IVfn0Fn1P`BRaoKJ;b8iO>2
+!s100 DRJUPP:Z6nD3APKODYzE01
+IWk^`R3iUoDGgFF^=[3Tz@3
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration
-w1670015005
-8Buffer.v
-FBuffer.v
-L0 1
+w1670025797
+8ALU.v
+FALU.v
+L0 9
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1670017167.000000
-Z5 !s107 DE_Buffer.v|RegFile.v|Controle_Signal.v|Decode.v|FD_Buffer.v|MemoInst.v|Fetch.v|Buffer.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration/Processor.v|
-Z6 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration/Processor.v|
+Z4 !s108 1670026294.000000
+Z5 !s107 EM_Buffer.v|ALU.v|ALUControl.v|Execute.v|DE_Buffer.v|RegFile.v|Controle_Signal.v|Decode.v|FD_Buffer.v|MemoInst.v|Fetch.v|Buffer.v|Processor.v|
+Z6 !s90 -reportprogress|300|Processor.v|
 !i113 1
-Z7 o-work work
-Z8 tCvgOpt 0
+Z7 tCvgOpt 0
+n@a@l@u
+vALUControl
+R0
+!i10b 1
+!s100 JMNKZ4RzoIPl9a0CZeVTc0
+II:N5F9CbOnfj@K?=Ib??00
+R1
+R2
+w1670024991
+8ALUControl.v
+FALUControl.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+n@a@l@u@control
+vBuffer
+R0
+!i10b 1
+!s100 >15fZTg30nd>O@@GCgDYL3
+I;^Y5Q0bb48b=@f01=4V4l3
+R1
+R2
+w1670023081
+8Buffer.v
+FBuffer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
 n@buffer
 vCU
 R0
 !i10b 1
 !s100 ncWehS1nfJkDlNI<FYzIb3
-ImCC7ioXk6k^mATAMi3z?H2
+I9D6:Km>D9Ch:ghURL3N_g1
 R1
 R2
 w1670016760
@@ -50,19 +91,18 @@ R5
 R6
 !i113 1
 R7
-R8
 n@c@u
 vDE_Buffer
 R0
 !i10b 1
 !s100 ^RTK;1ZAOCeeHaeY;Dz6N1
-Ib>SiC[;93Ni2h@jglQ[:d1
+ISIQj?Xi95ni]YHfdJ::kG2
 R1
 R2
 w1670016030
 8DE_Buffer.v
 FDE_Buffer.v
-Z9 L0 18
+Z8 L0 18
 R3
 r1
 !s85 0
@@ -72,16 +112,15 @@ R5
 R6
 !i113 1
 R7
-R8
 n@d@e_@buffer
 vDecode
 R0
 !i10b 1
 !s100 2GP_eP[]g<Tj3zi_Vo=JL3
-I0U2S4>@0dan;Y>haMj[XK1
+IgZ=lCYYSgd;Ole7PRnNF11
 R1
 R2
-w1670016768
+w1670026276
 8Decode.v
 FDecode.v
 L0 4
@@ -94,19 +133,18 @@ R5
 R6
 !i113 1
 R7
-R8
 n@decode
-vFD_Buffer
+vEM_Buffer
 R0
 !i10b 1
-!s100 PYLV?I9F<kEWOS_7J>:R=2
-IWYMUBD1iWh3Rfn`P8SUb02
+!s100 hZhAe4LdlSegD:WW<FciH1
+IPA59OKTJj3TlojGD?R0jJ3
 R1
 R2
-w1670011920
-8FD_Buffer.v
-FFD_Buffer.v
-L0 10
+w1670021848
+8EM_Buffer.v
+FEM_Buffer.v
+Z9 L0 10
 R3
 r1
 !s85 0
@@ -116,18 +154,38 @@ R5
 R6
 !i113 1
 R7
-R8
-n@f@d_@buffer
-vFetch
+n@e@m_@buffer
+vExecute
 R0
 !i10b 1
-!s100 3TRzc3=j1fmUPP61_jQYk2
-I@mmhUF];C`K8hmd4TH2YJ0
+!s100 hdiIG=9FbkFd@I3mY5j?81
+IS^ROfPRzZn`gNaP4BlC@P1
 R1
 R2
-w1670011353
-8Fetch.v
-FFetch.v
+w1670024785
+8Execute.v
+FExecute.v
+L0 21
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+n@execute
+vFD_Buffer
+R0
+!i10b 1
+!s100 PYLV?I9F<kEWOS_7J>:R=2
+I`ZeAJZXkKA0aLNWHIJgHh1
+R1
+R2
+w1670011920
+8FD_Buffer.v
+FFD_Buffer.v
 R9
 R3
 r1
@@ -138,13 +196,33 @@ R5
 R6
 !i113 1
 R7
+n@f@d_@buffer
+vFetch
+R0
+!i10b 1
+!s100 3TRzc3=j1fmUPP61_jQYk2
+IjQ@N=f1ff6dzj?7m?W92d3
+R1
+R2
+w1670011353
+8Fetch.v
+FFetch.v
 R8
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
 n@fetch
 vMemoInst
 R0
 !i10b 1
 !s100 5GB@l3@4ejgIF[5G76Az]0
-Ib00@7>m?9<hR4NYWLdQHh0
+ISdNob8X^HYXabK@k;:LBb3
 R1
 R2
 w1670008546
@@ -160,40 +238,17 @@ R5
 R6
 !i113 1
 R7
-R8
 n@memo@inst
 vProcessor
 R0
 !i10b 1
-!s100 h;>@:V]1_z]9_HZiZaOgf3
-IP@=:Yf]ige:H4gI`=e5^[3
+!s100 ?f?OJgGGXS=<b7bN^0J>L0
+I>@h?3HDE82M?XH^YmDcC:0
 R1
 R2
-w1670016304
-8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration/Processor.v
-FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/Computer Architecture/Project/Pipeline-Processor/Phase1 Integration/Processor.v
-L0 8
-R3
-r1
-!s85 0
-31
-R4
-R5
-R6
-!i113 1
-R7
-R8
-n@processor
-vRegFile
-R0
-!i10b 1
-!s100 Ob8knjPQkR=hJ_12BLZ1e2
-IGZDO6zKW4?:Ggh9BbUH=B0
-R1
-R2
-w1668759509
-8RegFile.v
-FRegFile.v
+w1670024411
+8Processor.v
+FProcessor.v
 R9
 R3
 r1
@@ -204,5 +259,25 @@ R5
 R6
 !i113 1
 R7
+n@processor
+vRegFile
+R0
+!i10b 1
+!s100 Ob8knjPQkR=hJ_12BLZ1e2
+IH6T944EjK0V<P:4QV24T12
+R1
+R2
+w1668759509
+8RegFile.v
+FRegFile.v
 R8
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
 n@reg@file

@@ -10,8 +10,8 @@ module ALU (in1,in2,aluControl,out,flag);
 
 input [15:0]in1,in2;
 input [2:0]aluControl;
-output [15:0]out;
-output [2:0]flag;
+output reg [15:0] out;
+output reg [2:0] flag;
 
 
 
@@ -19,7 +19,7 @@ wire [15:0]sum;
 wire carry;
 assign {carry_sum,sum}=in1+in2;
 
-always @* begin
+always @ * begin
 if(aluControl==3'b000)begin
 //nop
 {flag[1],out}=in1+in2;
@@ -30,7 +30,7 @@ end
 
 if(aluControl==3'b001)begin
 //add
-{flag[1],out}=in1+in2;
+{flag[1],out} = in1 + in2;
 flag[0]=(out=='b0) ? 1'b1:1'b0;
 flag[0]=(out<0)?1'b1:1'b0;
 end
