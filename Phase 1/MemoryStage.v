@@ -1,4 +1,5 @@
 `include "Memory/Memory.v"
+
 module MemoryStage (clk,mem_read,mem_write,read_add, write_data,
 					alu_data,mem_to_reg, data_to_write);
 
@@ -20,11 +21,10 @@ write_data,
 read_data);
 
 always @* begin
-
 	if(mem_to_reg) begin
-		data_to_write=read_data;
+		data_to_write = read_data;
 	end else begin
-		data_to_write=alu_data;
+		data_to_write = alu_data;
 	end
 
 end

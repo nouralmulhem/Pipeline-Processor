@@ -8,8 +8,8 @@ output:
 */
 module ALU (in1,in2,aluControl,out,flag);
 
-input [15:0]in1,in2;
-input [2:0]aluControl;
+input [15:0] in1,in2;
+input [2:0] aluControl;
 output [15:0] out;
 output [2:0] flag;
 
@@ -69,7 +69,7 @@ assign {flag[1], out} =
         (aluControl == 3'b011) ? in1 + in2:                
         (aluControl == 3'b100) ? {flag[1],~in2}:                     
         (aluControl == 3'b001) ? {flag[1],in1}: 
-        (aluControl == 3'b010) ? {flag[1],in2}: {flag[1], out};   // Add : Not : Nop(ALUOp is 0) 
+        (aluControl == 3'b010) ? {flag[1],in1}: {flag[1], out};   // Add : Not : Nop(ALUOp is 0) 
 
 /*
 assign out = 

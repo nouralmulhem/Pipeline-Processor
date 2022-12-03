@@ -37,10 +37,16 @@ wire [2:0] aluFlagOut;
 reg [2:0] flagReg;
 
 //Alu Control Instance
-ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(aluOperation));
+ALUControl ALUControlModule(.ALUOp(1'b1),.Funct(3'b010),.Operation(aluOperation));
+
+// ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(aluOperation));
+
 
 //Alu Instance
 ALU ALUModule (.in1(readData1),.in2(readData2),.aluControl(aluOperation),.out(aluResult),.flag(aluFlagOut));
+
+// ALU ALUModule (.in1(readData1),.in2(readData2),.aluControl(3'b010),.out(aluResult),.flag(aluFlagOut));
+
 
 
 //Sequential

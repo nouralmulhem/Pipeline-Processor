@@ -9,7 +9,7 @@ reg clk;
 wire [15:0] aluResult;
 // wire [2:0] Flag;
 
-Execute ExecuteModule (.clk(clk),.aluOp(1'b1),.branch(1'b0),.aluSrc(1'b0),.readData1({16{1'b0}}),.readData2(16'b0000000000000001),.func(3'b001),.aluResult(aluResult));
+Execute ExecuteModule (.clk(clk),.aluOp(1'b1),.branch(1'b0),.aluSrc(1'b0),.readData1({16{1'b0}}),.readData2(16'b0010010010010010),.func(3'b010),.aluResult(aluResult));
 initial
 begin
 clk=0;
