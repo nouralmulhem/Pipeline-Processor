@@ -1,8 +1,8 @@
 // memory data file (do not edit the following line - required for mem load use)
 // instance=/DataMemo/memory
 // format=mti addressradix=d dataradix=b version=1.0 wordsperline=1
-   0: 0011001100110001
-   1: 1010101010101010
+   0: xxxxxxxxxxxxxxxx
+   1: xxxxxxxxxxxxxxxx
    2: xxxxxxxxxxxxxxxx
    3: xxxxxxxxxxxxxxxx
    4: xxxxxxxxxxxxxxxx

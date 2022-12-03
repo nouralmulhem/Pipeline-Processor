@@ -40,4 +40,5 @@ mem load -i {./dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory
 mem load -i {./RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 
 add wave *
-#run 1000
+add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+run 1000
