@@ -9,8 +9,19 @@ module Decode(clk, instruction, writeAddress, writeEnable, writeData, controlSig
      input [15:0] writeData;
      output [10:0] controlSignal;
      output [15:0] readData1, readData2;
-
-                                             //ALUOP           //AluSrc          //MEMW            //MEMR            //MTR             //Branch          //reg_write       //In              //Out             //Stack_op        //Push
-     CU ControlUnitModule(instruction[15:13], controlSignal[0], controlSignal[1], controlSignal[2], controlSignal[3], controlSignal[4], controlSignal[5], controlSignal[6], controlSignal[7], controlSignal[8], controlSignal[9], controlSignal[10]);
+      
+     //ALUOP           //AluSrc          //MEMW            //MEMR            //MTR             //Branch          //reg_write       //In              //Out             //Stack_op        //Push
+      CU ControlUnitModule(.opcode(instruction[15:13]),
+     .ALU_OP(controlSignal[0]),
+     .ALU_src(controlSignal[1]),
+     .MEMW(controlSignal[2]),
+     .MEMR(controlSignal[3]),
+     .MTR(controlSignal[4]),
+     .reg_write(controlSignal[6]),
+     .Branch(controlSignal[5]),
+     .In(controlSignal[7]),
+     .Out(controlSignal[8]),
+     .Stack_op(controlSignal[9]),
+     .Push(controlSignal[10]));
      RegFile RegFileModule(clk, instruction[12:10], instruction[9:7], writeAddress, writeEnable, writeData, readData1, readData2); 
 endmodule

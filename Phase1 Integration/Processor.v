@@ -73,17 +73,8 @@ module Processor();
                         .readData2(readDataDEOut2),
                         .func(functionDEOut),
                         .aluResult(aluResultExecuteOut));
-//    -MEMW *
-//   -MEMR *
-//   -Memory to Reg(MTR) *
-//   -reg write *
-// -In *
-//   -Out *
-//   -Stack op *
-//   -Push *
 
-
-    //8 bits control signals - 16 bits read data 2 - 3 bits write address
+    //8 bits control signals[MEMW-MEMR-MTR-reg write-In-Out-Stack op-Push] - 16 bits read data 2 - 3 bits write address
     Buffer #(27) ExecuteBufferModule(.clk(clk1),.in({controlSignalDEOut[10:6],controlSignalDEOut[4:2],readDataDEOut2,writeAddressDEOut}),.out(executeBufferOut));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     wire [7:0] controlSignalEMOut;
