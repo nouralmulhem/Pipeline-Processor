@@ -56,7 +56,7 @@ always @ (*) begin
   end
   else if(opcode == 3'b010) begin
 //STD
-    ALU_OP=1'b0;
+    ALU_OP=1'b1;
     ALU_src=1'b0;
     MEMW=1'b1;
     MEMR=1'b0;

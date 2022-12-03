@@ -81,7 +81,7 @@ module Processor();
                         .clk(clk1),
                         .readData1(readDataDEOut1),
                         .readData2(readDataDEOut2),
-                        .func(functionDEOut),
+                        .func(functionDEOut),//010
                         .aluResult(aluResultExecuteOut));
 
     //8 bits control signals[MEMW-MEMR-MTR-reg write-In-Out-Stack op-Push] - 16 bits read data 2 - 3 bits write address

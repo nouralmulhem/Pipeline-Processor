@@ -37,9 +37,9 @@ wire [2:0] aluFlagOut;
 reg [2:0] flagReg;
 
 //Alu Control Instance
-ALUControl ALUControlModule(.ALUOp(1'b1),.Funct(3'b010),.Operation(aluOperation));
+// ALUControl ALUControlModule(.ALUOp(1'b1),.Funct(3'b010),.Operation(aluOperation));
 
-// ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(aluOperation));
+ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(aluOperation));
 
 
 //Alu Instance
