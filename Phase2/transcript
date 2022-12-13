@@ -1,0 +1,36 @@
+do BranchLogic.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:01:08 on Dec 13,2022
+# vlog -reportprogress 300 BranchLogic.v 
+# ** Error: (vlog-13069) BranchLogic.v(1): near "+": syntax error, unexpected '+', expecting class.
+# End time: 10:01:08 on Dec 13,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./BranchLogic.do line 2
+# C:/intelFPGA/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog BranchLogic.v"
+do BranchLogic.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:01:36 on Dec 13,2022
+# vlog -reportprogress 300 BranchLogic.v 
+# -- Compiling module BranchLogic
+# 
+# Top level modules:
+# 	BranchLogic
+# End time: 10:01:36 on Dec 13,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:01:36 on Dec 13,2022
+# vlog -reportprogress 300 BranchLogic_TB.v 
+# -- Compiling module BranchLogic
+# -- Compiling module BranchLogic_TB
+# 
+# Top level modules:
+# 	BranchLogic_TB
+# End time: 10:01:36 on Dec 13,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim BranchLogic_TB 
+# Start time: 10:01:37 on Dec 13,2022
+# Loading work.BranchLogic_TB
+# Loading work.BranchLogic
