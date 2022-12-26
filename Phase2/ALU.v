@@ -18,6 +18,9 @@ assign {flag[1], out} =
         (aluControl == 4'b0001) ? {flag[1],~in2}:            //NOT   
         (aluControl == 4'b0010) ? in1 + in2:            //ADD   
         (aluControl == 4'b0011) ? {flag[1],in1}:            //LDM LDD STD
+        (aluControl == 4'b0100) ? in1 - in2:            //SUB
+        (aluControl == 4'b0101) ? {flag[1],in1&in2}:            //AND
+        (aluControl == 4'b0110) ? {flag[1],in1|in2}:            //OR
         {flag[1], out};                                //NOP
 
         // (aluControl == 3'b100) ? {flag[1],~in2}:       //NOT               
