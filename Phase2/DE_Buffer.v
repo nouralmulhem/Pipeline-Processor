@@ -16,16 +16,16 @@ output:
   -function_out (3 bits)   
 */
 module DE_Buffer(clk, controlSignals_in, readData1_in, readData2_in, writeAdd_in, function_in, controlSignals_out, readData1_out, readData2_out, writeAdd_out, function_out);
-    input [10:0] controlSignals_in;
+    input [12:0] controlSignals_in;
     input [15:0] readData1_in, readData2_in;
     input [2:0] writeAdd_in;
-    input [2:0] function_in;
+    input [3:0] function_in;
     input clk;
 
-    output reg [10:0] controlSignals_out;
+    output reg [12:0] controlSignals_out;
     output reg [15:0] readData1_out, readData2_out;
     output reg [2:0] writeAdd_out;
-    output reg [2:0] function_out;
+    output reg [3:0] function_out;
 
     always @(posedge clk) begin
         controlSignals_out = controlSignals_in;

@@ -5,7 +5,7 @@ Fetch Stage in the 5 Stages of the pipline
 inputs:
   -branch (1 bit):Select bit of there is a branch to select Branch Address to be loaded to PC not PC+1
   -branchAdd (16 bit):New address to be Written in PC(After Sign Extend)
-  -reset (1 bit):Load PC with 2^5h (location of first instruction)
+  -reset (1 bit):Load PC with 2^5h (location of first instruction) [Interrupt Signal**********8]
   -clk:clock
 
 output:
