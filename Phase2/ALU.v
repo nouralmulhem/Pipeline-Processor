@@ -9,18 +9,30 @@ output:
 module ALU (in1,in2,aluControl,out,flag);
 
 input [15:0] in1,in2;
-input [2:0] aluControl;
+input [3:0] aluControl;
 output [15:0] out;
-output [2:0] flag;
+output [2:0] flag;//Negative Carry Zero
 
-
+//Carry Flag
 assign {flag[1], out} = 
-        (aluControl == 3'b011) ? in1 + in2:            //ADD     
-        (aluControl == 3'b100) ? {flag[1],~in2}:       //NOT               
-        (aluControl == 3'b001) ? {flag[1],in1}:        //LDD
-        (aluControl == 3'b111) ? {flag[1],in1}:        //LDM
-        (aluControl == 3'b010) ? {flag[1],in1}:        //STD
+        (aluControl == 4'b0001) ? {flag[1],~in2}:            //NOT   
+        (aluControl == 4'b0010) ? in1 + in2:            //ADD   
+        (aluControl == 4'b0011) ? {flag[1],in1}:            //LDM LDD STD
         {flag[1], out};                                //NOP
+
+        // (aluControl == 3'b100) ? {flag[1],~in2}:       //NOT               
+        // (aluControl == 3'b001) ? {flag[1],in1}:        //LDD
+        // (aluControl == 3'b111) ? {flag[1],in1}:        //LDM
+        // (aluControl == 3'b010) ? {flag[1],in1}:        //STD
+        // {flag[1], out};                                //NOP
+
+//Zero Flag
+assign flag[0]=(out=={16{1'b0}})?1'b1:1'b0;
+
+// Negative Flag
+assign flag[2]=(out<0)?1'b1:1'b0;
+
+
 
 
 // assign out={16{1'b0}};

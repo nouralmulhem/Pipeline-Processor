@@ -13,7 +13,7 @@ vlog DE_Buffer.v
 
 # Execute
 vlog Execute.v
-vlog ALUControl.v
+#vlog ALUControl.v
 vlog ALU.v
 vlog EM_Buffer.v
 
@@ -32,7 +32,11 @@ vlog Processor_TB.v
 vsim Processor_TB
 
 add wave *
-add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+add wave -position end sim:/Processor_TB/ProcessorModule/*
+#add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/flag
+#add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
+#add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+#add wave -position 0 sim:/Processor_TB/ProcessorModule/FetchModule/*
 
 # Clocks
 #clk1
