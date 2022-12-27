@@ -6,8 +6,8 @@
 `include "Execute.v"
 `include "EM_Buffer.v"
 `include "MemoryStage.v"
-//`include "MW_Buffer.v"
-//`include "WriteBack.v"
+`include "MW_Buffer.v"
+`include "WriteBack.v"
 
 
 
