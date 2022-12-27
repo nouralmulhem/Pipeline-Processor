@@ -13,7 +13,7 @@ nop
 nop
 nop
 nop
-std r6 r7
+std r7 r6
 nop
 nop
 nop

@@ -1,0 +1,6 @@
+SHL R0 1
+nop
+nop
+nop
+nop
+SHR R1 1

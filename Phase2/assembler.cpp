@@ -101,11 +101,11 @@ string getOperation(string opCode, string& func)
 		return "0010";
 	}
 	if (opCode == "shl") {
-		func = "1001";
+		func = "1011";
 		return "0101";
 	}
 	if (opCode == "shr") {
-		func = "xxxx";
+		func = "1100";
 		return "0101";
 	}
 	if (opCode == "push") {
@@ -229,6 +229,9 @@ void ReadFile(int number)
 						inst2 = arr[2];
 					}
 				}
+			}
+			if (arr[0] == "std") {
+				inst = (string)hex_string + ": " + "1100" + reg2 + reg;
 			}
 			inst += "00" + func;
 			out << inst << "\n";

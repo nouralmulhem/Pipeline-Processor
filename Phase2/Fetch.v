@@ -48,8 +48,7 @@ assign PC_Mux_Out=(branch==1'b0)?Adder_Out:Branch_Address_32bit;
 always @(negedge clk)
 begin
 if(reset == 1'b1) begin
-  //  PC = {32'd50};
-   PC = {32{1'b0}};
+   PC = {32'd50};
 end
 else begin
 PC = PC_Mux_Out;
