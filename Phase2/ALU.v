@@ -24,9 +24,9 @@ assign {flag[1], out} =
         (aluControl == 4'b0111) ? in2+1:            //inc
         (aluControl == 4'b1000) ? in2-1:            //dec
         (aluControl == 4'b1001) ? {1'b1,out}:            //sec
-        (aluControl == 4'b1010) ? {1'b0,out}:            //clc
-
-
+        (aluControl == 4'b1010) ? {1'b0,out}:            //clc1
+        (aluControl == 4'b1011) ? in2<<in1:            //shl
+        (aluControl == 4'b1100) ? in2>>in1:            //shr
         {flag[1], out};                                //NOP
 
         // (aluControl == 3'b100) ? {flag[1],~in2}:       //NOT               
@@ -36,10 +36,10 @@ assign {flag[1], out} =
         // {flag[1], out};                                //NOP
 
 //Zero Flag
-assign flag[0]=(out=={16{1'b0}})?1'b1:1'b0;
+assign flag[0]=(4'b0000)?flag[0]:((out=={16{1'b0}})?1'b1:1'b0);
 
 // Negative Flag
-assign flag[2]=(out<0)?1'b1:1'b0;
+assign flag[2]=(4'b0000)?flag[0]:((out<0)?1'b1:1'b0);
 
 
 

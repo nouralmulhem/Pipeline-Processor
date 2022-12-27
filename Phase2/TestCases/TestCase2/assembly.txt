@@ -1,0 +1,26 @@
+LDM R1 1
+nop
+nop
+nop
+nop
+LDM R2 2
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+nop
+ADD R2 R1
+nop
+nop
+nop
+nop
+NOT R1
+nop
+nop
+nop
+nop
+STD R2 R1

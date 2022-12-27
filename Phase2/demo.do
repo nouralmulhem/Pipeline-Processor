@@ -35,6 +35,8 @@ add wave *
 add wave -position end sim:/Processor_TB/ProcessorModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/flag
 add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/*
+add wave -position 35 sim:/Processor_TB/ProcessorModule/DecodeModule/*
+
 #add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
 #add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 #add wave -position 0 sim:/Processor_TB/ProcessorModule/FetchModule/*

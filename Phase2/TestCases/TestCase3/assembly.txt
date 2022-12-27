@@ -1,0 +1,21 @@
+AND R1 R2
+nop
+nop
+nop
+nop
+AND R0 R3
+nop
+nop
+nop
+nop
+OR R0 R3
+nop
+nop
+nop
+nop
+MOV R3 R5
+nop
+nop
+nop
+nop
+SUB R5 R0

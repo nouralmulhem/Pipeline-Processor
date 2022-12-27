@@ -1,0 +1,21 @@
+add r0 r1
+nop
+nop
+nop
+nop
+not r5 r5
+nop
+nop
+nop
+nop
+lDD r5 r2
+nop
+nop
+nop
+nop
+std r6 r7
+nop
+nop
+nop
+nop
+ldm r3 26214
