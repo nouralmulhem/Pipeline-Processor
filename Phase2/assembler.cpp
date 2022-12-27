@@ -73,11 +73,11 @@ string getOperation(string opCode, string& func)
 		return "0010";
 	}
 	if (opCode == "out") {
-		func = "xxxx";
+		func = "0000";
 		return "0011";
 	}
 	if (opCode == "in") {
-		func = "xxxx";
+		func = "0000";
 		return "0100";
 	}
 	if (opCode == "mov") {
@@ -109,11 +109,11 @@ string getOperation(string opCode, string& func)
 		return "0101";
 	}
 	if (opCode == "push") {
-		func = "xxxx";
+		func = "0000";
 		return "0110";
 	}
 	if (opCode == "pop") {
-		func = "xxxx";
+		func = "0000";
 		return "0111";
 	}
 	if (opCode == "ldm") {
