@@ -21,6 +21,8 @@ vlog EM_Buffer.v
 vlog MemoryStage.v
 vlog Memory.v
 vlog MW_Buffer.v
+vlog StackPointer.v
+vlog PushPopLogic.v
 
 # Write Back
 vlog WriteBack.v
@@ -36,6 +38,7 @@ add wave -position end sim:/Processor_TB/ProcessorModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/flag
 add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/*
 add wave -position 35 sim:/Processor_TB/ProcessorModule/DecodeModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/PushPopLogicModule/SP
 
 #add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
 #add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory

@@ -2,7 +2,7 @@
 // instance=/RegFile_TB/RegFileModule/memory
 // format=mti addressradix=d dataradix=s version=1.0 wordsperline=1
 0: 1111111111111111
-1: 0000000000000001
+1: 0000000000000000
 2: 0000000000000000
 3: 0000000000000000
 4: 0000000000000000
