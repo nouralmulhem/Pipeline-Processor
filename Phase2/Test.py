@@ -24,27 +24,27 @@ def runTestCase(testCaseNo):
     print("========================TestCase("+str(testCaseNo)+")============================")
 
     # Same Code Memory
-    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/codeMemoryTested.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/codeMemory.mem')):
+    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/codeMemory.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/codeMemory.mem')):
         print("Warning: Reading Different Code Memory :(")
         return False
 
     # Same Initial Data Memory
-    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/dataMemoryTested.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/dataMemory.mem')):
+    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/dataMemory.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/dataMemory.mem')):
         print("Warning: Reading Different Data Memory :(")
         return False
 
     # Same Regilster File 
-    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/RegFileTested.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/RegFile.mem')):
+    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/RegFile.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/RegFile.mem')):
         print("Warning: Reading Different Register File :(")
         return False
 
     # Same Final Register File Memory
-    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/RegFileOutTested.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/RegFileOut.mem')):
+    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/RegFileOut.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/RegFileOut.mem')):
         print("Error: Different Final Register File Memory :(")
         return False
     
     # Same Final Data Memory
-    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/dataMemoryOutTested.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/dataMemoryOut.mem')):
+    if(not compareFiles(path1='./TestCases/TestCase'+str(testCaseNo)+'/Tested/dataMemoryOut.mem',path2='./TestCases/TestCase'+str(testCaseNo)+'/dataMemoryOut.mem')):
         print("Error: Different Final Data Memory :(")
         return False
 
