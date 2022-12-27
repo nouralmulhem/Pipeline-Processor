@@ -41,7 +41,7 @@ assign Adder_Out=PC+1;
 //Address Sign Extend
 assign Branch_Address_32bit={{16{branchAdd[15]}},branchAdd};
 //Branch Multiplixer
-assign PC_Mux_Out=(branch==1'b0)?Adder_Out:Branch_Address_32bit;
+assign PC_Mux_Out=(branch===1'b1)?Branch_Address_32bit:Adder_Out;
 
 //Sequential
 //-ve Edge clk or reset (Upadate PC)

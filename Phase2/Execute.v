@@ -19,7 +19,7 @@ Edges:
 Assign Flag Reg (pending)
 
 */
-module Execute (clk,aluOp,branch,aluSrc,readData1,readData2,func,immediateValue,aluResult);
+module Execute (clk,aluOp,branch,aluSrc,readData1,readData2,func,immediateValue,aluResult,branch_output);
 
 //inputs and outputs
 input aluOp, branch, aluSrc; //will bw used in phase 2 
@@ -32,6 +32,7 @@ output [15:0] aluResult;
 
 //wires
 // wire [2:0] aluOperation;//Out of Control Unit and Alu Operation in
+
 
 //Instances
 //Flag Ref 3-bit Reg 
@@ -46,13 +47,21 @@ assign aluIn1=(aluSrc==0)?readData1:immediateValue;
 // ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(aluOperation));
 
 //Alu Instance
-ALU ALUModule (.in1(aluIn1),.in2(readData2),.aluControl(func),.out(aluResult),.flag(aluFlagOut));
+ALU ALUModule (.in1(aluIn1),.in2(readData2),.aluControl(func & ~{{3{branch}},branch}),.out(aluResult),.flag(aluFlagOut));
 
+//Branch Logic
+output branch_output;
+wire [2:0] branch_flag_out;
+BranchLogic BranchLogic_inst (.zf(flagReg[0]),.cf(flagReg[1]),.nf(flagReg[2]),.sel(func[1:0]),.branch(branch),.branch_out(branch_output),.flag_reg(branch_flag_out));
 
 //Sequential
 always @(negedge clk)
 begin
-flagReg=aluFlagOut;
+if(branch) begin
+  flagReg=branch_flag_out;
+end else begin
+  flagReg=aluFlagOut;
+end
 end
 
 endmodule
