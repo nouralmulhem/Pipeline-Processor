@@ -16,6 +16,7 @@ vlog Execute.v
 #vlog ALUControl.v
 vlog ALU.v
 vlog EM_Buffer.v
+vlog BranchLogic.v
 
 # Memory
 vlog MemoryStage.v
@@ -33,9 +34,9 @@ vsim Processor_TB
 
 add wave *
 add wave -position end sim:/Processor_TB/ProcessorModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/flag
-add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/*
 add wave -position 35 sim:/Processor_TB/ProcessorModule/DecodeModule/*
+add wave -position 3 sim:/Processor_TB/ProcessorModule/FetchModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/*
 
 #add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
 #add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory

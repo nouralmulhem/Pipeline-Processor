@@ -129,19 +129,19 @@ string getOperation(string opCode, string& func)
 		return "1100";
 	}
 	if (opCode == "jz") {
-		func = "xxxx";
+		func = "0000";
 		return "1000";
 	}
 	if (opCode == "jn") {
-		func = "xxxx";
+		func = "0010";
 		return "1000";
 	}
 	if (opCode == "jc") {
-		func = "xxxx";
+		func = "0001";
 		return "1000";
 	}
 	if (opCode == "jmp") {
-		func = "xxxx";
+		func = "0011";
 		return "1000";
 	}
 	if (opCode == "call") {
