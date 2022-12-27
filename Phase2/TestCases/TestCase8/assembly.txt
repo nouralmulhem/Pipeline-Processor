@@ -1,0 +1,21 @@
+inc r6
+nop
+nop
+nop
+nop
+inc r5
+nop
+nop
+nop
+nop
+dec r3
+nop
+nop
+nop
+nop
+jz r0
+nop
+nop
+nop
+nop
+inc r4

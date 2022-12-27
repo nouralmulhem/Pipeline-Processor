@@ -7,6 +7,7 @@
 #include <cctype>
 #include <vector>
 #include <bitset>
+#include <cstdio>
 
 using namespace std;
 
@@ -152,22 +153,22 @@ string getOperation(string opCode, string &func)
 	}
 	if (opCode == "jz")
 	{
-		func = "xxxx";
+		func = "0000";
 		return "1000";
 	}
 	if (opCode == "jn")
 	{
-		func = "xxxx";
+		func = "0010";
 		return "1000";
 	}
 	if (opCode == "jc")
 	{
-		func = "xxxx";
+		func = "0001";
 		return "1000";
 	}
 	if (opCode == "jmp")
 	{
-		func = "xxxx";
+		func = "0011";
 		return "1000";
 	}
 	if (opCode == "call")
@@ -308,6 +309,14 @@ int main(int argc, char **argv)
 {
 	for (int i = 1; i < stoi(argv[1]) + 1; i++)
 	{
+
+		string filenameDatastr = "TestCases/TestCase" + to_string(i) + "/dataMemoryOut.mem";
+		const char *filenameData = filenameDatastr.c_str();
+		string filenameMemorystr = "TestCases/TestCase" + to_string(i) + "/RegFileOut.mem";
+		const char *filenameMemory = filenameMemorystr.c_str();
+		remove(filenameData);
+		remove(filenameMemory);
+
 		ReadFile(i);
 	}
 	return 0;

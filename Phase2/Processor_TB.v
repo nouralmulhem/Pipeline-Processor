@@ -10,8 +10,7 @@ module Processor_TB();
 // reset PC value to zero
     reg fetchReset;
     reg [15:0] inputPort;
-
-    wire outputPort;
+    wire [15:0] outputPort;
 
 
 //Modules
