@@ -8,8 +8,9 @@
 *_info
 *.vstf
 *.mpf
-*.v.out
 
 Phase 1/work/
 Phase1 Integration/work/
-*.vcd
+Phase2/transcript
+Phase2/transcript
+Phase2/transcript

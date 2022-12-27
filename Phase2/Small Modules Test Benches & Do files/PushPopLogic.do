@@ -1,9 +1,9 @@
-#vlog StackPointer.v
-vlog PushPopLogic.v
-vlog PushPopLogic_TB.v
+vlog StackPointer.v
+#vlog PushPopLogic.v
+#vlog PushPopLogic_TB.v
 
 
-vsim PushPopLogic_TB
+#vsim PushPopLogic_TB
 
 add wave *
 

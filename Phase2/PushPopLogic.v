@@ -1,4 +1,4 @@
-// `include "../StackPointer.v"
+`include "StackPointer.v"
 //Push and Pop logic
 /*
 module to handle the push and pop instructions
@@ -14,41 +14,32 @@ Edges:
 -ve=>PC
 +ve=>Code Memory    
 */
-module StackPointer (clk, addressIn, addressOut, stackOp);
-    input clk;
-    input [31:0] addressIn;
-    input stackOp;
-    output reg [31:0] addressOut;
-
-    always @ (stackOp) begin
-        addressOut = addressIn;
-    end
-endmodule
 
 // adds or subtracts 1 to/from the SP base on the operation (push or pop)
-module AdderSubtractor(addressIn, operation, spAddressOut, memAddressOut);
+module SpALU(addressIn, pushPop, newAddressOut, oldAddressOut);
     //input and output ports
-    input operation;    
+    input pushPop;    
     input [31:0] addressIn;
     // the SP before and after operation is done -> chosen according to operation (push or pop)
-    output [31:0] spAddressOut, memAddressOut;
-    assign spAddressOut = (operation == 1) ? (addressIn + 1) : (addressIn - 1);
-    assign memAddressOut = addressIn;
+    output [31:0] newAddressOut, oldAddressOut;
+    assign newAddressOut = (pushPop == 1'b1) ? (addressIn - 1'b1) : (addressIn + 1'b1);
+    assign oldAddressOut = addressIn;
 endmodule
 
 //the SP points to the first empty location in stack
-module PushPopLogic (clk, stackOp, operation, addressOut);
-    input clk, stackOp, operation;
-    output [31:0] addressOut;
+module PushPopLogic (clk, stackOp, pushPop, SPOut, reset);
+    input clk;
+    input reset, stackOp, pushPop;
+    output [31:0] SPOut;
 
-    wire [31:0] addressIn;
-    wire [31:0] spNextAddress, spCurrentAddress;
+    wire [31:0] SP;
+    wire [31:0] SPOldAddress, SPNewAddress;
 
-    AdderSubtractor addSub(spCurrentAddress, operation, spNextAddress);
+    SpALU spAluModule(.addressIn(SP), .pushPop(pushPop), .newAddressOut(SPNewAddress), .oldAddressOut(SPOldAddress));
   
-    StackPointer SP(clk, spNextAddress, spCurrentAddress, stackOp);
+    StackPointer SPModule(.clk(clk), .addressIn(SPNewAddress), .addressOut(SP), .stackOp(stackOp), .reset(reset));
 
-    // if operation is pop (1) access memory with the incremented SP
-    // if operation is push (0) access the memory with the current value in SP 
-    assign addressOut = (operation == 1) ? spNextAddress : spCurrentAddress;  
+    // if operation is push (1) access the memory with the current value in SP 
+    // if operation is pop (0) access memory with the incremented SP
+    assign SPOut = (pushPop == 1) ? SPOldAddress : SPNewAddress;  
 endmodule

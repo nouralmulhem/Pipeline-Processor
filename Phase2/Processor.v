@@ -11,8 +11,10 @@
 
 
 
-module Processor(clk1,clk2,fetchReset);
+module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
     input clk1,clk2,fetchReset;
+    input [15:0] inputPort;
+    output [15:0] outputPort;
 
     //instruction to be executed
     wire [15:0] fetchedInstOut;
@@ -56,13 +58,17 @@ module Processor(clk1,clk2,fetchReset);
     Buffer #(7) DecodeBufferModule(.clk(clk1),.in({FDBufferInstOut[8:6],FDBufferInstOut[3:0]}),.out(decodeBufferOut));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     // wire [10:0] controlSignalDEOut; Moved Above
+    wire [15:0] readDataDEIn2;
+
     wire [2:0] writeAddressDEOut;
     wire [3:0] functionDEOut;
+
+    assign readDataDEIn2 = (controlSignalDecodeOut[8] == 1'b1) ? inputPort : readDataDecodeOut2;
 
     DE_Buffer DE_BufferModule(.clk(clk2),
                             .controlSignals_in(controlSignalDecodeOut), 
                             .readData1_in(readDataDecodeOut1), 
-                            .readData2_in(readDataDecodeOut2), 
+                            .readData2_in(readDataDEIn2), 
                             .writeAdd_in(decodeBufferOut[6:4]), 
                             .function_in(decodeBufferOut[3:0]), 
                             .controlSignals_out(controlSignalDEOut), 
@@ -112,6 +118,11 @@ module Processor(clk1,clk2,fetchReset);
     MemoryStage MemoryModule (.clk(clk1), 
                             .mem_read(controlSignalEMOut[1]), 
                             .mem_write(controlSignalEMOut[2]),
+                            .stackOp(controlSignalEMOut[9]),
+                            .pushPop(controlSignalEMOut[6]),
+                            .reset(fetchReset),
+                            .in(controlSignalEMOut[5]),
+                            .out(controlSignalEMOut[4]),
                             .read_add(aluResultEMOut),
                             .write_data(readDataEMOut2),
                             .alu_data(aluResultEMOut),
@@ -144,5 +155,7 @@ module Processor(clk1,clk2,fetchReset);
                             .writeAddressIn(writeAddressMWOut),
                             .regWrite(regWriteBack),
                             .writeDataOut(writeDataWriteBackOut),
-                            .writeAddressOut(writeAddressWriteBackOut));
+                            .writeAddressOut(writeAddressWriteBackOut),
+                            .outputPort(outputPort));
+    
 endmodule

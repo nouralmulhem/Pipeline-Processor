@@ -22,6 +22,8 @@ vlog BranchLogic.v
 vlog MemoryStage.v
 vlog Memory.v
 vlog MW_Buffer.v
+vlog StackPointer.v
+vlog PushPopLogic.v
 
 # Write Back
 vlog WriteBack.v
@@ -35,12 +37,15 @@ vsim Processor_TB
 add wave *
 add wave -position end sim:/Processor_TB/ProcessorModule/*
 add wave -position 35 sim:/Processor_TB/ProcessorModule/DecodeModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/PushPopLogicModule/SP
 add wave -position 3 sim:/Processor_TB/ProcessorModule/FetchModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/*
 
 #add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
 #add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 #add wave -position 0 sim:/Processor_TB/ProcessorModule/FetchModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/WriteBackModul/*
+add wave -position 54 sim:/Processor_TB/ProcessorModule/MemoryModule/*
 
 # Clocks
 #clk1
@@ -64,6 +69,9 @@ mem load -i {./RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModu
 #fetch Reset
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
 run 1000
 
 # Export Data Memory Results

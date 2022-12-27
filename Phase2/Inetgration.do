@@ -22,6 +22,8 @@ vlog BranchLogic.v
 vlog MemoryStage.v
 vlog Memory.v
 vlog MW_Buffer.v
+vlog StackPointer.v
+vlog PushPopLogic.v
 
 # Write Back
 vlog WriteBack.v
@@ -34,6 +36,8 @@ vsim Processor_TB
 
 add wave *
 add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/flag
+add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/PushPopLogicModule/SP
+
 
 # Clocks
 #clk1
@@ -170,7 +174,6 @@ mem save -o ./TestCases/TestCase6/dataMemoryOut.mem -f mti -data symbolic -addr 
 #Export RegFile
 mem save -o ./TestCases/TestCase6/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 
-
 #-------------------------------------------------TestCase7----------------------------------------------------
 # read initial Code Memory
 mem load -i {./TestCases/TestCase7/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
@@ -184,6 +187,9 @@ mem load -i {./TestCases/TestCase7/RegFile.mem} -format mti /Processor_TB/Proces
 #fetch Reset
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
 run 1000
 
 # Export Data Memory Results
@@ -191,6 +197,7 @@ mem save -o ./TestCases/TestCase7/dataMemoryOut.mem -f mti -data symbolic -addr 
 
 #Export RegFile
 mem save -o ./TestCases/TestCase7/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
 
 #-------------------------------------------------TestCase8----------------------------------------------------
 # read initial Code Memory
@@ -205,6 +212,9 @@ mem load -i {./TestCases/TestCase8/RegFile.mem} -format mti /Processor_TB/Proces
 #fetch Reset
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
 run 1000
 
 # Export Data Memory Results
@@ -227,6 +237,9 @@ mem load -i {./TestCases/TestCase9/RegFile.mem} -format mti /Processor_TB/Proces
 #fetch Reset
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
 run 1000
 
 # Export Data Memory Results
@@ -234,4 +247,3 @@ mem save -o ./TestCases/TestCase9/dataMemoryOut.mem -f mti -data symbolic -addr 
 
 #Export RegFile
 mem save -o ./TestCases/TestCase9/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
-
