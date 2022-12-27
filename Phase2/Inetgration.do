@@ -16,6 +16,7 @@ vlog Execute.v
 #vlog ALUControl.v
 vlog ALU.v
 vlog EM_Buffer.v
+vlog BranchLogic.v
 
 # Memory
 vlog MemoryStage.v
@@ -189,7 +190,6 @@ force -freeze sim:/Processor_TB/fetchReset 0 2
 
 #input port
 force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
-
 run 1000
 
 # Export Data Memory Results

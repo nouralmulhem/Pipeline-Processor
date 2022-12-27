@@ -21,8 +21,7 @@ vector<string> removeDupWord(string str)
 			arr.push_back(word);
 			word = "";
 		}
-		else
-		{
+		else {
 			word = word + x;
 		}
 	}
@@ -32,7 +31,7 @@ vector<string> removeDupWord(string str)
 
 string decToBinary(int n)
 {
-	string s = "";
+	string s="";
 	int binaryNum[16];
 
 	for (int i = 0; i < 16; i++)
@@ -40,148 +39,120 @@ string decToBinary(int n)
 		binaryNum[i] = n % 2;
 		n = n / 2;
 	}
-
-	for (int j = 15; j >= 0; j--)
-	{
+		
+	for (int j = 15; j >= 0; j--) {
 		s += to_string(binaryNum[j]);
 	}
 	return s;
 }
 
-string getOperation(string opCode, string &func)
+string getOperation(string opCode, string& func)
 {
-	if (opCode == "nop")
-	{
+	if (opCode == "nop") {
 		func = "0000";
 		return "0000";
 	}
-	if (opCode == "clrc")
-	{
+	if (opCode == "clrc") {
 		func = "1001";
 		return "0001";
 	}
-	if (opCode == "setc")
-	{
+	if (opCode == "setc") {
 		func = "1010";
 		return "0001";
 	}
-	if (opCode == "not")
-	{
+	if (opCode == "not") {
 		func = "0001";
 		return "0010";
 	}
-	if (opCode == "inc")
-	{
+	if (opCode == "inc") {
 		func = "0111";
 		return "0010";
 	}
-	if (opCode == "dec")
-	{
+	if (opCode == "dec") {
 		func = "1000";
 		return "0010";
 	}
-	if (opCode == "out")
-	{
-		func = "0000";
+	if (opCode == "out") {
+		func = "xxxx";
 		return "0011";
 	}
-	if (opCode == "in")
-	{
-		func = "0000";
+	if (opCode == "in") {
+		func = "xxxx";
 		return "0100";
 	}
-	if (opCode == "mov")
-	{
+	if (opCode == "mov") {
 		func = "0011";
 		return "0010";
 	}
-	if (opCode == "add")
-	{
+	if (opCode == "add") {
 		func = "0010";
 		return "0010";
 	}
-	if (opCode == "sub")
-	{
+	if (opCode == "sub") {
 		func = "0100";
 		return "0010";
 	}
-	if (opCode == "and")
-	{
+	if (opCode == "and") {
 		func = "0101";
 		return "0010";
 	}
-	if (opCode == "or")
-	{
+	if (opCode == "or") {
 		func = "0110";
 		return "0010";
 	}
-	if (opCode == "shl")
-	{
+	if (opCode == "shl") {
 		func = "1011";
 		return "0101";
 	}
-	if (opCode == "shr")
-	{
+	if (opCode == "shr") {
 		func = "1100";
 		return "0101";
 	}
-	if (opCode == "push")
-	{
-		func = "0000";
+	if (opCode == "push") {
+		func = "xxxx";
 		return "0110";
 	}
-	if (opCode == "pop")
-	{
-		func = "0000";
+	if (opCode == "pop") {
+		func = "xxxx";
 		return "0111";
 	}
-	if (opCode == "ldm")
-	{
+	if (opCode == "ldm") {
 		func = "0011";
 		return "0101";
 	}
-	if (opCode == "ldd")
-	{
+	if (opCode == "ldd") {
 		func = "0011";
 		return "1011";
 	}
-	if (opCode == "std")
-	{
+	if (opCode == "std") {
 		func = "0011";
 		return "1100";
 	}
-	if (opCode == "jz")
-	{
-		func = "xxxx";
+	if (opCode == "jz") {
+		func = "0000";
 		return "1000";
 	}
-	if (opCode == "jn")
-	{
-		func = "xxxx";
+	if (opCode == "jn") {
+		func = "0010";
 		return "1000";
 	}
-	if (opCode == "jc")
-	{
-		func = "xxxx";
+	if (opCode == "jc") {
+		func = "0001";
 		return "1000";
 	}
-	if (opCode == "jmp")
-	{
-		func = "xxxx";
+	if (opCode == "jmp") {
+		func = "0011";
 		return "1000";
 	}
-	if (opCode == "call")
-	{
+	if (opCode == "call") {
 		func = "xxxx";
 		return "1001";
 	}
-	if (opCode == "ret")
-	{
+	if (opCode == "ret") {
 		func = "xxxx";
 		return "1010";
 	}
-	if (opCode == "rti")
-	{
+	if (opCode == "rti") {
 		func = "xxxx";
 		return "1110";
 	}
@@ -190,28 +161,20 @@ string getOperation(string opCode, string &func)
 
 string getRegister(string reg)
 {
-	if (reg == "r0")
-		return "000";
-	if (reg == "r1")
-		return "001";
-	if (reg == "r2")
-		return "010";
-	if (reg == "r3")
-		return "011";
-	if (reg == "r4")
-		return "100";
-	if (reg == "r5")
-		return "101";
-	if (reg == "r6")
-		return "110";
-	if (reg == "r7")
-		return "111";
+	if (reg == "r0") return "000";
+	if (reg == "r1") return "001";
+	if (reg == "r2") return "010";
+	if (reg == "r3") return "011";
+	if (reg == "r4") return "100";
+	if (reg == "r5") return "101";
+	if (reg == "r6") return "110";
+	if (reg == "r7") return "111";
 	return "-1";
 }
 
 void ReadFile(int number)
 {
-	// creating an obj of ifstream and reading the file name then opening it
+	//creating an obj of ifstream and reading the file name then opening it
 	ifstream file;
 	string path = "";
 	path += "TestCases/TestCase" + to_string(number);
@@ -228,8 +191,7 @@ void ReadFile(int number)
 	{
 		char hex_string[100];
 		sprintf_s(hex_string, "%x", index);
-		out << hex_string << ":"
-			<< " 0000000000000000\n";
+		out << hex_string << ":" << " 0000000000000000\n";
 	}
 	if (file.is_open())
 	{
@@ -247,41 +209,33 @@ void ReadFile(int number)
 			inst = (string)hex_string + ": ";
 			for (int i = 0; i < arr.size(); i++)
 			{
-				if (i == 0)
-				{
+				if (i == 0) {
 					inst += getOperation(arr[i], func);
 					if (arr.size() == 1)
 						inst += "000000";
 				}
-				else if (i == 1)
-				{
+				else if (i == 1) {
 					reg = getRegister(arr[i]);
 					inst += reg;
-					if (arr.size() == 2)
-						inst += reg;
+					if (arr.size() == 2) inst += reg;
 				}
-				else if (i == 2)
-				{
+				else if (i == 2) {
 					reg2 = getRegister(arr[i]);
-					if (reg2 != "-1")
-					{
+					if (reg2 != "-1") {
 						inst += reg2;
 					}
-					else
-					{
+					else {
 						inst += reg;
 						inst2 = arr[2];
 					}
 				}
 			}
-			if (arr[0] == "std")
-			{
+			if (arr[0] == "std") {
 				inst = (string)hex_string + ": " + "1100" + reg2 + reg;
 			}
 			inst += "00" + func;
 			out << inst << "\n";
-			if (inst2 != "")
-			{
+			if (inst2 != "") {
 				char hex_string[100];
 				sprintf_s(hex_string, "%x", ++index);
 				inst2 = decToBinary(stoi(inst2));
@@ -293,8 +247,7 @@ void ReadFile(int number)
 		{
 			char hex_string[100];
 			sprintf_s(hex_string, "%x", index);
-			out << hex_string << ":"
-				<< " xxxxxxxxxxxxxxxx\n";
+			out << hex_string << ":" << " xxxxxxxxxxxxxxxx\n";
 		}
 		file.close(); // closing the file
 	}
@@ -302,10 +255,10 @@ void ReadFile(int number)
 	{
 		cout << "can't open the file";
 	}
+
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char** argv) {
 	for (int i = 1; i < stoi(argv[1]) + 1; i++)
 	{
 		ReadFile(i);

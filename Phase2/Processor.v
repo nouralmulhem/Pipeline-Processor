@@ -18,8 +18,10 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
 
     //instruction to be executed
     wire [15:0] fetchedInstOut;
+    wire branch_output;
+    wire [15:0] readDataDEOut1, readDataDEOut2;
 
-    Fetch FetchModule(.branch(1'b0),.branchAdd({16{1'b0}}),.reset(fetchReset),.clk(clk1),.instruction(fetchedInstOut));
+    Fetch FetchModule(.branch(branch_output),.branchAdd(readDataDEOut1),.reset(fetchReset),.clk(clk1),.instruction(fetchedInstOut));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     //instruction in fetch/decode buffer
     wire [15:0] FDBufferInstOut; 
@@ -57,7 +59,7 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
 /*-------------------------------------------------------------------------------------------------------------------------*/
     // wire [10:0] controlSignalDEOut; Moved Above
     wire [15:0] readDataDEIn2;
-    wire [15:0] readDataDEOut1, readDataDEOut2;
+
     wire [2:0] writeAddressDEOut;
     wire [3:0] functionDEOut;
 
@@ -86,7 +88,8 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
                         .readData2(readDataDEOut2),
                         .func(functionDEOut),
                         .immediateValue(FDBufferInstOut),
-                        .aluResult(aluResultExecuteOut));
+                        .aluResult(aluResultExecuteOut),
+                        .branch_output(branch_output));
 
 
     //10 bits control signals[reg_write-MEMR-MEMW-MTR-Out-In-PushPop-PushPc-PopPc-Spop] [!ALU_OP-ALU_src-Branch]- 16 bits read data 2 - 3 bits write address
