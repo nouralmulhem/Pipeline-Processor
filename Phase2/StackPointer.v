@@ -5,10 +5,12 @@ module StackPointer (clk, addressIn, addressOut, stackOp);
     output reg [31:0] addressOut;
 
     reg address;
+    assign address = addressIn;
 
-    assign addressIn = address
-
-    always @ (stackOp) begin
-        addressOut = address;
+    always @ (negedge clk) begin
+        if(stackOp==1'b1)
+           addressOut = address;
+        else
+           addressOut=addressOut;
     end
 endmodule
