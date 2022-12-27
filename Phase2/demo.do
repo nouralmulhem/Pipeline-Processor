@@ -43,6 +43,8 @@ add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/PushPopLog
 #add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
 #add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 #add wave -position 0 sim:/Processor_TB/ProcessorModule/FetchModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/WriteBackModul/*
+add wave -position 54 sim:/Processor_TB/ProcessorModule/MemoryModule/*
 
 # Clocks
 #clk1
@@ -66,6 +68,9 @@ mem load -i {./RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModu
 #fetch Reset
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
 run 1000
 
 # Export Data Memory Results

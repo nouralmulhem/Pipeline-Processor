@@ -82,12 +82,12 @@ string getOperation(string opCode, string &func)
 	}
 	if (opCode == "out")
 	{
-		func = "xxxx";
+		func = "0000";
 		return "0011";
 	}
 	if (opCode == "in")
 	{
-		func = "xxxx";
+		func = "0000";
 		return "0100";
 	}
 	if (opCode == "mov")
