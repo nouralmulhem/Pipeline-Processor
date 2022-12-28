@@ -52,7 +52,6 @@ int == 1'b1                    // interupt
     flush=1'b0;
     stall=1'b0; 
   end
-
 end
 
 endmodule
