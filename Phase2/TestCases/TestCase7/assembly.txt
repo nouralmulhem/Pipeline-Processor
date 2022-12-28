@@ -1,3 +1,8 @@
+ldm r0 65535
+nop
+nop
+nop
+nop
 IN R2
 nop
 nop

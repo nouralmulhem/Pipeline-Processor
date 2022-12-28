@@ -45,6 +45,7 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
 
 
     Decode DecodeModule(.clk(clk1),
+                        .reset(fetchReset),
                         .instruction(FDBufferInstOut), 
                         .writeAddress(writeAddressWriteBackOut), 
                         .writeEnable(regWriteBack), 

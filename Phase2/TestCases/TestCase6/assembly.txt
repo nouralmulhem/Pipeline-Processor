@@ -1,3 +1,8 @@
+ldm r0 65535
+nop
+nop
+nop
+nop
 PUSH R0
 nop
 nop
