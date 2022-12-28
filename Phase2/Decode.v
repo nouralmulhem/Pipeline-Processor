@@ -1,8 +1,8 @@
 `include "Controle_Signal.v"
 `include "RegFile.v"
 
-module Decode(clk, instruction, writeAddress, writeEnable, writeData,aluSrc, controlSignal, readData1, readData2);
-     input clk;
+module Decode(clk, reset, instruction, writeAddress, writeEnable, writeData,aluSrc, controlSignal, readData1, readData2);
+     input clk, reset;
      input writeEnable;
      input [15:0] instruction;
      input [2:0] writeAddress;
@@ -40,5 +40,5 @@ module Decode(clk, instruction, writeAddress, writeEnable, writeData,aluSrc, con
      .PopPc(controlSignal[11]),
      .Spop(controlSignal[12]));
 
-     RegFile RegFileModule(clk, instruction[11:9], instruction[8:6], writeAddress, writeEnable, writeData, readData1, readData2); 
+     RegFile RegFileModule(clk, reset, instruction[11:9], instruction[8:6], writeAddress, writeEnable, writeData, readData1, readData2); 
 endmodule

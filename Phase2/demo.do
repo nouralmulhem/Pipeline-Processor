@@ -46,6 +46,9 @@ add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/*
 #add wave -position 0 sim:/Processor_TB/ProcessorModule/FetchModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/WriteBackModul/*
 add wave -position 54 sim:/Processor_TB/ProcessorModule/MemoryModule/*
+add wave -position 3 sim:/Processor_TB/ProcessorModule/DecodeModule/RegFileModule/*
+add wave -position 7  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+add wave -position 11 sim:/Processor_TB/ProcessorModule/MemoryModule/PushPopLogicModule/SPModule/*
 
 # Clocks
 #clk1
@@ -81,6 +84,22 @@ mem save -o ./dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperlin
 #Export RegFile
 #mem save -o ./TestCases/TestCase1/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 mem save -o ./RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 10
+run 10
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
+run 1000
+
+# Export Data Memory Results
+#mem save -o ./TestCases/TestCase1/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+mem save -o ./dataMemoryOut2.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#Export RegFile
+#mem save -o ./TestCases/TestCase1/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+mem save -o ./RegFileOut2.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 
 #-------------------------------------------------TestCase2----------------------------------------------------
 # read initial Code Memory
