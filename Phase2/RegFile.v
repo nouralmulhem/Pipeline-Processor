@@ -16,7 +16,8 @@ output:
   - Read_data_2(32bit):[Read_Add_2] data @ Address Read_Add_2
 */
 module RegFile(clk,reset,Read_Add_1,Read_Add_2,Write_Add,Write_enable,Write_data,Read_data_1,Read_data_2);
-input clk,reset;
+input clk;
+input reset;
 input [2:0] Read_Add_1,Read_Add_2;
 input [2:0] Write_Add;
 input Write_enable;
@@ -29,24 +30,21 @@ output reg [15:0] Read_data_1 , Read_data_2;
 
 reg [15:0] memory [0:7];
 
-// always @* begin
-		
-// end
+always @(posedge reset) begin
+  for (i = 0; i < 8; i = i + 1) begin
+    memory[i] = 'b0; 
+  end 
+  Read_data_1 = 'bz; 
+  Read_data_2 = 'bz; 
+end
 
 always @ (negedge clk) begin
   Read_data_1 = memory[Read_Add_1];
   Read_data_2 = memory[Read_Add_2];
 end
 
-always @ (posedge clk,posedge reset) begin
-  if (reset===1'b1)begin
-    for (i = 0; i < 8; i = i + 1) begin
-      memory[i] = 'b0; 
-    end 
-    Read_data_1 = 'bz; 
-    Read_data_2 = 'bz; 
-  end
-  else if(Write_enable === 1'b1) begin
+always @ (posedge clk) begin
+  if(Write_enable === 1'b1) begin
     memory[Write_Add] = Write_data;
   end
 end

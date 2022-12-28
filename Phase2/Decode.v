@@ -1,8 +1,9 @@
 `include "Controle_Signal.v"
 `include "RegFile.v"
 
-module Decode(clk, reset, instruction, writeAddress, writeEnable, writeData,aluSrc, controlSignal, readData1, readData2);
-     input clk, reset;
+module Decode(clk, reset,instruction, writeAddress, writeEnable, writeData,aluSrc, controlSignal, readData1, readData2);
+     input clk;
+     input reset;
      input writeEnable;
      input [15:0] instruction;
      input [2:0] writeAddress;

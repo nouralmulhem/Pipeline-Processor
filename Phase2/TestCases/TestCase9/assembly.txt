@@ -1,3 +1,23 @@
+ldm r0 89
+nop
+nop
+nop
+nop
+ldm r1 114
+nop
+nop
+nop
+nop
+ldm r3 1
+nop
+nop
+nop
+nop
+ldm r7 130
+nop
+nop
+nop
+nop
 inc r6
 nop
 nop
