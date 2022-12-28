@@ -57,7 +57,6 @@ force -freeze sim:/Processor_TB/clk2 0 0, 1 {5 ps} -r 10
 #fetch Reset
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
-run 2
 
 # read initial Code Memory
 #mem load -i {./TestCases/TestCase1/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
@@ -68,8 +67,8 @@ mem load -i {./codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMem
 mem load -i {./dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 
 # read initial Register File
-#mem load -i {./TestCases/TestCase1/RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
-mem load -i {./RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+# mem load -i {./TestCases/TestCase1/RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+# mem load -i {./RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 
 #input port
 force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
