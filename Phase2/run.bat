@@ -1,5 +1,5 @@
 :: Compile Assembler
-:: g++ assembler.cpp -o main
+g++ assembler.cpp -o main
 
 :: Run Assembler
 main %1
