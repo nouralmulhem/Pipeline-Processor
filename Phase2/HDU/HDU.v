@@ -8,14 +8,16 @@ inputs:
   - dst
 //////////////all the above for detect load use case (satll)
   - int    // for interupt
-  - opcode
+  - branch_out
+  - call
 //////for detect flushing buffer when change pc 
 output:
   -flush
   -stall
 */
 module HDU(
-opcode,
+branch_out,
+call,
 mem_read,
 write_add,
 src,
@@ -24,8 +26,7 @@ int,
 flush,
 stall
 );
-input mem_read,int;
-input [3:0] opcode;
+input mem_read,int,branch_out,call;
 input [2:0]write_add,src,dst;
 
 output reg flush,stall;
@@ -37,13 +38,15 @@ always @ * begin
 	stall=1'b1; 
 	flush=1'b0;
     end
+    else begin
+    	flush=1'b0;
+    	stall=1'b0; 
+     end
   end
-  else if(opcode == 4'b1000||  //jmp
-opcode == 4'b1001||            //call
-opcode == 4'b1010||            //ret
-opcode == 4'b1110||            // rti
-int == 1'b1                    // interupt 
-) begin
+  else if(branch_out === 1'b1||  // jmp
+	  call===1'b1 ||         // call ret rti
+	  int === 1'b1           // interupt 
+	) begin
 //call - ret - rti - jmp - interupt
     flush=1'b1;
     stall=1'b0; 
