@@ -1,7 +1,8 @@
 //FU_integration
 /*
 
-inputs: wr_add: of the current instruction          // for FU
+inputs: wr_add: of the current instruction  (dst)    // for FU
+        wr_add2: of the current instruction (src)   // for FU
         wr_add_alu: write address from alu pipe     // for FU
         wb_alu: write back from alu pipe            // for FU
         wr_add_mem: write address from mem pipe     // for FU
@@ -49,3 +50,5 @@ always @* begin
 end
 
 endmodule
+// add r2 r1
+// mov r4 r1

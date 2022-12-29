@@ -17,6 +17,8 @@ vlog Execute.v
 vlog ALU.v
 vlog EM_Buffer.v
 vlog BranchLogic.v
+vlog FU.v
+vlog FU_integration.v
 
 # Memory
 vlog MemoryStage.v
