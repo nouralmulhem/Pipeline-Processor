@@ -13,12 +13,17 @@ using namespace std;
 
 vector<string> removeDupWord(string str)
 {
+
 	vector<string> arr;
+	vector<string> arr2;
+
 	string word = "";
 	for (auto x : str)
 	{
-		if (x == ' ')
+		if (x == ' ' || x == ',')
 		{
+			if (word == "")continue;
+			else if (word[0] == '#') return arr;
 			arr.push_back(word);
 			word = "";
 		}
@@ -27,6 +32,7 @@ vector<string> removeDupWord(string str)
 			word = word + x;
 		}
 	}
+	if (word[0] == '#') return arr;
 	arr.push_back(word);
 	return arr;
 }
@@ -49,7 +55,83 @@ string decToBinary(int n)
 	return s;
 }
 
-string getOperation(string opCode, string &func)
+
+string HexToBin(string hexdec)
+{
+	long int i = 0;
+	string value="";
+
+	while (hexdec.length() <= 3) {
+		hexdec = "0" + hexdec;
+	}
+
+	while (hexdec[i]) {
+
+		switch (hexdec[i]) {
+		case '0':
+			value += "0000";
+			break;
+		case '1':
+			value += "0001";
+			break;
+		case '2':
+			value += "0010";
+			break;
+		case '3':
+			value += "0011";
+			break;
+		case '4':
+			value += "0100";
+			break;
+		case '5':
+			value += "0101";
+			break;
+		case '6':
+			value += "0110";
+			break;
+		case '7':
+			value += "0111";
+			break;
+		case '8':
+			value += "1000";
+			break;
+		case '9':
+			value += "1001";
+			break;
+		case 'A':
+		case 'a':
+			value += "1010";
+			break;
+		case 'B':
+		case 'b':
+			value += "1011";
+			break;
+		case 'C':
+		case 'c':
+			value += "1100";
+			break;
+		case 'D':
+		case 'd':
+			value += "1101";
+			break;
+		case 'E':
+		case 'e':
+			value += "1110";
+			break;
+		case 'F':
+		case 'f':
+			value += "1111";
+			break;
+		default:
+			cout << "\nInvalid hexadecimal digit "
+				<< hexdec[i];
+		}
+		i++;
+	}
+	return value;
+}
+
+string getOperation(string opCode, string& func)
 {
 	if (opCode == "nop")
 	{
@@ -225,7 +307,7 @@ void ReadFile(int number)
 	out << "// instance=/Fetch_TB/FetchModule/instMemory/memory\n";
 	out << "// format=mti addressradix=h dataradix=s version=1.0 wordsperline=1\n";
 	int index = 0;
-	for (index; index < 50; index++)
+	for (index; index < 32; index++)
 	{
 		char hex_string[100];
 		sprintf_s(hex_string, "%x", index);
@@ -243,7 +325,9 @@ void ReadFile(int number)
 			char hex_string[100];
 			getline(file, line);
 			std::transform(line.begin(), line.end(), line.begin(), ::tolower);
+			if (line[0] == '#' || line[0] == '.')continue;
 			vector<string> arr = removeDupWord(line);
+
 			sprintf_s(hex_string, "%x", index);
 			inst = (string)hex_string + ": ";
 			for (int i = 0; i < arr.size(); i++)
@@ -285,7 +369,12 @@ void ReadFile(int number)
 			{
 				char hex_string[100];
 				sprintf_s(hex_string, "%x", ++index);
-				inst2 = decToBinary(stoi(inst2));
+				if (inst2[0] == 'h') {
+					inst2 = HexToBin(inst2.substr(1,inst2.length()));
+				}
+				else {
+					inst2 = decToBinary(stoi(inst2));
+				}
 				out << hex_string << ": " << inst2 << "\n";
 			}
 			index++;
@@ -305,15 +394,15 @@ void ReadFile(int number)
 	}
 }
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
-	for (int i = 1; i < stoi(argv[1]) + 1; i++)
+	for (int i = 1; i <= stoi(argv[1]) ; i++)
 	{
 
 		string filenameDatastr = "TestCases/TestCase" + to_string(i) + "/dataMemoryOut.mem";
-		const char *filenameData = filenameDatastr.c_str();
+		const char* filenameData = filenameDatastr.c_str();
 		string filenameMemorystr = "TestCases/TestCase" + to_string(i) + "/RegFileOut.mem";
-		const char *filenameMemory = filenameMemorystr.c_str();
+		const char* filenameMemory = filenameMemorystr.c_str();
 		remove(filenameData);
 		remove(filenameMemory);
 
