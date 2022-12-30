@@ -2,7 +2,7 @@
 // instance=/DataMemo/memory
 // format=mti addressradix=d dataradix=b version=1.0 wordsperline=1
    0: xxxxxxxxxxxxxxxx
-   1: 1010101010101010
+   1: xxxxxxxxxxxxxxxx
    2: xxxxxxxxxxxxxxxx
    3: xxxxxxxxxxxxxxxx
    4: xxxxxxxxxxxxxxxx

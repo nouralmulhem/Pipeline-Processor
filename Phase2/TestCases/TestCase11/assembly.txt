@@ -1,0 +1,17 @@
+ldm r0 52428
+ldm r3 61680
+ldm r7 67
+inc r0
+std r3 r5
+ldd r5 r2
+push r0
+mov r3 r0
+pop r2
+and r4 r3
+inc r3
+inc r3
+add r3 r7
+sub r3 r3
+not r7
+or r7 r6
+sub r0 r6

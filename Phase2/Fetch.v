@@ -47,12 +47,15 @@ assign PC_Mux_Out=(branch===1'b1)?Branch_Address_32bit:Adder_Out;
 //-ve Edge clk or reset (Upadate PC)
 always @(negedge clk)
 begin
-if(reset == 1'b1) begin
-   PC = {32'd50};
+  if(reset ===1'b0)begin
+    PC = PC_Mux_Out;
+  end
 end
-else begin
-PC = PC_Mux_Out;
-end
+
+always @(posedge reset) begin
+  // if(reset == 1'b1) begin
+  PC = {32'd32};
+// end
 end
 
 endmodule

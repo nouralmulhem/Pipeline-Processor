@@ -18,6 +18,7 @@ Processor ProcessorModule (.clk1(clk1),.clk2(clk2),.fetchReset(fetchReset), .inp
 
 
 initial begin
+
     // $dumpfile("Processor_TB.vcd");
     // $dumpvars;
     // clk1 = 1;

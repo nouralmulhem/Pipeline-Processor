@@ -17,6 +17,8 @@ vlog Execute.v
 vlog ALU.v
 vlog EM_Buffer.v
 vlog BranchLogic.v
+vlog FU.v
+vlog FU_integration.v
 
 # Memory
 vlog MemoryStage.v
@@ -54,6 +56,10 @@ force -freeze sim:/Processor_TB/clk1 0 1, 1 {6 ps} -r 10
 #clk2
 force -freeze sim:/Processor_TB/clk2 0 0, 1 {5 ps} -r 10
 
+#fetch Reset
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 2
+
 # read initial Code Memory
 #mem load -i {./TestCases/TestCase1/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
 mem load -i {./codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
@@ -63,12 +69,8 @@ mem load -i {./codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMem
 mem load -i {./dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 
 # read initial Register File
-#mem load -i {./TestCases/TestCase1/RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
-mem load -i {./RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
-
-#fetch Reset
-force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
-force -freeze sim:/Processor_TB/fetchReset 0 2
+# mem load -i {./TestCases/TestCase1/RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+# mem load -i {./RegFile.mem} -format mti /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 
 #input port
 force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
@@ -102,4 +104,3 @@ mem save -o ./RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1
 
 #Export RegFile
 #mem save -o ./TestCases/TestCase2/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
-

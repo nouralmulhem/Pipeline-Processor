@@ -1,8 +1,8 @@
 // memory data file (do not edit the following line - required for mem load use)
 // instance=/Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 // format=mti addressradix=d dataradix=s version=1.0 wordsperline=1
-   0: xxxxxxxxxxxxxxxx
-   1: xxxxxxxxxxxxxxxx
+   0: 0010001000100010
+   1: 1010101010101010
    2: xxxxxxxxxxxxxxxx
    3: xxxxxxxxxxxxxxxx
    4: xxxxxxxxxxxxxxxx

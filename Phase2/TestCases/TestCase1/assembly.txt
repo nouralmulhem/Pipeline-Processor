@@ -1,21 +1,36 @@
-add r0 r1
+ldm r0 h37
 nop
 nop
 nop
 nop
-not r5 r5
+ldm r1 1
 nop
 nop
 nop
 nop
-lDD r5 r2
+ldm r3 1
 nop
 nop
 nop
 nop
-std r7 r6
+inc r6
 nop
 nop
 nop
 nop
-ldm r3 26214
+inc r5
+nop
+nop
+nop
+nop
+dec r3
+nop
+nop
+nop
+nop
+jz r0
+nop
+nop
+nop
+nop
+inc r4

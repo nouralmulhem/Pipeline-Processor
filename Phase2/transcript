@@ -1,110 +1,128 @@
-do Inetgration.do
+# do Inetgration.do
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:53 on Dec 27,2022
-# vlog -reportprogress 300 Buffer.v 
+# Start time: 20:01:13 on Dec 30,2022
+# vlog Buffer.v 
 # -- Compiling module Buffer
 # 
 # Top level modules:
 # 	Buffer
-# End time: 20:43:53 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:13 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:53 on Dec 27,2022
-# vlog -reportprogress 300 Fetch.v 
+# Start time: 20:01:13 on Dec 30,2022
+# vlog Fetch.v 
 # -- Compiling module MemoInst
 # -- Compiling module Fetch
 # 
 # Top level modules:
 # 	Fetch
-# End time: 20:43:53 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:14 on Dec 30,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:53 on Dec 27,2022
-# vlog -reportprogress 300 MemoInst.v 
+# Start time: 20:01:14 on Dec 30,2022
+# vlog MemoInst.v 
 # -- Compiling module MemoInst
 # 
 # Top level modules:
 # 	MemoInst
-# End time: 20:43:53 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:14 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:53 on Dec 27,2022
-# vlog -reportprogress 300 FD_Buffer.v 
+# Start time: 20:01:14 on Dec 30,2022
+# vlog FD_Buffer.v 
 # -- Compiling module FD_Buffer
 # 
 # Top level modules:
 # 	FD_Buffer
-# End time: 20:43:54 on Dec 27,2022, Elapsed time: 0:00:01
+# End time: 20:01:14 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:54 on Dec 27,2022
-# vlog -reportprogress 300 Decode.v 
+# Start time: 20:01:14 on Dec 30,2022
+# vlog Decode.v 
 # -- Compiling module CU
 # -- Compiling module RegFile
 # -- Compiling module Decode
 # 
 # Top level modules:
 # 	Decode
-# End time: 20:43:54 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:14 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:54 on Dec 27,2022
-# vlog -reportprogress 300 Controle_Signal.v 
+# Start time: 20:01:14 on Dec 30,2022
+# vlog Controle_Signal.v 
 # -- Compiling module CU
 # 
 # Top level modules:
 # 	CU
-# End time: 20:43:54 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:14 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:54 on Dec 27,2022
-# vlog -reportprogress 300 DE_Buffer.v 
+# Start time: 20:01:14 on Dec 30,2022
+# vlog DE_Buffer.v 
 # -- Compiling module DE_Buffer
 # 
 # Top level modules:
 # 	DE_Buffer
-# End time: 20:43:54 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:15 on Dec 30,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:54 on Dec 27,2022
-# vlog -reportprogress 300 Execute.v 
+# Start time: 20:01:15 on Dec 30,2022
+# vlog Execute.v 
 # -- Compiling module ALU
 # -- Compiling module Execute
 # 
 # Top level modules:
 # 	Execute
-# End time: 20:43:54 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:15 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:55 on Dec 27,2022
-# vlog -reportprogress 300 ALU.v 
+# Start time: 20:01:15 on Dec 30,2022
+# vlog ALU.v 
 # -- Compiling module ALU
 # 
 # Top level modules:
 # 	ALU
-# End time: 20:43:55 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:15 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:55 on Dec 27,2022
-# vlog -reportprogress 300 EM_Buffer.v 
+# Start time: 20:01:15 on Dec 30,2022
+# vlog EM_Buffer.v 
 # -- Compiling module EM_Buffer
 # 
 # Top level modules:
 # 	EM_Buffer
-# End time: 20:43:55 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:15 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:55 on Dec 27,2022
-# vlog -reportprogress 300 BranchLogic.v 
+# Start time: 20:01:15 on Dec 30,2022
+# vlog BranchLogic.v 
 # -- Compiling module BranchLogic
 # 
 # Top level modules:
 # 	BranchLogic
-# End time: 20:43:55 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:16 on Dec 30,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:55 on Dec 27,2022
-# vlog -reportprogress 300 MemoryStage.v 
+# Start time: 20:01:16 on Dec 30,2022
+# vlog FU.v 
+# -- Compiling module FU
+# 
+# Top level modules:
+# 	FU
+# End time: 20:01:16 on Dec 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:16 on Dec 30,2022
+# vlog FU_integration.v 
+# -- Compiling module FU_integration
+# 
+# Top level modules:
+# 	FU_integration
+# End time: 20:01:16 on Dec 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:01:16 on Dec 30,2022
+# vlog MemoryStage.v 
 # -- Compiling module DataMemo
 # -- Compiling module StackPointer
 # -- Compiling module SpALU
@@ -113,58 +131,58 @@ do Inetgration.do
 # 
 # Top level modules:
 # 	MemoryStage
-# End time: 20:43:55 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:17 on Dec 30,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:55 on Dec 27,2022
-# vlog -reportprogress 300 Memory.v 
+# Start time: 20:01:17 on Dec 30,2022
+# vlog Memory.v 
 # -- Compiling module DataMemo
 # 
 # Top level modules:
 # 	DataMemo
-# End time: 20:43:55 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:17 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:55 on Dec 27,2022
-# vlog -reportprogress 300 MW_Buffer.v 
+# Start time: 20:01:17 on Dec 30,2022
+# vlog MW_Buffer.v 
 # -- Compiling module MW_Buffer
 # 
 # Top level modules:
 # 	MW_Buffer
-# End time: 20:43:55 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:17 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:56 on Dec 27,2022
-# vlog -reportprogress 300 StackPointer.v 
+# Start time: 20:01:17 on Dec 30,2022
+# vlog StackPointer.v 
 # -- Compiling module StackPointer
 # 
 # Top level modules:
 # 	StackPointer
-# End time: 20:43:56 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:17 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:56 on Dec 27,2022
-# vlog -reportprogress 300 PushPopLogic.v 
+# Start time: 20:01:17 on Dec 30,2022
+# vlog PushPopLogic.v 
 # -- Compiling module StackPointer
 # -- Compiling module SpALU
 # -- Compiling module PushPopLogic
 # 
 # Top level modules:
 # 	PushPopLogic
-# End time: 20:43:56 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:17 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:56 on Dec 27,2022
-# vlog -reportprogress 300 WriteBack.v 
+# Start time: 20:01:17 on Dec 30,2022
+# vlog WriteBack.v 
 # -- Compiling module WriteBack
 # 
 # Top level modules:
 # 	WriteBack
-# End time: 20:43:56 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:18 on Dec 30,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:56 on Dec 27,2022
-# vlog -reportprogress 300 Processor.v 
+# Start time: 20:01:18 on Dec 30,2022
+# vlog Processor.v 
 # -- Compiling module Buffer
 # -- Compiling module MemoInst
 # -- Compiling module Fetch
@@ -187,11 +205,11 @@ do Inetgration.do
 # 
 # Top level modules:
 # 	Processor
-# End time: 20:43:56 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:18 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:43:56 on Dec 27,2022
-# vlog -reportprogress 300 Processor_TB.v 
+# Start time: 20:01:18 on Dec 30,2022
+# vlog Processor_TB.v 
 # -- Compiling module Buffer
 # -- Compiling module MemoInst
 # -- Compiling module Fetch
@@ -215,10 +233,10 @@ do Inetgration.do
 # 
 # Top level modules:
 # 	Processor_TB
-# End time: 20:43:56 on Dec 27,2022, Elapsed time: 0:00:00
+# End time: 20:01:18 on Dec 30,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim Processor_TB 
-# Start time: 20:43:57 on Dec 27,2022
+# Start time: 20:01:18 on Dec 30,2022
 # Loading work.Processor_TB
 # Loading work.Processor
 # Loading work.Fetch
@@ -229,6 +247,8 @@ do Inetgration.do
 # Loading work.RegFile
 # Loading work.Buffer
 # Loading work.DE_Buffer
+# Loading work.FU_integration
+# Loading work.FU
 # Loading work.Execute
 # Loading work.ALU
 # Loading work.BranchLogic
@@ -240,1223 +260,6 @@ do Inetgration.do
 # Loading work.DataMemo
 # Loading work.MW_Buffer
 # Loading work.WriteBack
-do Inetgration.do
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:09 on Dec 27,2022
-# vlog -reportprogress 300 Buffer.v 
-# -- Compiling module Buffer
-# 
-# Top level modules:
-# 	Buffer
-# End time: 20:45:09 on Dec 27,2022, Elapsed time: 0:00:00
+#  quit -f
+# End time: 20:01:24 on Dec 30,2022, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:09 on Dec 27,2022
-# vlog -reportprogress 300 Fetch.v 
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# 
-# Top level modules:
-# 	Fetch
-# End time: 20:45:09 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:09 on Dec 27,2022
-# vlog -reportprogress 300 MemoInst.v 
-# -- Compiling module MemoInst
-# 
-# Top level modules:
-# 	MemoInst
-# End time: 20:45:09 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:09 on Dec 27,2022
-# vlog -reportprogress 300 FD_Buffer.v 
-# -- Compiling module FD_Buffer
-# 
-# Top level modules:
-# 	FD_Buffer
-# End time: 20:45:09 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:09 on Dec 27,2022
-# vlog -reportprogress 300 Decode.v 
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# 
-# Top level modules:
-# 	Decode
-# End time: 20:45:09 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:10 on Dec 27,2022
-# vlog -reportprogress 300 Controle_Signal.v 
-# -- Compiling module CU
-# 
-# Top level modules:
-# 	CU
-# End time: 20:45:10 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:10 on Dec 27,2022
-# vlog -reportprogress 300 DE_Buffer.v 
-# -- Compiling module DE_Buffer
-# 
-# Top level modules:
-# 	DE_Buffer
-# End time: 20:45:10 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:10 on Dec 27,2022
-# vlog -reportprogress 300 Execute.v 
-# -- Compiling module ALU
-# -- Compiling module Execute
-# 
-# Top level modules:
-# 	Execute
-# End time: 20:45:10 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:10 on Dec 27,2022
-# vlog -reportprogress 300 ALU.v 
-# -- Compiling module ALU
-# 
-# Top level modules:
-# 	ALU
-# End time: 20:45:10 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:10 on Dec 27,2022
-# vlog -reportprogress 300 EM_Buffer.v 
-# -- Compiling module EM_Buffer
-# 
-# Top level modules:
-# 	EM_Buffer
-# End time: 20:45:10 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:10 on Dec 27,2022
-# vlog -reportprogress 300 BranchLogic.v 
-# -- Compiling module BranchLogic
-# 
-# Top level modules:
-# 	BranchLogic
-# End time: 20:45:11 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:11 on Dec 27,2022
-# vlog -reportprogress 300 MemoryStage.v 
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# 
-# Top level modules:
-# 	MemoryStage
-# End time: 20:45:11 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:11 on Dec 27,2022
-# vlog -reportprogress 300 Memory.v 
-# -- Compiling module DataMemo
-# 
-# Top level modules:
-# 	DataMemo
-# End time: 20:45:11 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:11 on Dec 27,2022
-# vlog -reportprogress 300 MW_Buffer.v 
-# -- Compiling module MW_Buffer
-# 
-# Top level modules:
-# 	MW_Buffer
-# End time: 20:45:11 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:11 on Dec 27,2022
-# vlog -reportprogress 300 StackPointer.v 
-# -- Compiling module StackPointer
-# 
-# Top level modules:
-# 	StackPointer
-# End time: 20:45:11 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:11 on Dec 27,2022
-# vlog -reportprogress 300 PushPopLogic.v 
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# 
-# Top level modules:
-# 	PushPopLogic
-# End time: 20:45:11 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:12 on Dec 27,2022
-# vlog -reportprogress 300 WriteBack.v 
-# -- Compiling module WriteBack
-# 
-# Top level modules:
-# 	WriteBack
-# End time: 20:45:12 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:12 on Dec 27,2022
-# vlog -reportprogress 300 Processor.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# 
-# Top level modules:
-# 	Processor
-# End time: 20:45:12 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:12 on Dec 27,2022
-# vlog -reportprogress 300 Processor_TB.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# -- Compiling module Processor_TB
-# 
-# Top level modules:
-# 	Processor_TB
-# End time: 20:45:12 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 20:45:15 on Dec 27,2022, Elapsed time: 0:01:18
-# Errors: 0, Warnings: 1
-# vsim Processor_TB 
-# Start time: 20:45:15 on Dec 27,2022
-# Loading work.Processor_TB
-# Loading work.Processor
-# Loading work.Fetch
-# Loading work.MemoInst
-# Loading work.FD_Buffer
-# Loading work.Decode
-# Loading work.CU
-# Loading work.RegFile
-# Loading work.Buffer
-# Loading work.DE_Buffer
-# Loading work.Execute
-# Loading work.ALU
-# Loading work.BranchLogic
-# Loading work.EM_Buffer
-# Loading work.MemoryStage
-# Loading work.PushPopLogic
-# Loading work.SpALU
-# Loading work.StackPointer
-# Loading work.DataMemo
-# Loading work.MW_Buffer
-# Loading work.WriteBack
-do Inetgration.do
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:21 on Dec 27,2022
-# vlog -reportprogress 300 Buffer.v 
-# -- Compiling module Buffer
-# 
-# Top level modules:
-# 	Buffer
-# End time: 20:45:21 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:21 on Dec 27,2022
-# vlog -reportprogress 300 Fetch.v 
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# 
-# Top level modules:
-# 	Fetch
-# End time: 20:45:21 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:21 on Dec 27,2022
-# vlog -reportprogress 300 MemoInst.v 
-# -- Compiling module MemoInst
-# 
-# Top level modules:
-# 	MemoInst
-# End time: 20:45:21 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:21 on Dec 27,2022
-# vlog -reportprogress 300 FD_Buffer.v 
-# -- Compiling module FD_Buffer
-# 
-# Top level modules:
-# 	FD_Buffer
-# End time: 20:45:21 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:21 on Dec 27,2022
-# vlog -reportprogress 300 Decode.v 
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# 
-# Top level modules:
-# 	Decode
-# End time: 20:45:21 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:21 on Dec 27,2022
-# vlog -reportprogress 300 Controle_Signal.v 
-# -- Compiling module CU
-# 
-# Top level modules:
-# 	CU
-# End time: 20:45:22 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:22 on Dec 27,2022
-# vlog -reportprogress 300 DE_Buffer.v 
-# -- Compiling module DE_Buffer
-# 
-# Top level modules:
-# 	DE_Buffer
-# End time: 20:45:22 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:22 on Dec 27,2022
-# vlog -reportprogress 300 Execute.v 
-# -- Compiling module ALU
-# -- Compiling module Execute
-# 
-# Top level modules:
-# 	Execute
-# End time: 20:45:22 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:22 on Dec 27,2022
-# vlog -reportprogress 300 ALU.v 
-# -- Compiling module ALU
-# 
-# Top level modules:
-# 	ALU
-# End time: 20:45:22 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:22 on Dec 27,2022
-# vlog -reportprogress 300 EM_Buffer.v 
-# -- Compiling module EM_Buffer
-# 
-# Top level modules:
-# 	EM_Buffer
-# End time: 20:45:22 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:22 on Dec 27,2022
-# vlog -reportprogress 300 BranchLogic.v 
-# -- Compiling module BranchLogic
-# 
-# Top level modules:
-# 	BranchLogic
-# End time: 20:45:22 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:22 on Dec 27,2022
-# vlog -reportprogress 300 MemoryStage.v 
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# 
-# Top level modules:
-# 	MemoryStage
-# End time: 20:45:23 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:23 on Dec 27,2022
-# vlog -reportprogress 300 Memory.v 
-# -- Compiling module DataMemo
-# 
-# Top level modules:
-# 	DataMemo
-# End time: 20:45:23 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:23 on Dec 27,2022
-# vlog -reportprogress 300 MW_Buffer.v 
-# -- Compiling module MW_Buffer
-# 
-# Top level modules:
-# 	MW_Buffer
-# End time: 20:45:23 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:23 on Dec 27,2022
-# vlog -reportprogress 300 StackPointer.v 
-# -- Compiling module StackPointer
-# 
-# Top level modules:
-# 	StackPointer
-# End time: 20:45:23 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:23 on Dec 27,2022
-# vlog -reportprogress 300 PushPopLogic.v 
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# 
-# Top level modules:
-# 	PushPopLogic
-# End time: 20:45:23 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:23 on Dec 27,2022
-# vlog -reportprogress 300 WriteBack.v 
-# -- Compiling module WriteBack
-# 
-# Top level modules:
-# 	WriteBack
-# End time: 20:45:23 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:24 on Dec 27,2022
-# vlog -reportprogress 300 Processor.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# 
-# Top level modules:
-# 	Processor
-# End time: 20:45:24 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:45:24 on Dec 27,2022
-# vlog -reportprogress 300 Processor_TB.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# -- Compiling module Processor_TB
-# 
-# Top level modules:
-# 	Processor_TB
-# End time: 20:45:24 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 20:45:25 on Dec 27,2022, Elapsed time: 0:00:10
-# Errors: 0, Warnings: 1
-# vsim Processor_TB 
-# Start time: 20:45:25 on Dec 27,2022
-# Loading work.Processor_TB
-# Loading work.Processor
-# Loading work.Fetch
-# Loading work.MemoInst
-# Loading work.FD_Buffer
-# Loading work.Decode
-# Loading work.CU
-# Loading work.RegFile
-# Loading work.Buffer
-# Loading work.DE_Buffer
-# Loading work.Execute
-# Loading work.ALU
-# Loading work.BranchLogic
-# Loading work.EM_Buffer
-# Loading work.MemoryStage
-# Loading work.PushPopLogic
-# Loading work.SpALU
-# Loading work.StackPointer
-# Loading work.DataMemo
-# Loading work.MW_Buffer
-# Loading work.WriteBack
-do Inetgration.do
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:52 on Dec 27,2022
-# vlog -reportprogress 300 Buffer.v 
-# -- Compiling module Buffer
-# 
-# Top level modules:
-# 	Buffer
-# End time: 20:52:52 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:52 on Dec 27,2022
-# vlog -reportprogress 300 Fetch.v 
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# 
-# Top level modules:
-# 	Fetch
-# End time: 20:52:52 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:52 on Dec 27,2022
-# vlog -reportprogress 300 MemoInst.v 
-# -- Compiling module MemoInst
-# 
-# Top level modules:
-# 	MemoInst
-# End time: 20:52:53 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:53 on Dec 27,2022
-# vlog -reportprogress 300 FD_Buffer.v 
-# -- Compiling module FD_Buffer
-# 
-# Top level modules:
-# 	FD_Buffer
-# End time: 20:52:53 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:53 on Dec 27,2022
-# vlog -reportprogress 300 Decode.v 
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# 
-# Top level modules:
-# 	Decode
-# End time: 20:52:53 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:53 on Dec 27,2022
-# vlog -reportprogress 300 Controle_Signal.v 
-# -- Compiling module CU
-# 
-# Top level modules:
-# 	CU
-# End time: 20:52:54 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:54 on Dec 27,2022
-# vlog -reportprogress 300 DE_Buffer.v 
-# -- Compiling module DE_Buffer
-# 
-# Top level modules:
-# 	DE_Buffer
-# End time: 20:52:54 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:54 on Dec 27,2022
-# vlog -reportprogress 300 Execute.v 
-# -- Compiling module ALU
-# -- Compiling module Execute
-# 
-# Top level modules:
-# 	Execute
-# End time: 20:52:54 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:54 on Dec 27,2022
-# vlog -reportprogress 300 ALU.v 
-# -- Compiling module ALU
-# 
-# Top level modules:
-# 	ALU
-# End time: 20:52:54 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:54 on Dec 27,2022
-# vlog -reportprogress 300 EM_Buffer.v 
-# -- Compiling module EM_Buffer
-# 
-# Top level modules:
-# 	EM_Buffer
-# End time: 20:52:54 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:55 on Dec 27,2022
-# vlog -reportprogress 300 BranchLogic.v 
-# -- Compiling module BranchLogic
-# 
-# Top level modules:
-# 	BranchLogic
-# End time: 20:52:55 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:55 on Dec 27,2022
-# vlog -reportprogress 300 MemoryStage.v 
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# 
-# Top level modules:
-# 	MemoryStage
-# End time: 20:52:55 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:55 on Dec 27,2022
-# vlog -reportprogress 300 Memory.v 
-# -- Compiling module DataMemo
-# 
-# Top level modules:
-# 	DataMemo
-# End time: 20:52:55 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:55 on Dec 27,2022
-# vlog -reportprogress 300 MW_Buffer.v 
-# -- Compiling module MW_Buffer
-# 
-# Top level modules:
-# 	MW_Buffer
-# End time: 20:52:55 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:55 on Dec 27,2022
-# vlog -reportprogress 300 StackPointer.v 
-# -- Compiling module StackPointer
-# 
-# Top level modules:
-# 	StackPointer
-# End time: 20:52:55 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:55 on Dec 27,2022
-# vlog -reportprogress 300 PushPopLogic.v 
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# 
-# Top level modules:
-# 	PushPopLogic
-# End time: 20:52:56 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:56 on Dec 27,2022
-# vlog -reportprogress 300 WriteBack.v 
-# -- Compiling module WriteBack
-# 
-# Top level modules:
-# 	WriteBack
-# End time: 20:52:56 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:56 on Dec 27,2022
-# vlog -reportprogress 300 Processor.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# 
-# Top level modules:
-# 	Processor
-# End time: 20:52:56 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:52:56 on Dec 27,2022
-# vlog -reportprogress 300 Processor_TB.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# -- Compiling module Processor_TB
-# 
-# Top level modules:
-# 	Processor_TB
-# End time: 20:52:56 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 20:52:57 on Dec 27,2022, Elapsed time: 0:07:32
-# Errors: 0, Warnings: 1
-# vsim Processor_TB 
-# Start time: 20:52:57 on Dec 27,2022
-# Loading work.Processor_TB
-# Loading work.Processor
-# Loading work.Fetch
-# Loading work.MemoInst
-# Loading work.FD_Buffer
-# Loading work.Decode
-# Loading work.CU
-# Loading work.RegFile
-# Loading work.Buffer
-# Loading work.DE_Buffer
-# Loading work.Execute
-# Loading work.ALU
-# Loading work.BranchLogic
-# Loading work.EM_Buffer
-# Loading work.MemoryStage
-# Loading work.PushPopLogic
-# Loading work.SpALU
-# Loading work.StackPointer
-# Loading work.DataMemo
-# Loading work.MW_Buffer
-# Loading work.WriteBack
-do Inetgration.do
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:10 on Dec 27,2022
-# vlog -reportprogress 300 Buffer.v 
-# -- Compiling module Buffer
-# 
-# Top level modules:
-# 	Buffer
-# End time: 21:28:10 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:10 on Dec 27,2022
-# vlog -reportprogress 300 Fetch.v 
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# 
-# Top level modules:
-# 	Fetch
-# End time: 21:28:10 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:11 on Dec 27,2022
-# vlog -reportprogress 300 MemoInst.v 
-# -- Compiling module MemoInst
-# 
-# Top level modules:
-# 	MemoInst
-# End time: 21:28:11 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:11 on Dec 27,2022
-# vlog -reportprogress 300 FD_Buffer.v 
-# -- Compiling module FD_Buffer
-# 
-# Top level modules:
-# 	FD_Buffer
-# End time: 21:28:11 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:11 on Dec 27,2022
-# vlog -reportprogress 300 Decode.v 
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# 
-# Top level modules:
-# 	Decode
-# End time: 21:28:11 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:11 on Dec 27,2022
-# vlog -reportprogress 300 Controle_Signal.v 
-# -- Compiling module CU
-# 
-# Top level modules:
-# 	CU
-# End time: 21:28:11 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:11 on Dec 27,2022
-# vlog -reportprogress 300 DE_Buffer.v 
-# -- Compiling module DE_Buffer
-# 
-# Top level modules:
-# 	DE_Buffer
-# End time: 21:28:12 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:12 on Dec 27,2022
-# vlog -reportprogress 300 Execute.v 
-# -- Compiling module ALU
-# -- Compiling module Execute
-# 
-# Top level modules:
-# 	Execute
-# End time: 21:28:12 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:12 on Dec 27,2022
-# vlog -reportprogress 300 ALU.v 
-# -- Compiling module ALU
-# 
-# Top level modules:
-# 	ALU
-# End time: 21:28:12 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:12 on Dec 27,2022
-# vlog -reportprogress 300 EM_Buffer.v 
-# -- Compiling module EM_Buffer
-# 
-# Top level modules:
-# 	EM_Buffer
-# End time: 21:28:12 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:12 on Dec 27,2022
-# vlog -reportprogress 300 BranchLogic.v 
-# -- Compiling module BranchLogic
-# 
-# Top level modules:
-# 	BranchLogic
-# End time: 21:28:12 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:12 on Dec 27,2022
-# vlog -reportprogress 300 MemoryStage.v 
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# 
-# Top level modules:
-# 	MemoryStage
-# End time: 21:28:13 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:13 on Dec 27,2022
-# vlog -reportprogress 300 Memory.v 
-# -- Compiling module DataMemo
-# 
-# Top level modules:
-# 	DataMemo
-# End time: 21:28:13 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:13 on Dec 27,2022
-# vlog -reportprogress 300 MW_Buffer.v 
-# -- Compiling module MW_Buffer
-# 
-# Top level modules:
-# 	MW_Buffer
-# End time: 21:28:13 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:13 on Dec 27,2022
-# vlog -reportprogress 300 StackPointer.v 
-# -- Compiling module StackPointer
-# 
-# Top level modules:
-# 	StackPointer
-# End time: 21:28:13 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:13 on Dec 27,2022
-# vlog -reportprogress 300 PushPopLogic.v 
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# 
-# Top level modules:
-# 	PushPopLogic
-# End time: 21:28:13 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:13 on Dec 27,2022
-# vlog -reportprogress 300 WriteBack.v 
-# -- Compiling module WriteBack
-# 
-# Top level modules:
-# 	WriteBack
-# End time: 21:28:13 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:13 on Dec 27,2022
-# vlog -reportprogress 300 Processor.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# 
-# Top level modules:
-# 	Processor
-# End time: 21:28:14 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:28:14 on Dec 27,2022
-# vlog -reportprogress 300 Processor_TB.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# -- Compiling module Processor_TB
-# 
-# Top level modules:
-# 	Processor_TB
-# End time: 21:28:14 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 21:28:15 on Dec 27,2022, Elapsed time: 0:35:18
-# Errors: 0, Warnings: 1
-# vsim Processor_TB 
-# Start time: 21:28:16 on Dec 27,2022
-# Loading work.Processor_TB
-# Loading work.Processor
-# Loading work.Fetch
-# Loading work.MemoInst
-# Loading work.FD_Buffer
-# Loading work.Decode
-# Loading work.CU
-# Loading work.RegFile
-# Loading work.Buffer
-# Loading work.DE_Buffer
-# Loading work.Execute
-# Loading work.ALU
-# Loading work.BranchLogic
-# Loading work.EM_Buffer
-# Loading work.MemoryStage
-# Loading work.PushPopLogic
-# Loading work.SpALU
-# Loading work.StackPointer
-# Loading work.DataMemo
-# Loading work.MW_Buffer
-# Loading work.WriteBack
-do Inetgration.do
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:15 on Dec 27,2022
-# vlog -reportprogress 300 Buffer.v 
-# -- Compiling module Buffer
-# 
-# Top level modules:
-# 	Buffer
-# End time: 21:34:15 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:15 on Dec 27,2022
-# vlog -reportprogress 300 Fetch.v 
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# 
-# Top level modules:
-# 	Fetch
-# End time: 21:34:15 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:15 on Dec 27,2022
-# vlog -reportprogress 300 MemoInst.v 
-# -- Compiling module MemoInst
-# 
-# Top level modules:
-# 	MemoInst
-# End time: 21:34:16 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:16 on Dec 27,2022
-# vlog -reportprogress 300 FD_Buffer.v 
-# -- Compiling module FD_Buffer
-# 
-# Top level modules:
-# 	FD_Buffer
-# End time: 21:34:16 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:16 on Dec 27,2022
-# vlog -reportprogress 300 Decode.v 
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# 
-# Top level modules:
-# 	Decode
-# End time: 21:34:16 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:16 on Dec 27,2022
-# vlog -reportprogress 300 Controle_Signal.v 
-# -- Compiling module CU
-# 
-# Top level modules:
-# 	CU
-# End time: 21:34:16 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:16 on Dec 27,2022
-# vlog -reportprogress 300 DE_Buffer.v 
-# -- Compiling module DE_Buffer
-# 
-# Top level modules:
-# 	DE_Buffer
-# End time: 21:34:17 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:17 on Dec 27,2022
-# vlog -reportprogress 300 Execute.v 
-# -- Compiling module ALU
-# -- Compiling module Execute
-# 
-# Top level modules:
-# 	Execute
-# End time: 21:34:17 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:17 on Dec 27,2022
-# vlog -reportprogress 300 ALU.v 
-# -- Compiling module ALU
-# 
-# Top level modules:
-# 	ALU
-# End time: 21:34:17 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:17 on Dec 27,2022
-# vlog -reportprogress 300 EM_Buffer.v 
-# -- Compiling module EM_Buffer
-# 
-# Top level modules:
-# 	EM_Buffer
-# End time: 21:34:17 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:17 on Dec 27,2022
-# vlog -reportprogress 300 BranchLogic.v 
-# -- Compiling module BranchLogic
-# 
-# Top level modules:
-# 	BranchLogic
-# End time: 21:34:17 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:18 on Dec 27,2022
-# vlog -reportprogress 300 MemoryStage.v 
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# 
-# Top level modules:
-# 	MemoryStage
-# End time: 21:34:18 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:18 on Dec 27,2022
-# vlog -reportprogress 300 Memory.v 
-# -- Compiling module DataMemo
-# 
-# Top level modules:
-# 	DataMemo
-# End time: 21:34:18 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:18 on Dec 27,2022
-# vlog -reportprogress 300 MW_Buffer.v 
-# -- Compiling module MW_Buffer
-# 
-# Top level modules:
-# 	MW_Buffer
-# End time: 21:34:18 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:19 on Dec 27,2022
-# vlog -reportprogress 300 StackPointer.v 
-# -- Compiling module StackPointer
-# 
-# Top level modules:
-# 	StackPointer
-# End time: 21:34:19 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:19 on Dec 27,2022
-# vlog -reportprogress 300 PushPopLogic.v 
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# 
-# Top level modules:
-# 	PushPopLogic
-# End time: 21:34:19 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:19 on Dec 27,2022
-# vlog -reportprogress 300 WriteBack.v 
-# -- Compiling module WriteBack
-# 
-# Top level modules:
-# 	WriteBack
-# End time: 21:34:19 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:19 on Dec 27,2022
-# vlog -reportprogress 300 Processor.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# 
-# Top level modules:
-# 	Processor
-# End time: 21:34:19 on Dec 27,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 21:34:19 on Dec 27,2022
-# vlog -reportprogress 300 Processor_TB.v 
-# -- Compiling module Buffer
-# -- Compiling module MemoInst
-# -- Compiling module Fetch
-# -- Compiling module FD_Buffer
-# -- Compiling module CU
-# -- Compiling module RegFile
-# -- Compiling module Decode
-# -- Compiling module DE_Buffer
-# -- Compiling module ALU
-# -- Compiling module Execute
-# -- Compiling module EM_Buffer
-# -- Compiling module DataMemo
-# -- Compiling module StackPointer
-# -- Compiling module SpALU
-# -- Compiling module PushPopLogic
-# -- Compiling module MemoryStage
-# -- Compiling module MW_Buffer
-# -- Compiling module WriteBack
-# -- Compiling module Processor
-# -- Compiling module Processor_TB
-# 
-# Top level modules:
-# 	Processor_TB
-# End time: 21:34:20 on Dec 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# End time: 21:34:20 on Dec 27,2022, Elapsed time: 0:06:04
-# Errors: 0, Warnings: 1
-# vsim Processor_TB 
-# Start time: 21:34:21 on Dec 27,2022
-# Loading work.Processor_TB
-# Loading work.Processor
-# Loading work.Fetch
-# Loading work.MemoInst
-# Loading work.FD_Buffer
-# Loading work.Decode
-# Loading work.CU
-# Loading work.RegFile
-# Loading work.Buffer
-# Loading work.DE_Buffer
-# Loading work.Execute
-# Loading work.ALU
-# Loading work.BranchLogic
-# Loading work.EM_Buffer
-# Loading work.MemoryStage
-# Loading work.PushPopLogic
-# Loading work.SpALU
-# Loading work.StackPointer
-# Loading work.DataMemo
-# Loading work.MW_Buffer
-# Loading work.WriteBack

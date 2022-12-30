@@ -1,3 +1,13 @@
+ldm r0 65535
+nop
+nop
+nop
+nop
+ldm r1 1
+nop
+nop
+nop
+nop
 SHL R0 1
 nop
 nop
