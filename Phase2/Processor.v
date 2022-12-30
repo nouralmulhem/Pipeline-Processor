@@ -16,17 +16,46 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
     input [15:0] inputPort;
     output [15:0] outputPort;
 
+/*-------------------------------------------------------------------------------------------------------------------------*/
+    // Hazard Detection Unit
+
+    // [Spop-PopPc-PushPc-PushPop-In-Out-Branch-MTR-MEMW-MEMR-reg_write-ALU_src-ALU_OP]
+    wire [12:0] controlSignalDEOut;//[Basma] [Output from DE_BufferModule] // Moved Up
+
+    wire [2:0] writeAddressDEOut1, writeAddressDEOut2; 
+
+    wire [15:0] FDBufferInstOut;
+
+    wire branch_output;
+
+    wire flush_signal, stall_signal;
+
+    HDU HDUModule(
+        .mem_read(controlSignalDEOut[3]),
+        .write_add(writeAddressDEOut1),
+        .src(FDBufferInstOut[11:9]),
+        .dst(FDBufferInstOut[8:6]),
+        .count(2'b0),
+        .int(1'b0),
+        .branch_out(1'b0), // branch_output
+        .ret(1'b0),
+        .flush(flush_signal),
+        .stall(stall_signal)
+        );
+
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
     //instruction to be executed
     wire [15:0] fetchedInstOut;
-    wire branch_output;
+    // wire branch_output; // Moved Above
     wire [15:0] readDataDEOut1, readDataDEOut2;
 
-    Fetch FetchModule(.branch(branch_output),.branchAdd(readDataDEOut1),.reset(fetchReset),.clk(clk1),.instruction(fetchedInstOut));
+    Fetch FetchModule(.branch(branch_output),.branchAdd(readDataDEOut1),.reset(fetchReset),.clk(clk1),.stall(stall_signal),.instruction(fetchedInstOut));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     //instruction in fetch/decode buffer
-    wire [15:0] FDBufferInstOut; 
+    // wire [15:0] FDBufferInstOut; // Moved Above
 
-    FD_Buffer FD_BufferModule(.instruction_in(fetchedInstOut),.clk(clk2),.instruction_out(FDBufferInstOut));
+    FD_Buffer FD_BufferModule(.instruction_in(fetchedInstOut),.clk(clk2),.stall(stall_signal),.instruction_out(FDBufferInstOut));
  /*-------------------------------------------------------------------------------------------------------------------------*/
     //control signal generated from decode stage
     wire [12:0] controlSignalDecodeOut;//[Basma]
@@ -41,7 +70,8 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
     wire [15:0] writeDataWriteBackOut;
     wire [2:0] writeAddressWriteBackOut;
     
-    wire [12:0] controlSignalDEOut;//[Basma] [Output from DE_BufferModule]
+    // [Spop-PopPc-PushPc-PushPop-In-Out-Branch-MTR-MEMW-MEMR-reg_write-ALU_src-ALU_OP]
+    // wire [12:0] controlSignalDEOut;//[Basma] [Output from DE_BufferModule] // Moved Up
 
 
     Decode DecodeModule(.clk(clk1),
@@ -60,7 +90,7 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
 /*-------------------------------------------------------------------------------------------------------------------------*/
     // wire [10:0] controlSignalDEOut; Moved Above
     wire [15:0] readDataDEIn2;
-    wire [2:0] writeAddressDEOut1, writeAddressDEOut2;
+    // wire [2:0] writeAddressDEOut1, writeAddressDEOut2; // Moved Above
     wire [3:0] functionDEOut;
 
     assign readDataDEIn2 = (controlSignalDecodeOut[8] == 1'b1) ? inputPort : readDataDecodeOut2;
@@ -72,6 +102,7 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
                             .writeAdd_in1(decodeBufferOut[6:4]), 
                             .writeAdd_in2(decodeBufferOut[9:7]), 
                             .function_in(decodeBufferOut[3:0]), 
+                            .stall(stall_signal), // stall
                             .controlSignals_out(controlSignalDEOut), 
                             .readData1_out(readDataDEOut1), 
                             .readData2_out(readDataDEOut2), 

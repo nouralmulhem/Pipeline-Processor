@@ -44,20 +44,17 @@ always @ * begin
     	flush=1'b0;
     	stall=1'b0; 
      end
-  end
-  else if(count > 2'b01 && int)begin 
-	stall=1'b1; 
-	flush=1'b0;
-  // in case of ret and rti need to flush all buffers before EX_buff on count
-  end
-  else if(branch_out === 1'b1||  // jmp
-	  ret===1'b1 ||         // ret rti
-	) begin
-// ret - rti - jmp - interupt
+  end else if(count > 2'b01 && int)begin 
+    stall=1'b1; 
+    flush=1'b0;
+    // in case of ret and rti need to flush all buffers before EX_buff on count
+  end else if(branch_out === 1'b1||  // jmp
+	        ret===1'b1         // ret rti
+	        ) begin
+      // ret - rti - jmp - interupt
     flush=1'b1;
     stall=1'b0; 
-  end  
-  else begin
+  end else begin
     flush=1'b0;
     stall=1'b0; 
   end
