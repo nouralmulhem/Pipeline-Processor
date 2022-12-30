@@ -1,26 +1,78 @@
-LDM R1 1
+ldm r0 h47
 nop
 nop
 nop
 nop
-LDM R2 2
+ldm r1 h60
 nop
 nop
 nop
 nop
+ldm r3 1
 nop
 nop
 nop
 nop
-nop
-ADD R2 R1
-nop
-nop
-nop
-nop
-NOT R1
+ldm r7 h71
 nop
 nop
 nop
 nop
-STD R1 R2
+inc r6
+nop
+nop
+nop
+nop
+jmp r0
+nop
+nop
+nop
+nop
+inc r6
+nop
+nop
+nop
+nop
+inc r5
+nop
+nop
+nop
+nop
+dec r3
+nop
+nop
+nop
+nop
+jn r1
+nop
+nop
+nop
+nop
+jz r0
+nop
+nop
+nop
+nop
+inc r4
+nop
+nop
+nop
+nop
+inc r4
+nop
+nop
+nop
+nop
+add r3 r4
+nop
+nop
+nop
+nop
+jc r7
+nop
+dec r4
+nop
+nop
+nop
+nop
+inc r4

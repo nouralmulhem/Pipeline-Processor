@@ -54,7 +54,7 @@ end
 
 always @(posedge reset) begin
   // if(reset == 1'b1) begin
-  PC = {32'd50};
+  PC = {32'd32};
 // end
 end
 

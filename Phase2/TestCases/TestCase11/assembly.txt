@@ -1,10 +1,6 @@
 ldm r0 52428
 ldm r3 61680
 ldm r7 67
-nop
-nop
-nop
-nop
 inc r0
 std r3 r5
 ldd r5 r2

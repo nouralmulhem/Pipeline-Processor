@@ -11,7 +11,7 @@ output reg [1:0] newCount;
 
 always @(posedge clk)begin
 
-  if(count===2'b00)begin
+  if(count===2'b01)begin
 	newCount=2'b00;
 	continue=1'b0;
   end else begin

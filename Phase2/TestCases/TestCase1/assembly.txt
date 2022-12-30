@@ -1,56 +1,36 @@
-ldm r0 1
+ldm r0 h37
 nop
 nop
 nop
 nop
-ldm r1 2
+ldm r1 1
 nop
 nop
 nop
 nop
-ldm r2 3
+ldm r3 1
 nop
 nop
 nop
 nop
-ldm r3 43690
+inc r6
 nop
 nop
 nop
 nop
-ldm r4 65535
+inc r5
 nop
 nop
 nop
 nop
-ldm r5 65534
+dec r3
 nop
 nop
 nop
 nop
-ldm r7 8738
+jz r0
 nop
 nop
 nop
 nop
-add r0 r1
-nop
-nop
-nop
-nop
-not r5 r5
-nop
-nop
-nop
-nop
-lDD r5 r2
-nop
-nop
-nop
-nop
-std r7 r6
-nop
-nop
-nop
-nop
-ldm r3 26214
+inc r4
