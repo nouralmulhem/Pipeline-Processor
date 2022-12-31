@@ -17,6 +17,7 @@ output:
   -stall
 */
 module HDU(
+clk,
 mem_read,
 write_add,
 src,
@@ -25,38 +26,33 @@ count,
 int,
 branch_out,
 ret,
-flush,
+flush_FD,
+flush_DE,
 stall
 );
-input mem_read,int,branch_out,ret;
+input clk,mem_read,int,branch_out,ret;
 input [2:0]write_add,src,dst;
 input [1:0] count ;
-output reg flush,stall;
+output reg flush_FD, flush_DE, stall;
 
-always @ * begin
-  if(mem_read == 1'b1) begin   
+always @(posedge clk) begin
+  flush_DE = 1'b0;
+  flush_FD = 1'b0;
+  stall = 1'b0;
+  if(mem_read === 1'b1 && stall === 1'b0) begin   
     //load use case
     if(write_add=== src || write_add===dst)begin
-    stall=1'b1; 
-    flush=1'b0;
+    stall=1'b1; // PC 
+    flush_FD=1'b1; // FD buffer
     end
-    else begin
-    	flush=1'b0;
-    	stall=1'b0; 
-     end
   end else if(count > 2'b01 && int)begin 
     stall=1'b1; 
-    flush=1'b0;
     // in case of ret and rti need to flush all buffers before EX_buff on count
-  end else if(branch_out === 1'b1||  // jmp
+  end else if(branch_out === 1'b1 ||  // jmp
 	        ret===1'b1         // ret rti
 	        ) begin
       // ret - rti - jmp - interupt
-    flush=1'b1;
-    stall=1'b0; 
-  end else begin
-    flush=1'b0;
-    stall=1'b0; 
+    flush_DE=1'b1;
   end
 
 end
