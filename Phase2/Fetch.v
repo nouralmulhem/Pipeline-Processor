@@ -7,6 +7,7 @@ inputs:
   -branchAdd (16 bit):New address to be Written in PC(After Sign Extend)
   -reset (1 bit):Load PC with 2^5h (location of first instruction) [Interrupt Signal**********8]
   -clk:clock
+  -stall : signal to stall PC
 
 output:
   -instruction (16 bit):Instruction that has been fetched (Enter next stage Decode)  
@@ -15,10 +16,10 @@ Edges:
 -ve=>PC
 +ve=>Code Memory    
 */
-module Fetch (branch,branchAdd,reset,clk,instruction);
+module Fetch (branch,branchAdd,reset,clk,stall,instruction);
 
 //inputs and outputs
-input branch;
+input branch, stall;
 input [15:0] branchAdd;
 input reset,clk;
 output [15:0] instruction;
@@ -47,15 +48,13 @@ assign PC_Mux_Out=(branch===1'b1)?Branch_Address_32bit:Adder_Out;
 //-ve Edge clk or reset (Upadate PC)
 always @(negedge clk)
 begin
-  if(reset ===1'b0)begin
+  if(reset ===1'b0 && stall !== 1'b1)begin
     PC = PC_Mux_Out;
   end
 end
 
 always @(posedge reset) begin
-  // if(reset == 1'b1) begin
   PC = {32'd32};
-// end
 end
 
 endmodule
