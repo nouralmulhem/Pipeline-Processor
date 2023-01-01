@@ -37,18 +37,11 @@ assign {flag[1], out} =
         // {flag[1], out};                                //NOP
 
 
-// //Zero Flag
-// assign flag[0]=(aluControl === 4'b0000 || aluControl === 4'b0011 || aluControl === 4'b1111 || aluControl === 4'b1001 || aluControl === 4'b1010)?flag[0]:((out=={16{1'b0}})?1'b1:1'b0);
-
-// // Negative Flag
-// assign flag[2]=(aluControl === 4'b0000 || aluControl === 4'b0011 || aluControl === 4'b1111 || aluControl === 4'b1001 || aluControl === 4'b1010)?flag[2]:((out<0)?1'b1:1'b0);
-
 //Zero Flag
-assign flag[0]=(aluControl === 4'b0000)?flag[0]:((out=={16{1'b0}})?1'b1:1'b0);
+assign flag[0]=(aluControl === 4'b0000 || aluControl === 4'b0011 || aluControl === 4'b1111 || aluControl === 4'b1001 || aluControl === 4'b1010)?flag[0]:((out=={16{1'b0}})?1'b1:1'b0);
 
 // Negative Flag
-assign flag[2]=(aluControl === 4'b0000)?flag[2]:((out<0)?1'b1:1'b0);
-
+assign flag[2]=(aluControl === 4'b0000 || aluControl === 4'b0011 || aluControl === 4'b1111 || aluControl === 4'b1001 || aluControl === 4'b1010)?flag[2]:((out<0)?1'b1:1'b0);
 
 
 // assign out={16{1'b0}};

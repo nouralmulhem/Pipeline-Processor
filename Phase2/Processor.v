@@ -171,6 +171,7 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
                         .branch(controlSignalDEOut[6]),
                         .aluSrc(controlSignalDEOut[1]),
                         .clk(clk1),
+                        .reset(fetchReset),
                         .readData1(readDataFU1),
                         .readData2(readDataFU2),
                         .func(functionDEOut),
