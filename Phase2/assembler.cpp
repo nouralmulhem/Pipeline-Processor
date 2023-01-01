@@ -292,30 +292,60 @@ string getRegister(string reg)
 	return "-1";
 }
 
-void ReadFile(int number)
+void mergeFiles(string path){  
+  fstream f1,f2,f3; 
+  string str1,str2; //str1 for fetching string line from file 1 and str2 for fetching string from file2
+  
+  f1.open(path+"/intCode.mem",ios::in);//opening file in reading mode
+  f2.open(path+"/code.mem",ios::in);
+  f3.open(path+"/codeMemory.mem",ios::out);//opening file in writing mode
+
+   while(getline(f1, str1)){ //read lines from file object and put it into string and push back to file 3.
+         f3<<str1; // inserting the fetched string inside file3
+         f3<<endl;
+      }
+
+   while(getline(f2, str2)){ //Same step for file 2 to file 3 fetching
+         f3<<str2;
+         f3<<endl;
+      }
+
+  f1.close();
+  f2.close();
+  f3.close();
+	string filenameDatastr = path+"/intCode.mem";
+	const char* filenameData = filenameDatastr.c_str();
+	string filenameMemorystr = path+"/code.mem";
+	const char* filenameMemory = filenameMemorystr.c_str();
+	remove(filenameData);
+	remove(filenameMemory);
+}
+
+void ReadFile(int number, string& path)
 {
 	// creating an obj of ifstream and reading the file name then opening it
 	ifstream file;
-	string path = "";
+
+	string program_code = "";
+	string interrupt_code = "";
+
 	path += "TestCases/TestCase" + to_string(number);
 	file.open(path + "/assembly.txt");
 
 	ofstream out;
 	out.open(path + "/codeMemory.mem");
 
-	out << "// memory data file (do not edit the following line - required for mem load use)\n";
-	out << "// instance=/Fetch_TB/FetchModule/instMemory/memory\n";
-	out << "// format=mti addressradix=h dataradix=s version=1.0 wordsperline=1\n";
+	// ofstream out2;
+	// out2.open(path + "/code.mem");
+
+	interrupt_code += "// memory data file (do not edit the following line - required for mem load use)\n";
+	interrupt_code += "// instance=/Fetch_TB/FetchModule/instMemory/memory\n";
+	interrupt_code += "// format=mti addressradix=h dataradix=s version=1.0 wordsperline=1\n";
 	int index = 0;
-	for (index; index < 32; index++)
-	{
-		char hex_string[100];
-		sprintf_s(hex_string, "%x", index);
-		out << hex_string << ":"
-			<< " 0000000000000000\n";
-	}
 	if (file.is_open())
 	{
+		int index2=0;
+		bool interrupt= false;
 		while (!file.eof())
 		{
 			string inst, func;
@@ -325,9 +355,19 @@ void ReadFile(int number)
 			char hex_string[100];
 			getline(file, line);
 			std::transform(line.begin(), line.end(), line.begin(), ::tolower);
-			if (line[0] == '#' || line[0] == '.')continue;
+			if (line[0] == '#') continue;
+			if (line.substr(0,6) == ".org 0")  {
+				index = 0;
+				interrupt = true;
+				continue;
+			}
+			else if(line.substr(0,7) == ".org 20")  {
+				index = 32;
+				interrupt = false;
+				continue;
+			}
+			(interrupt) && index2++;
 			vector<string> arr = removeDupWord(line);
-
 			sprintf_s(hex_string, "%x", index);
 			inst = (string)hex_string + ": ";
 			for (int i = 0; i < arr.size(); i++)
@@ -364,7 +404,7 @@ void ReadFile(int number)
 				inst = (string)hex_string + ": " + "1100" + reg2 + reg;
 			}
 			inst += "00" + func;
-			out << inst << "\n";
+			(interrupt == true)? interrupt_code += inst + "\n": program_code += inst + "\n";
 			if (inst2 != "")
 			{
 				char hex_string[100];
@@ -375,18 +415,33 @@ void ReadFile(int number)
 				else {
 					inst2 = decToBinary(stoi(inst2));
 				}
-				out << hex_string << ": " << inst2 << "\n";
+				string meen = (string)hex_string + ": ";
+				(interrupt == true)? interrupt_code += meen + inst2 + "\n" : program_code += meen + inst2 + "\n";
 			}
 			index++;
 		}
+		string add = ": xxxxxxxxxxxxxxxx\n";
 		for (index; index < 1048576; index++)
 		{
 			char hex_string[100];
 			sprintf_s(hex_string, "%x", index);
-			out << hex_string << ":"
-				<< " xxxxxxxxxxxxxxxx\n";
+			program_code += hex_string + add;
 		}
+
+
+		add = ": 0000000000000000\n";
+		for (index2; index2 < 32; index2++)
+		{
+			char hex_string[100];
+			sprintf_s(hex_string, "%x", index2);
+			interrupt_code += hex_string + add;
+		}
+
+		out<<interrupt_code<<program_code;
 		file.close(); // closing the file
+		// out.close(); // closing the file
+		// out2.close(); // closing the file
+
 	}
 	else
 	{
@@ -405,8 +460,9 @@ int main(int argc, char** argv)
 		const char* filenameMemory = filenameMemorystr.c_str();
 		remove(filenameData);
 		remove(filenameMemory);
-
-		ReadFile(i);
+		string path = "";
+		ReadFile(i, path);
+		// mergeFiles(path);
 	}
 	return 0;
 }

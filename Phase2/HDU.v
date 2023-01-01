@@ -22,7 +22,6 @@ mem_read,
 write_add,
 src,
 dst,
-count,
 int,
 branch_out,
 ret,
@@ -32,10 +31,9 @@ stall
 );
 input clk,mem_read,int,branch_out,ret;
 input [2:0]write_add,src,dst;
-input [1:0] count ;
 output reg flush_FD, flush_DE, stall;
 
-always @(posedge clk) begin
+always @(negedge clk) begin
   flush_DE = 1'b0;
   flush_FD = 1'b0;
   stall = 1'b0;
@@ -45,8 +43,10 @@ always @(posedge clk) begin
     stall=1'b1; // PC 
     flush_FD=1'b1; // FD buffer
     end
-  end else if(count > 2'b01 && int)begin 
+  end else if(branch_out === 1'b1 && int === 1'b1)begin 
     stall=1'b1; 
+    flush_DE=1'b1;
+    flush_FD=1'b1; 
     // in case of ret and rti need to flush all buffers before EX_buff on count
   end else if(branch_out === 1'b1 ||  // jmp
 	        ret===1'b1         // ret rti

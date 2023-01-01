@@ -137,7 +137,7 @@ assign MEMR=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
 
 
 
-assign MEMW=(interrupt==1'b1)?1'b0:
+assign MEMW=(interrupt==1'b1)?1'b1:
               (opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b0001) ?1'b0://CLRC-SETC
               (opcode == 4'b0010)?1'b0://NOT-INC-DEC-MOV ADD SUB AND OR
@@ -170,7 +170,7 @@ assign MTR=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b1110)?1'b0:1'b0;//RETI
 
 
-assign Branch=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
+assign Branch=(interrupt==1'b1)?1'b1:(opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b0001) ?1'b0://CLRC-SETC
               (opcode == 4'b0010)?1'b0://NOT-INC-DEC-MOV ADD SUB AND OR
               (opcode == 4'b0011)?1'b0://OUT
@@ -220,7 +220,7 @@ assign In=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
 
 
 
-assign PushPop=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
+assign PushPop=(interrupt==1'b1)?1'b1:(opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b0001) ?1'b0://CLRC-SETC
               (opcode == 4'b0010)?1'b0://NOT-INC-DEC-MOV ADD SUB AND OR
               (opcode == 4'b0011)?1'b0://OUT
@@ -235,7 +235,7 @@ assign PushPop=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b1010)?1'b0://RET
               (opcode == 4'b1110)?1'b0:1'b0;//RETI
 
-assign PushPc=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
+assign PushPc=(interrupt==1'b1)?1'b1:(opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b0001) ?1'b0://CLRC-SETC
               (opcode == 4'b0010)?1'b0://NOT-INC-DEC-MOV ADD SUB AND OR
               (opcode == 4'b0011)?1'b0://OUT
@@ -266,7 +266,7 @@ assign PopPc=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b1010)?1'b1://RET
               (opcode == 4'b1110)?1'b1:1'b0;//RETI
 
-assign Spop=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
+assign Spop=(interrupt==1'b1)?1'b1:(opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b0001) ?1'b0://CLRC-SETC
               (opcode == 4'b0010)?1'b0://NOT-INC-DEC-MOV ADD SUB AND OR
               (opcode == 4'b0011)?1'b0://OUT

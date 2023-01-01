@@ -1,3 +1,4 @@
+.org 20
 ldm r0 h2a
 ldm r2 h29
 ldm r7 2

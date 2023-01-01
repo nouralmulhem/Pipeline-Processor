@@ -1,3 +1,4 @@
+.org 20
 ldm r0 h28
 inc r6
 jmp r0

@@ -16,13 +16,13 @@ module EM_Buffer (controlSignals_in,ALUData_in,ReadData2_in,WriteAdd_in,interrup
   input [15:0] ALUData_in,ReadData2_in;
   input [2:0] WriteAdd_in;
   input clk, interrupt;
-  input [31:0]PC_in;
+  input [47:0]PC_in;
 
 
   output reg [9:0] controlSignals_out;
   output reg [15:0] ALUData_out,ReadData2_out;
   output reg [2:0] WriteAdd_out;
-  output reg [31:0]PC_out;
+  output reg [47:0]PC_out;
   output reg interrupt_out;
 
 

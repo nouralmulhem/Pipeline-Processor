@@ -19,7 +19,7 @@ Edges:
 Assign Flag Reg (pending)
 
 */
-module Execute (clk,aluOp,branch,aluSrc,readData1,readData2,func,immediateValue,aluResult,branch_output);
+module Execute (clk,aluOp,branch,aluSrc,readData1,readData2,func,immediateValue,aluResult,branch_output, flagReg);
 
 //inputs and outputs
 input aluOp, branch, aluSrc; //will bw used in phase 2 
@@ -38,7 +38,7 @@ output [15:0] aluResult;
 //Flag Ref 3-bit Reg 
 wire [15:0] aluIn1;
 wire [2:0] aluFlagOut;
-reg [2:0] flagReg;
+output reg [2:0] flagReg;
 
 //Immediate Value??
 assign aluIn1=(aluSrc==0)?readData1:immediateValue;

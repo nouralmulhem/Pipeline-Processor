@@ -5,28 +5,35 @@
 // case rti count start with 3 to push flag
 module HonsyCallStateMachine(clk,interrupt,PC,reset,PC_out,continue);
 input clk,reset,interrupt;
-input [31:0] PC;
+input [47:0] PC;
 output reg continue;
-output reg [31:0] PC_out;
+output reg [47:0] PC_out;
 
-// reg [1:0] count_state;
+reg [1:0] count_state;
 
-// localparam count = (interrupt === 1'b1) ? 2'b10 : 2'b01;
-// localparam count = 2'b01;
+localparam count = 1'b1;
 
 always @(negedge clk)begin
 
-    continue=1'b0;
-    if(reset===2'b01)begin
-        // count_state=count+interrupt;
-        PC_out = PC;
+    // count_state = 2'b0;
+    if(reset===1'b1)begin
+        if(interrupt === 1'b1)begin
+            count_state=2'b10;
+            PC_out = PC+32'h0001;
+        end else begin
+            count_state=2'b01;
+            PC_out = PC+32'h0002;
+        end
+        // count_state = count + interrupt;
+        
+        continue=1'b1;
+    end else if(count_state > 2'b01) begin
+        PC_out = PC_out >> 16;
+        count_state=count_state-2'b01;
         continue=1'b1;
     end else begin
-//if(count_state !== 2'b00)
         PC_out = PC_out >> 16;
-        // count_state=count_state-1'b1;
         continue=1'b0;
-        // continue=1'b1;
     end
 
 end

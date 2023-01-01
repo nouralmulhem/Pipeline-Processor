@@ -1,9 +1,9 @@
 `include "Controle_Signal.v"
 `include "RegFile.v"
 
-module Decode(clk, reset,instruction, writeAddress, writeEnable, writeData,aluSrc, controlSignal, readData1, readData2);
+module Decode(clk, reset,instruction,interrupt, writeAddress, writeEnable, writeData,aluSrc, controlSignal, readData1, readData2);
      input clk;
-     input reset;
+     input reset, interrupt;
      input writeEnable;
      input [15:0] instruction;
      input [2:0] writeAddress;
@@ -15,13 +15,10 @@ module Decode(clk, reset,instruction, writeAddress, writeEnable, writeData,aluSr
 
 //Opcode selection Muxx(Select Between Op code of inst or NOP [FOR immediate Case])
      wire [3:0] opCode;
-     wire interrupt;
      // wire aluSrc
      assign opCode=(aluSrc===1'bx || aluSrc==1'b0)?instruction[15:12]:4'b0000;
      
-
      //Assign interrupt to 0 [Temp till Adding interrupt signal form o/p]
-     assign interrupt=1'b0;
 
      //ALUOP           //AluSrc          //MEMW            //MEMR            //MTR             //Branch          //reg_write       //In              //Out             //Stack_op        //Push
 
