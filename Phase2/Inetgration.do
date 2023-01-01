@@ -48,7 +48,24 @@ add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/ALUImmediateOperation
 add wave -position end sim:/Processor_TB/ProcessorModule/functionDEIn
+add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/*
 
+
+add wave -position end sim:/Processor_TB/ProcessorModule/FUModule/*
+
+add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+add wave -position end sim:/Processor_TB/ProcessorModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/FetchModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/FD_BufferModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/DecodeBufferModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/DE_BufferModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/FUModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/EM_BufferModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/MW_BufferModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/HDUModule/*
 
 #add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
 
@@ -59,6 +76,7 @@ force -freeze sim:/Processor_TB/clk1 0 1, 1 {6 ps} -r 10
 #clk2
 force -freeze sim:/Processor_TB/clk2 0 0, 1 {5 ps} -r 10
 
+
 #-------------------------------------------------TestCase1----------------------------------------------------
 # read initial Code Memory
 
@@ -66,18 +84,19 @@ force -freeze sim:/Processor_TB/clk2 0 0, 1 {5 ps} -r 10
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
 
-mem load -i {./TestCases/TestCase1/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+mem load -i {./TestCases/TestCase2/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
 
 # read initial Data Memory
-mem load -i {./TestCases/TestCase1/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+mem load -i {./TestCases/TestCase2/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 
 run 1000
 
 # Export Data Memory Results
-mem save -o ./TestCases/TestCase1/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+mem save -o ./TestCases/TestCase2/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 
 #Export RegFile
-mem save -o ./TestCases/TestCase1/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+mem save -o ./TestCases/TestCase2/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
 
 #-------------------------------------------------TestCase2----------------------------------------------------
 # read initial Code Memory
@@ -340,38 +359,38 @@ mem save -o ./TestCases/TestCase13/dataMemoryOut.mem -f mti -data symbolic -addr
 #Export RegFile
 mem save -o ./TestCases/TestCase13/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 
-#-------------------------------------------------TestCase14--------------------------------------------------------------------------
+#-------------------------------------------------TestCase18--------------------------------------------------------------------------
 # read initial Code Memory
 
 #fetch Reset
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
 
-mem load -i {./TestCases/TestCase14/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+mem load -i {./TestCases/TestCase18/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
 
 # read initial Data Memory
-mem load -i {./TestCases/TestCase14/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+mem load -i {./TestCases/TestCase18/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 run 1000
 
 # Export Data Memory Results
-mem save -o ./TestCases/TestCase14/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+mem save -o ./TestCases/TestCase18/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 
 #Export RegFile
-mem save -o ./TestCases/TestCase14/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+mem save -o ./TestCases/TestCase18/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 
 
 
-#-------------------------------------------------TestCase15--------------------------------------------------------------------------
+#-------------------------------------------------TestCase19--------------------------------------------------------------------------
 # read initial Code Memory
 
 #fetch Reset
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
 
-mem load -i {./TestCases/TestCase15/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+mem load -i {./TestCases/TestCase19/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
 
 # read initial Data Memory
-mem load -i {./TestCases/TestCase15/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+mem load -i {./TestCases/TestCase19/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 
 #input port
 force -freeze sim:/Processor_TB/inputPort 0000000000000101 0
@@ -390,7 +409,32 @@ force -freeze sim:/Processor_TB/inputPort 1111001100100000 0
 run 1000
 
 # Export Data Memory Results
-mem save -o ./TestCases/TestCase15/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+mem save -o ./TestCases/TestCase19/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 
 #Export RegFile
-mem save -o ./TestCases/TestCase15/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+mem save -o ./TestCases/TestCase19/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
+
+
+#-------------------------------------------------TestCase20----------------------------------------------------
+# read initial Code Memory
+
+#fetch Reset
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 2
+
+mem load -i {./TestCases/TestCase20/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+
+# read initial Data Memory
+mem load -i {./TestCases/TestCase20/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1111111111110000 0
+run 1000
+
+# Export Data Memory Results
+mem save -o ./TestCases/TestCase20/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#Export RegFile
+mem save -o ./TestCases/TestCase20/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
