@@ -166,12 +166,17 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
 /*-------------------------------------------------------------------------------------------------------------------------*/
     wire [15:0] readDataEMOut2;
     wire [31:0] PcEMout;
+    wire [11:0] controlSignalsEM_in;
+    wire [1:0] state_out; // for state machine
+    wire continue; // for state machine
 
+
+    assign controlSignalsEM_in = (continue !== 2'b0) ? controlSignalEMOut : executeBufferOut[28:19];
 
     //[controlSignalEMOut] = [Push-StackOp-Out-In-RegWrite-MTR-MemR-MemW]old
 
     //[controlSignalEMOut] = [Spop-PopPc-PushPc-PushPop-In-Out-MTR-MEMW-MEMR-reg_write]
-    EM_Buffer EM_BufferModule(.controlSignals_in(executeBufferOut[30:19]),
+    EM_Buffer EM_BufferModule(.controlSignals_in(),
                             .ALUData_in(aluResultExecuteOut),
                             .ReadData2_in(executeBufferOut[18:3]),
                             .WriteAdd_in(executeBufferOut[2:0]),
@@ -182,6 +187,13 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
                             .ReadData2_out(readDataEMOut2),
                             .WriteAdd_out(writeAddressEMOut),
                             .PC_out(PcEMout));
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+    HonsyMachine HonsyMachineModule(.clk(clk1),
+                                    .count(state),
+                                    .continue(continue),
+                                    .newCount(state_out));
+
 /*-------------------------------------------------------------------------------------------------------------------------*/
     wire [15:0] memoryDataOut;
     MemoryStage MemoryModule (.clk(clk1), 
