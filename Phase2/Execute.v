@@ -19,7 +19,7 @@ Edges:
 Assign Flag Reg (pending)
 
 */
-module Execute (clk,aluOp,branch,aluSrc,readData1,readData2,func,immediateValue,aluResult,branch_output, flagReg);
+module Execute (clk,aluOp,branch,aluSrc,readData1,readData2,func,immediateValue,aluResult,branch_output, flagReg, ALUImmediateOperation);
 
 //inputs and outputs
 input aluOp, branch, aluSrc; //will bw used in phase 2 
@@ -29,6 +29,7 @@ input clk;
 input [15:0] immediateValue;
 
 output [15:0] aluResult;
+output ALUImmediateOperation;
 
 //wires
 // wire [2:0] aluOperation;//Out of Control Unit and Alu Operation in
@@ -42,6 +43,7 @@ output reg [2:0] flagReg;
 
 //Immediate Value??
 assign aluIn1=(aluSrc==0)?readData1:immediateValue;
+assign ALUImmediateOperation=(aluSrc==0)?1'b0:1'b1;
 
 //Alu Control Instance
 // ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(aluOperation));

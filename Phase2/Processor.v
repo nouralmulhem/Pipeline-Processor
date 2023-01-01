@@ -88,7 +88,6 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
     // [state-Spop-PopPc-PushPc-PushPop-In-Out-Branch-MTR-MEMW-MEMR-reg_write-ALU_src-ALU_OP]
     wire [13:0] controlSignalDEOut;//[Basma] [Output from DE_BufferModule] 
 
-
     Decode DecodeModule(.clk(clk1),
                         .interrupt(interruptFDout),
                         .reset(fetchReset),
@@ -111,7 +110,9 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
     wire [3:0] functionDEOut;
     wire [31:0] PcDEout;
     // wire  interruptDEout; // above
-
+    wire ALUImmediateOperation;
+    wire [3:0]functionDEIn;
+    assign functionDEIn=(ALUImmediateOperation===1'bx || ALUImmediateOperation==1'b0 )?decodeBufferOut[3:0]:4'b0000;
 
     assign readDataDEIn2 = (controlSignalDecodeOut[8] == 1'b1) ? inputPort : readDataDecodeOut2;
 
@@ -121,7 +122,7 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
                             .readData2_in(readDataDEIn2), 
                             .writeAdd_in1(decodeBufferOut[6:4]), 
                             .writeAdd_in2(decodeBufferOut[9:7]), 
-                            .function_in(decodeBufferOut[3:0]), 
+                            .function_in(functionDEIn), 
                             // .stall(stall_signal), // stall
                             .flush(flush_DE_signal),
                             .PC_in(decodeBufferOut[41:10]),
@@ -176,6 +177,7 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
                         .immediateValue(FDBufferInstOut),
                         .aluResult(aluResultExecuteOut),
                         .branch_output(branch_output),
+                        .ALUImmediateOperation(ALUImmediateOperation),
                         .flagReg(flagReg));
 
 

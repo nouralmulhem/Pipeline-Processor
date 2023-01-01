@@ -1,7 +1,7 @@
 // memory data file (do not edit the following line - required for mem load use)
 // instance=/Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 // format=mti addressradix=d dataradix=s version=1.0 wordsperline=1
-0: 0000000011110001
+0: xxxxxxxxxxxxxxxx
 1: 1010101010101001
 2: 0000000000000000
 3: 0000111111000000

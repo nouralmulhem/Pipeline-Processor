@@ -1,3 +1,6 @@
+::Remove Wave
+del vsim.wlf
+
 :: Compile Assembler
 g++ assembler.cpp -o main
 
