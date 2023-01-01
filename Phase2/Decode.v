@@ -9,7 +9,7 @@ module Decode(clk, reset,instruction, writeAddress, writeEnable, writeData,aluSr
      input [2:0] writeAddress;
      input [15:0] writeData;
      input aluSrc;//AluSrc CS of the previous instrcution NOP to prevent immediate value reading as an instruction
-     output [12:0] controlSignal; //Basma
+     output [14:0] controlSignal; //Basma
      output [15:0] readData1, readData2;
 
 
@@ -39,7 +39,8 @@ module Decode(clk, reset,instruction, writeAddress, writeEnable, writeData,aluSr
      .PushPop(controlSignal[9]),
      .PushPc(controlSignal[10]),
      .PopPc(controlSignal[11]),
-     .Spop(controlSignal[12]));
+     .Spop(controlSignal[12]),
+     .state(controlSignal[14:13]));
 
      RegFile RegFileModule(clk, reset, instruction[11:9], instruction[8:6], writeAddress, writeEnable, writeData, readData1, readData2); 
 endmodule

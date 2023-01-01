@@ -16,7 +16,7 @@ Edges:
 -ve=>PC
 +ve=>Code Memory    
 */
-module Fetch (branch,branchAdd,reset,clk,stall,instruction);
+module Fetch (branch,branchAdd,reset,clk,stall,instruction, PC);
 
 //inputs and outputs
 input branch, stall;
@@ -26,7 +26,7 @@ output [15:0] instruction;
 
 //Instances
 //PC 32-bit Reg (Program Counter) 
-reg [31:0] PC;
+output reg [31:0] PC;
 
 //Code Memory Instance
 MemoInst instMemory(.pc(PC),.inst(instruction));

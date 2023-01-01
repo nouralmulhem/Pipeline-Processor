@@ -8,7 +8,7 @@ main %1
 vsim -c -do "do Inetgration.do; quit -f"
 
 ::Run Python script
-python Test.py %1
+python Test.py %2
 
 :: Draw Wave Form
 :: vsim -do "vsim -view vsim.wlf; add wave -r *"
