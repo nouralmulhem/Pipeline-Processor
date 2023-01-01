@@ -1,0 +1,9 @@
+.org 20
+ldm r0 h1234
+ldm r1 h1
+add r0 r1
+not r0
+inc r2
+inc r2
+inc r2
+inc r2

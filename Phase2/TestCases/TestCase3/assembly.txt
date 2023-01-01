@@ -1,3 +1,4 @@
+.org 20
 ldm r0 240
 nop
 nop

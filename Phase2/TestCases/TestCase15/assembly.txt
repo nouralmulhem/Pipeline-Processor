@@ -1,0 +1,19 @@
+#this is a comment 
+#all numbers are in hexadecimal
+#the reset signal is raised before this code is executed and the flags and the registers are set to zeros.
+.org 0 #this is the interrupt code
+AND R3,R4
+ADD R1,R4
+OUT R4
+.org 20 #this is the instructions code
+IN R1
+IN R2
+IN R3
+IN R4
+MOV R3 R5
+ADD R1 R4
+SUB R5 R4
+AND R7 R4
+OR R2 R1
+SHL R1 4
+SHR R1 2

@@ -98,6 +98,11 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
     wire [3:0] functionDEOut;
     wire [31:0] PcDEout;
 
+    //Case Of Immediate Value
+    wire ALUImmediateOperation;
+    wire [3:0]functionDEIn;
+    assign functionDEIn=(ALUImmediateOperation===1'bx || ALUImmediateOperation==1'b0 )?decodeBufferOut[3:0]:4'b0000;
+
     assign readDataDEIn2 = (controlSignalDecodeOut[8] == 1'b1) ? inputPort : readDataDecodeOut2;
 
     DE_Buffer DE_BufferModule(.clk(clk2),
@@ -106,7 +111,7 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
                             .readData2_in(readDataDEIn2), 
                             .writeAdd_in1(decodeBufferOut[6:4]), 
                             .writeAdd_in2(decodeBufferOut[9:7]), 
-                            .function_in(decodeBufferOut[3:0]), 
+                            .function_in(functionDEIn), 
                             // .stall(stall_signal), // stall
                             .flush(flush_DE_signal),
                             .PC_in(decodeBufferOut[41:10]),
@@ -156,7 +161,9 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
                         .func(functionDEOut),
                         .immediateValue(FDBufferInstOut),
                         .aluResult(aluResultExecuteOut),
-                        .branch_output(branch_output));
+                        .branch_output(branch_output),
+                        .ALUImmediateOperation(ALUImmediateOperation)
+                        );
 
 
     //10 bits control signals[reg_write-MEMR-MEMW-MTR-Out-In-PushPop-PushPc-PopPc-Spop] [!ALU_OP-ALU_src-Branch]- 16 bits read data 2 - 3 bits write address
