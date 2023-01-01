@@ -11,11 +11,11 @@ output:
   -PC
 
 */
-module EM_Buffer (controlSignals_in,ALUData_in,ReadData2_in,WriteAdd_in,clk,PC_in,controlSignals_out,ALUData_out,ReadData2_out,WriteAdd_out,PC_out);
+module EM_Buffer (controlSignals_in,ALUData_in,ReadData2_in,WriteAdd_in,interrupt,clk,PC_in,controlSignals_out,ALUData_out,ReadData2_out,WriteAdd_out,PC_out,interrupt_out);
   input[9:0] controlSignals_in;
   input [15:0] ALUData_in,ReadData2_in;
   input [2:0] WriteAdd_in;
-  input clk;
+  input clk, interrupt;
   input [31:0]PC_in;
 
 
@@ -23,9 +23,11 @@ module EM_Buffer (controlSignals_in,ALUData_in,ReadData2_in,WriteAdd_in,clk,PC_i
   output reg [15:0] ALUData_out,ReadData2_out;
   output reg [2:0] WriteAdd_out;
   output reg [31:0]PC_out;
+  output reg interrupt_out;
 
 
   always @(posedge clk)begin
+    interrupt_out = interrupt;
     PC_out = PC_in;
     controlSignals_out = controlSignals_in;
     ALUData_out = ALUData_in;

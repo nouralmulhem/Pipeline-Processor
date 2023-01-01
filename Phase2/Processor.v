@@ -11,8 +11,9 @@
 
 
 
-module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
+module Processor(clk1, clk2, fetchReset , inputPort, outputPort);
     input clk1,clk2,fetchReset;
+    // input interrupt;
     input [15:0] inputPort;
     output [15:0] outputPort;
 
@@ -21,7 +22,7 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
 
     // [state-Spop-PopPc-PushPc-PushPop-In-Out-Branch-MTR-MEMW-MEMR-reg_write-ALU_src-ALU_OP]
 
-    wire [14:0] controlSignalDecodeOut;//[Basma] 
+    wire [13:0] controlSignalDecodeOut;//[Basma] 
 
     wire [15:0] FDBufferInstOut; // Moved Up
 
@@ -51,23 +52,26 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
     //instruction to be executed
     // wire [15:0] fetchedInstOut; // moved up
     // wire branch_output; // Moved Above
-    wire [15:0] readDataDEOut1, readDataDEOut2;
     wire [31:0] PC;
+    wire [31:0] PC_prop;
+    wire [15:0] readDataFU1, readDataFU2; 
 
-    Fetch FetchModule(.branch(branch_output),.branchAdd(readDataDEOut1),.reset(fetchReset),.clk(clk1),.stall(stall_signal),.instruction(fetchedInstOut),.PC(PC));
+
+    Fetch FetchModule(.branch(branch_output),.branchAdd(readDataFU1),.reset(fetchReset),.interrupt(1'b0),.clk(clk1),.stall(stall_signal),.instruction(fetchedInstOut),.PC(PC),.PC_prop(PC_prop));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     //instruction in fetch/decode buffer
     // wire [15:0] FDBufferInstOut; // Moved Up
     wire [31:0] PcFDout;
+    wire interruptFDout;
 
-    FD_Buffer FD_BufferModule(.instruction_in(fetchedInstOut),.PC_in(PC),.clk(clk2),.flush(flush_FD_signal),.instruction_out(FDBufferInstOut),.PC_out(PcFDout));
+    FD_Buffer FD_BufferModule(.instruction_in(fetchedInstOut),.PC_in(PC_prop),.clk(clk2),.interrupt(interrupt),.flush(flush_FD_signal),.instruction_out(FDBufferInstOut),.PC_out(PcFDout),.interrupt_out(interruptFDout));
  /*-------------------------------------------------------------------------------------------------------------------------*/
     //control signal generated from decode stage
     // wire [12:0] controlSignalDecodeOut;//[Basma] Above
 
     //output data from register file
     wire [15:0] readDataDecodeOut1, readDataDecodeOut2;
-    wire [41:0] decodeBufferOut;
+    wire [42:0] decodeBufferOut;
 
     //Write back stage declarations
     wire regWriteBack;
@@ -75,7 +79,7 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
     wire [2:0] writeAddressWriteBackOut;
     
     // [state-Spop-PopPc-PushPc-PushPop-In-Out-Branch-MTR-MEMW-MEMR-reg_write-ALU_src-ALU_OP]
-    wire [14:0] controlSignalDEOut;//[Basma] [Output from DE_BufferModule] 
+    wire [13:0] controlSignalDEOut;//[Basma] [Output from DE_BufferModule] 
 
 
     Decode DecodeModule(.clk(clk1),
@@ -90,13 +94,16 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
                         .readData2(readDataDecodeOut2));
     
     //3 bits write address - 4 bits function
-    Buffer #(42) DecodeBufferModule(.clk(clk1),.in({PcFDout,FDBufferInstOut[11:9],FDBufferInstOut[8:6],FDBufferInstOut[3:0]}),.out(decodeBufferOut));
+    Buffer #(43) DecodeBufferModule(.clk(clk1),.in({interruptFDout,PcFDout,FDBufferInstOut[11:9],FDBufferInstOut[8:6],FDBufferInstOut[3:0]}),.out(decodeBufferOut));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     // wire [10:0] controlSignalDEOut; Moved Above
     wire [15:0] readDataDEIn2;
     wire [2:0] writeAddressDEOut1, writeAddressDEOut2; 
+    wire [15:0] readDataDEOut1, readDataDEOut2;
     wire [3:0] functionDEOut;
     wire [31:0] PcDEout;
+    wire  interruptDEout;
+
 
     assign readDataDEIn2 = (controlSignalDecodeOut[8] == 1'b1) ? inputPort : readDataDecodeOut2;
 
@@ -110,20 +117,22 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
                             // .stall(stall_signal), // stall
                             .flush(flush_DE_signal),
                             .PC_in(decodeBufferOut[41:10]),
+                            .interrupt(decodeBufferOut[42]),
                             .controlSignals_out(controlSignalDEOut), 
                             .readData1_out(readDataDEOut1), 
                             .readData2_out(readDataDEOut2), 
                             .writeAdd_out1(writeAddressDEOut1), 
                             .writeAdd_out2(writeAddressDEOut2), 
                             .function_out(functionDEOut),
-                            .PC_out(PcDEout));
+                            .PC_out(PcDEout),
+                            .interrupt_out(interruptDEout));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     wire [15:0] aluResultExecuteOut;
     wire [62:0] executeBufferOut;
     
     //from EM_buffer
     wire [2:0] writeAddressEMOut;
-    wire [11:0] controlSignalEMOut;
+    wire [9:0] controlSignalEMOut;
     wire [15:0] aluResultEMOut;
 
     //from MW_buffer
@@ -131,7 +140,7 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
     wire [2:0] writeAddressMWOut;
     wire [15:0] memoryDataMWOut;
 
-    wire [15:0] readDataFU1, readDataFU2; 
+    // wire [15:0] readDataFU1, readDataFU2;  // moved up
 
     FU_integration FUModule(
     .wr_add(writeAddressDEOut1), 
@@ -161,14 +170,14 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
 
     //10 bits control signals[reg_write-MEMR-MEMW-MTR-Out-In-PushPop-PushPc-PopPc-Spop] [!ALU_OP-ALU_src-Branch]- 16 bits read data 2 - 3 bits write address
     Buffer #(63) ExecuteBufferModule(.clk(clk1),
-                                    .in({PcDEout,controlSignalDEOut[14:7],controlSignalDEOut[5:2],readDataFU2,writeAddressDEOut1}),
+                                    .in({interruptDEout,PcDEout,controlSignalDEOut[13:7],controlSignalDEOut[5:2],readDataFU2,writeAddressDEOut1}),
                                     .out(executeBufferOut));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     wire [15:0] readDataEMOut2;
     wire [31:0] PcEMout;
-    wire [11:0] controlSignalsEM_in;
-    wire [1:0] state_out; // for state machine
+    wire [9:0] controlSignalsEM_in;
     wire continue; // for state machine
+    wire interruptEMout; // for state machine
 
 
     assign controlSignalsEM_in = (continue !== 2'b0) ? controlSignalEMOut : executeBufferOut[28:19];
@@ -176,23 +185,29 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
     //[controlSignalEMOut] = [Push-StackOp-Out-In-RegWrite-MTR-MemR-MemW]old
 
     //[controlSignalEMOut] = [Spop-PopPc-PushPc-PushPop-In-Out-MTR-MEMW-MEMR-reg_write]
-    EM_Buffer EM_BufferModule(.controlSignals_in(),
+    EM_Buffer EM_BufferModule(.controlSignals_in(controlSignalsEM_in),
                             .ALUData_in(aluResultExecuteOut),
                             .ReadData2_in(executeBufferOut[18:3]),
                             .WriteAdd_in(executeBufferOut[2:0]),
+                            .interrupt(executeBufferOut[62]),
                             .clk(clk2),
-                            .PC_in(executeBufferOut[62:31]),
+                            .PC_in(executeBufferOut[61:30]),
                             .controlSignals_out(controlSignalEMOut), // state = controlSignalEMOut[11:10]
                             .ALUData_out(aluResultEMOut),
                             .ReadData2_out(readDataEMOut2),
                             .WriteAdd_out(writeAddressEMOut),
-                            .PC_out(PcEMout));
+                            .PC_out(PcEMout),
+                            .interrupt_out(interruptEMout));
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
-    HonsyMachine HonsyMachineModule(.clk(clk1),
-                                    .count(state),
-                                    .continue(continue),
-                                    .newCount(state_out));
+    wire [31:0] PC_shifted;
+    
+    HonsyCallStateMachine HonsyMachineModule(.clk(clk2),
+                                            .interrupt(interruptEMout),
+                                            .reset(executeBufferOut[29]),
+                                            .PC(PcEMout),
+                                            .continue(continue),
+                                            .PC_out(PC_shifted));
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
     wire [15:0] memoryDataOut;
@@ -204,8 +219,8 @@ module Processor(clk1, clk2, fetchReset, inputPort, outputPort);
                             .reset(fetchReset),
                             .in(controlSignalEMOut[5]),
                             .out(controlSignalEMOut[4]),
-                            .state(controlSignalEMOut[11:10]),
-                            .PC(PcEMout),
+                            .pushPC(controlSignalEMOut[7]),
+                            .PC(PC_shifted[15:0]),
                             .read_add(aluResultEMOut),
                             .write_data(readDataEMOut2),
                             .alu_data(aluResultEMOut),

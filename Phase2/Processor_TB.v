@@ -9,12 +9,19 @@ module Processor_TB();
     reg clk1, clk2;
 // reset PC value to zero
     reg fetchReset;
+    // reg interrupt;
     reg [15:0] inputPort;
     wire [15:0] outputPort;
 
 
 //Modules
-Processor ProcessorModule (.clk1(clk1),.clk2(clk2),.fetchReset(fetchReset), .inputPort(inputPort), .outputPort(outputPort));
+Processor ProcessorModule (
+    .clk1(clk1),
+    .clk2(clk2),
+    .fetchReset(fetchReset),
+    // .interrupt(interrupt), 
+    .inputPort(inputPort), 
+    .outputPort(outputPort));
 
 
 initial begin

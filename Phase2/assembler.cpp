@@ -255,7 +255,7 @@ string getOperation(string opCode, string& func)
 	}
 	if (opCode == "call")
 	{
-		func = "xxxx";
+		func = "0011";
 		return "1001";
 	}
 	if (opCode == "ret")

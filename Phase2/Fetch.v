@@ -16,17 +16,18 @@ Edges:
 -ve=>PC
 +ve=>Code Memory    
 */
-module Fetch (branch,branchAdd,reset,clk,stall,instruction, PC);
+module Fetch (branch,branchAdd,reset,interrupt,clk,stall,instruction, PC, PC_prop);
 
 //inputs and outputs
 input branch, stall;
 input [15:0] branchAdd;
-input reset,clk;
+input reset,clk,interrupt;
 output [15:0] instruction;
 
 //Instances
 //PC 32-bit Reg (Program Counter) 
 output reg [31:0] PC;
+output [31:0] PC_prop;
 
 //Code Memory Instance
 MemoInst instMemory(.pc(PC),.inst(instruction));
@@ -35,6 +36,8 @@ MemoInst instMemory(.pc(PC),.inst(instruction));
 wire [31:0]PC_Mux_Out;//Selection of PC (branch)
 wire [31:0]Adder_Out;//Adder Result (PC+1)
 wire [31:0]Branch_Address_32bit;//Extend 16 bit Branch Address to be 32 bit 
+
+assign PC_prop = (interrupt === 1'b1) ? PC : Adder_Out;
 
 //Combinational
 //Adder

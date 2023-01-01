@@ -1,0 +1,10 @@
+ldm r0 h2a
+ldm r2 h29
+ldm r7 2
+ldm r6 h2d
+call r0
+inc r1
+dec r7
+jz r6
+call r2
+inc r5

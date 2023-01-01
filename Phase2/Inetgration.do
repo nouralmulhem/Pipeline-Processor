@@ -21,6 +21,8 @@ vlog BranchLogic.v
 vlog FU.v
 vlog FU_integration.v
 
+vlog HosnyStateMachine.v
+
 # Memory
 vlog MemoryStage.v
 vlog Memory.v
@@ -42,6 +44,7 @@ add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule
 add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/PushPopLogicModule/SP
 # add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
 add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+add wave -position end sim:/Processor_TB/ProcessorModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/FetchModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/FD_BufferModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/*
@@ -66,6 +69,9 @@ force -freeze sim:/Processor_TB/clk2 0 0, 1 {5 ps} -r 10
 #fetch Reset
 force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
 force -freeze sim:/Processor_TB/fetchReset 0 2
+
+#interrupt
+#force -freeze sim:/Processor_TB/interrupt 0 0
 
 # read initial Code Memory
 mem load -i {./TestCases/TestCase1/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
@@ -341,3 +347,74 @@ mem save -o ./TestCases/TestCase13/dataMemoryOut.mem -f mti -data symbolic -addr
 
 #Export RegFile
 mem save -o ./TestCases/TestCase13/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
+
+#-------------------------------------------------TestCase14----------------------------------------------------
+# read initial Code Memory
+
+#fetch Reset
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 2
+
+mem load -i {./TestCases/TestCase14/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+
+# read initial Data Memory
+mem load -i {./TestCases/TestCase14/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
+run 1000
+
+# Export Data Memory Results
+mem save -o ./TestCases/TestCase14/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#Export RegFile
+mem save -o ./TestCases/TestCase14/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
+
+
+#-------------------------------------------------TestCase15----------------------------------------------------
+# read initial Code Memory
+
+#fetch Reset
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 2
+
+mem load -i {./TestCases/TestCase15/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+
+# read initial Data Memory
+mem load -i {./TestCases/TestCase15/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
+run 1000
+
+# Export Data Memory Results
+mem save -o ./TestCases/TestCase15/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#Export RegFile
+mem save -o ./TestCases/TestCase15/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
+
+
+#-------------------------------------------------TestCase16----------------------------------------------------
+# read initial Code Memory
+
+#fetch Reset
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 2
+
+mem load -i {./TestCases/TestCase16/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+
+# read initial Data Memory
+mem load -i {./TestCases/TestCase16/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
+run 1000
+
+# Export Data Memory Results
+mem save -o ./TestCases/TestCase16/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#Export RegFile
+mem save -o ./TestCases/TestCase16/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory

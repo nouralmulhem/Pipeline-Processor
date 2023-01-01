@@ -36,7 +36,7 @@ PushPop,
 PushPc,
 PopPc,
 Spop,
-state
+reset_call_machine
 // Flush
 );
 input [3:0] opcode;
@@ -54,7 +54,7 @@ PushPop,
 PushPc,
 PopPc,
 Spop;
-output [1:0] state;
+output reset_call_machine;
 // Flush;
 
 //1=>smame as call
@@ -74,21 +74,21 @@ assign ALU_OP=1'b0;//NOP
 //               (opcode == 4'b1010)?1'b0://RET
 //               (opcode == 4'b1110)?1'b0:1'b0;//RETI
               
-assign state=(interrupt==1'b1)?2'b11:
-              (opcode == 4'b0000) ?2'b0://NOP
-              (opcode == 4'b0001) ?2'b0://CLRC-SETC
-              (opcode == 4'b0010)?2'b0://NOT-INC-DEC-MOV ADD SUB AND OR
-              (opcode == 4'b0011)?2'b0://OUT
-              (opcode == 4'b0100)?2'b0://IN
-              (opcode == 4'b0101)?2'b0://shl-shr-LDM
-              (opcode == 4'b0110)?2'b0://PUSH
-              (opcode == 4'b0111)?2'b0://POP
-              (opcode == 4'b1011)?2'b0://LDD
-              (opcode == 4'b1100)?2'b0://STD
-              (opcode == 4'b1000)?2'b0://JMP -JN -JC -JZ
-              (opcode == 4'b1001)?2'b10://CALL
-              (opcode == 4'b1010)?2'b10://RET
-              (opcode == 4'b1110)?2'b11: 2'b0;//RETI
+assign reset_call_machine = (interrupt==1'b1)?1'b1:
+              (opcode == 4'b0000) ?1'b0://NOP
+              (opcode == 4'b0001) ?1'b0://CLRC-SETC
+              (opcode == 4'b0010)?1'b0://NOT-INC-DEC-MOV ADD SUB AND OR
+              (opcode == 4'b0011)?1'b0://OUT
+              (opcode == 4'b0100)?1'b0://IN
+              (opcode == 4'b0101)?1'b0://shl-shr-LDM
+              (opcode == 4'b0110)?1'b0://PUSH
+              (opcode == 4'b0111)?1'b0://POP
+              (opcode == 4'b1011)?1'b0://LDD
+              (opcode == 4'b1100)?1'b0://STD
+              (opcode == 4'b1000)?1'b0://JMP -JN -JC -JZ
+              (opcode == 4'b1001)?1'b1://CALL
+              (opcode == 4'b1010)?1'b0://RET
+              (opcode == 4'b1110)?1'b0: 1'b0;//RETI
 
 assign ALU_src=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b0001) ?1'b0://CLRC-SETC
@@ -137,7 +137,8 @@ assign MEMR=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
 
 
 
-assign MEMW=(interrupt==1'b1)?1'b0:(opcode == 4'b0000) ?1'b0://NOP
+assign MEMW=(interrupt==1'b1)?1'b0:
+              (opcode == 4'b0000) ?1'b0://NOP
               (opcode == 4'b0001) ?1'b0://CLRC-SETC
               (opcode == 4'b0010)?1'b0://NOT-INC-DEC-MOV ADD SUB AND OR
               (opcode == 4'b0011)?1'b0://OUT
