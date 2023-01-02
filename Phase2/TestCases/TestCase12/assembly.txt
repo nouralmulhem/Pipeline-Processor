@@ -1,4 +1,0 @@
-.org 20
-ldm r7 h1
-ldd r7 r2
-inc r2

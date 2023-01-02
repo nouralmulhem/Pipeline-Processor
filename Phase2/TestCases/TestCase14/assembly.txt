@@ -1,5 +1,0 @@
-.org 20
-ldm r0 h24
-call r0
-inc r3
-inc r5
