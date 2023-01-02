@@ -11,12 +11,15 @@
 
 
 
-module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
-    input clk1,clk2,fetchReset;
+module Processor(clk1, clk2, interrupt, fetchResetIn , inputPort, outputPort, StackOverFlow);
+    input clk1,clk2,fetchResetIn;
     input interrupt;
     input [15:0] inputPort;
     output [15:0] outputPort;
+    output StackOverFlow;
 
+    wire fetchReset;
+    assign fetchReset=(fetchResetIn==1'b1||StackOverFlow==1'b1)?1'b1:1'b0;
 /*-------------------------------------------------------------------------------------------------------------------------*/
     // Hazard Detection Unit
 
@@ -115,8 +118,10 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
     wire [15:0] readDataDEOut1, readDataDEOut2;
     wire [3:0] functionDEOut;
     wire [31:0] PcDEout;
+    wire ALUImmediateOperation;
+    wire [3:0]functionDEIn;
     // wire  interruptDEout; // above
-
+    assign functionDEIn=(ALUImmediateOperation===1'bx || ALUImmediateOperation==1'b0 )?decodeBufferOut[3:0]:4'b0000;
 
     assign readDataDEIn2 = (controlSignalDecodeOut[8] == 1'b1) ? inputPort : readDataDecodeOut2;
 
@@ -126,7 +131,7 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
                             .readData2_in(readDataDEIn2), 
                             .writeAdd_in1(decodeBufferOut[6:4]), 
                             .writeAdd_in2(decodeBufferOut[9:7]), 
-                            .function_in(decodeBufferOut[3:0]), 
+                            .function_in(functionDEIn), 
                             // .stall(stall_signal), // stall
                             .flush(flush_DE_signal),
                             .PC_in(decodeBufferOut[41:10]),
@@ -175,13 +180,15 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
                         .branch(controlSignalDEOut[6]),
                         .aluSrc(controlSignalDEOut[1]),
                         .clk(clk1),
+                        .reset(fetchReset),
                         .readData1(readDataFU1),
                         .readData2(readDataFU2),
                         .func(functionDEOut),
                         .immediateValue(FDBufferInstOut),
                         .aluResult(aluResultExecuteOut),
                         .branch_output(branch_output),
-                        .flagReg(flagReg));
+                        .flagReg(flagReg),
+                        .ALUImmediateOperation(ALUImmediateOperation));
 
     //10 bits control signals[reg_write-MEMR-MEMW-MTR-Out-In-PushPop-PushPc-PopPc-Spop] [!ALU_OP-ALU_src-Branch]- 16 bits read data 2 - 3 bits write address
     Buffer #(64) ExecuteBufferModule(.clk(clk1),
@@ -245,6 +252,7 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
                             .out(controlSignalEMOut[4]),
                             .pushPC(controlSignalEMOut[7]), 
                             .popPC(controlSignalEMOut[8]), 
+                            .StackOverFlow(StackOverFlow),
                             .PC(PC_shifted[15:0]),
                             .read_add(aluResultEMOut),
                             .write_data(readDataEMOut2),

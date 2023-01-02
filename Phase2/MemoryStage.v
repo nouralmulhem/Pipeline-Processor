@@ -1,7 +1,7 @@
 `include "Memory.v"
 `include "PushPopLogic.v"
 
-module MemoryStage (clk, mem_read, mem_write,pushPC, popPC, stackOp, pushPop, reset, in, out, PC, read_add, write_data, alu_data, mem_to_reg, data_to_write);
+module MemoryStage (clk, mem_read, StackOverFlow, mem_write,pushPC, popPC, stackOp, pushPop, reset, in, out, PC, read_add, write_data, alu_data, mem_to_reg, data_to_write);
 
 	input clk;
 
@@ -13,13 +13,14 @@ module MemoryStage (clk, mem_read, mem_write,pushPC, popPC, stackOp, pushPop, re
 	input [15:0] read_add;
 	input [15:0] alu_data,write_data;
 	output reg [15:0] data_to_write;
+	output StackOverFlow;
 
 
 	wire [15:0] read_data;
 	wire [31:0] SPOut;
 	wire [15:0] memoryReadAddress;
 
-	PushPopLogic PushPopLogicModule (.clk(clk), .stackOp(stackOp), .pushPop(pushPop), .SPOut(SPOut), .reset(reset));
+	PushPopLogic PushPopLogicModule (.clk(clk), .stackOp(stackOp), .StackOverFlow(StackOverFlow), .pushPop(pushPop), .SPOut(SPOut), .reset(reset));
 
 	assign memoryReadAddress = (stackOp == 1'b1) ? SPOut[15:0] : read_add;
 
