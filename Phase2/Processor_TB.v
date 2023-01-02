@@ -12,16 +12,18 @@ module Processor_TB();
     reg interrupt;
     reg [15:0] inputPort;
     wire [15:0] outputPort;
+    wire StackOverFlow;
 
 
 //Modules
 Processor ProcessorModule (
     .clk1(clk1),
     .clk2(clk2),
-    .fetchReset(fetchReset),
+    .fetchResetIn(fetchReset),
     .interrupt(interrupt), 
     .inputPort(inputPort), 
-    .outputPort(outputPort));
+    .outputPort(outputPort),
+    .StackOverFlow(StackOverFlow));
 
 
 initial begin

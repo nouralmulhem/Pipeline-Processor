@@ -2,10 +2,5 @@
 inc r6
 dec r4
 .org 20
-inc r0
-dec r1
-add r1 r2
-sub r4 r2
-inc r7
-inc r7
-inc r7
+inc r3
+pop r0

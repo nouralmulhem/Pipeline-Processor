@@ -10,7 +10,6 @@
 #include <cstdio>
 
 using namespace std;
-
 vector<string> removeDupWord(string str)
 {
 

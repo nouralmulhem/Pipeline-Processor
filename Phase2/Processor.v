@@ -11,11 +11,16 @@
 
 
 
-module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
-    input clk1,clk2,fetchReset;
+module Processor(clk1, clk2, interrupt, fetchResetIn , inputPort, outputPort,StackOverFlow);
+    input clk1,clk2;
     input interrupt;
+    input fetchResetIn;
     input [15:0] inputPort;
     output [15:0] outputPort;
+    output StackOverFlow;
+
+    wire fetchReset;
+    assign fetchReset=(fetchResetIn==1'b1||StackOverFlow==1'b1)?1'b1:1'b0;
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
     // Hazard Detection Unit
@@ -241,7 +246,8 @@ module Processor(clk1, clk2, interrupt, fetchReset , inputPort, outputPort);
                             .write_data(readDataEMOut2),
                             .alu_data(aluResultEMOut),
                             .mem_to_reg(controlSignalEMOut[3]),
-                            .data_to_write(memoryDataOut));
+                            .data_to_write(memoryDataOut),
+                            .StackOverFlow(StackOverFlow));
 /*-------------------------------------------------------------------------------------------------------------------------*/
     wire [5:0] memoryBufferOut;
 
