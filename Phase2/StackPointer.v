@@ -1,9 +1,10 @@
-module StackPointer (clk, addressIn, addressOut, stackOp, reset);
+module StackPointer (clk, addressIn, addressOut, stackOp, reset,StackOverFlow);
     input clk;
     input reset;
     input [31:0] addressIn;
     input stackOp;
     output reg [31:0] addressOut;
+    output StackOverFlow;
 
     always @(posedge reset)begin
     //   if (reset == 1'b1) begin
@@ -20,5 +21,7 @@ module StackPointer (clk, addressIn, addressOut, stackOp, reset);
                 addressOut = addressOut;
             end
         end
+       
     end
+    assign StackOverFlow=(addressOut>32'd2047 || addressOut<32'd0)?1'b1:1'b0;
 endmodule

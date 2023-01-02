@@ -1,8 +1,0 @@
-.org 20
-ldm r0 h28
-inc r6
-jmp r0
-inc r4
-inc r4
-ldm r5 h34
-dec r3
