@@ -1,22 +1,28 @@
 #this is a comment 
 #all numbers are in hexadecimal
-#the reset signal is raised before this code is executed and the flags and the registers are set to zeros.
-.ORG 0 #this is the interrupt code
-LDM R1, 15     #R1=00000015
-ADD R1, R4
-STD R4, R1
-RTI
-.ORG 20 #this is the instructions code
-ldm R2 h19        #R2=00000019 add 19 in R2
-ldm R3 hf       #R3=0000000F
-ldm R4 hf320       #R4=FFFFF320
-LDM R1, h5     #R1=5
-PUSH R1      #SP=000007FE,M[000007FF]=5
-PUSH R2      #SP=000007FD,M[000007FE]=19
-POP R1       #SP=000007FE,R1=00000019
-POP R2       #SP=000007FF,R2=00000005
-LDD R3 R5  #R5=M[0000000F]
-STD R1 R5  #M[0000000F]=00000019
-# () execluded
-# ldm instead of in
-# org 20
+#the reset signal is raised before this code is executed and the flags and the registe
+.org 0 #this is the interrupt code
+AND R3,R4
+ADD R1,R4
+OUT R4
+.org 20 #this is the instructions code
+IN R0
+MOV R0 R1
+CLRC
+LDM R5 h8
+ADD R5 R0
+PUSH R5
+AND R5 R1
+SETC
+LDM R7 h2d
+JC R7
+INC R2
+INC R3
+ADD R7 R5
+nop
+SHL R7 4
+STD R7 R6
+LDD R6 R6
+POP R4
+OUT R4
+NOT R4

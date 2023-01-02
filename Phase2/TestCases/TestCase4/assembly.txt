@@ -1,0 +1,37 @@
+.org 20
+ldm r0 240
+nop
+nop
+nop
+nop
+ldm r1 43690
+nop
+nop
+nop
+nop
+ldm r3 4032
+nop
+nop
+nop
+nop
+INC R0
+nop
+nop
+nop
+nop
+DEC R1
+nop
+nop
+nop
+nop
+DEC R7
+nop
+nop
+nop
+nop
+CLRC
+nop
+nop
+nop
+nop
+SETC

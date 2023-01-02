@@ -1,0 +1,37 @@
+.org 20
+ldm r0 240
+nop
+nop
+nop
+nop
+ldm r2 43690
+nop
+nop
+nop
+nop
+ldm r3 4032
+nop
+nop
+nop
+nop
+AND R1 R2
+nop
+nop
+nop
+nop
+AND R0 R3
+nop
+nop
+nop
+nop
+OR R0 R3
+nop
+nop
+nop
+nop
+MOV R3 R5
+nop
+nop
+nop
+nop
+SUB R5 R0

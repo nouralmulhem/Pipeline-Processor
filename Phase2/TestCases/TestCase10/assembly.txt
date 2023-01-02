@@ -1,0 +1,9 @@
+.org 20
+ldm r3 1
+ldm r1 1
+ldm r2 2
+ldm r4 3
+mov r2 r1
+add r2 r3
+add r1 r4
+add r4 r0

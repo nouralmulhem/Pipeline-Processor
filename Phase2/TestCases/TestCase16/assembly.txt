@@ -1,0 +1,18 @@
+.org 20
+ldm r0 h2b
+ldm r1 h30
+ldm r3 1
+ldm r7 h34
+inc r6
+jmp r0
+inc r6
+inc r5
+dec r3
+jn r1
+jz r0
+inc r4
+inc r4
+add r3 r4
+jc r7
+dec r4
+inc r4

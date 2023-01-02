@@ -1,24 +1,9 @@
-#this is a comment 
-#all numbers are in hexadecimal
-#the reset signal is raised before this code is executed and the flags and the registers are set to zeros.
-.ORG 0 #this is the interrupt code
-AND R3,R4
-ADD R1,R4
-OUT R4
-RTI
-.ORG 20 #this is the instructions code
-ldm R1 h5                  #add 00000005 in R1
-ldm R2 h19                 #add 00000019 in R2
-ldm R3 hffff                  #FFFFFFFF
-ldm R4 hf320                  #FFFFF320
-MOV R3,R5               #R5= FFFFFFFF , flags no change
-ADD R1,R4               #R4= FFFFF325 , C-->0, N-->1, Z-->0
-SUB R5,R4               #R4= 00000CDA , C-->0, N-->0,Z-->0 
-AND R7,R4               #R4= 00000000 , C-->no change, N-->0, Z-->1
-OR R2, R1               #R1= 0000001D , C-->0, N-->0,Z-->0
-SHL R1,4                #R1= 000001D0 , C-->0, N-->0,Z-->0
-SHR R1,2                #R1= 0000001D , C-->0, N-->0,Z-->0
-
-# shift right is not correct here
-# in instruction should be loaded from tb
-# org 200 ==> run 10000
+.org 20
+ldm r0 h1234
+ldm r1 h1
+add r0 r1
+not r0
+inc r2
+inc r2
+inc r2
+inc r2
