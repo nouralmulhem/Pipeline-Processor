@@ -629,3 +629,87 @@ mem save -o ./TestCases/TestCase24/dataMemoryOut.mem -f mti -data symbolic -addr
 
 #Export RegFile
 mem save -o ./TestCases/TestCase24/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
+#-------------------------------------------------TestCase25----------------------------------------------------
+# read initial Code Memory
+
+#fetch Reset
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 2
+
+mem load -i {./TestCases/TestCase25/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+
+# read initial Data Memory
+mem load -i {./TestCases/TestCase25/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000001100000000 0
+run 15
+
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000000001000000 0
+run 30
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000010100000000 0
+run 15
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000000100000000 0
+run 15
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000011111111111 0
+run 1000
+
+# Export Data Memory Results
+mem save -o ./TestCases/TestCase25/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#Export RegFile
+mem save -o ./TestCases/TestCase25/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
+
+#-------------------------------------------------TestCase26----------------------------------------------------
+# read initial Code Memory
+
+#fetch Reset
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 2
+
+mem load -i {./TestCases/TestCase26/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+
+# read initial Data Memory
+mem load -i {./TestCases/TestCase26/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000000100101100 0
+run 15
+
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000000000101000 0
+run 30
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000000111110100 0
+run 15
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000000001100100 0
+run 15
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000011111111111 0
+run 15
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000011100000000 0
+run 1000
+
+
+# Export Data Memory Results
+mem save -o ./TestCases/TestCase26/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#Export RegFile
+mem save -o ./TestCases/TestCase26/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
