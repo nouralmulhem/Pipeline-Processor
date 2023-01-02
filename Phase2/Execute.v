@@ -25,7 +25,7 @@ module Execute (clk,reset,aluOp,branch,aluSrc,readData1,readData2,func,immediate
 input aluOp, branch, aluSrc; //will bw used in phase 2 
 input [15:0] readData1, readData2;
 input [3:0] func;
-input clk, reset;
+input clk,reset;
 input [15:0] immediateValue;
 
 output [15:0] aluResult;
@@ -42,14 +42,14 @@ wire [2:0] aluFlagOut;
 output reg [2:0] flagReg;
 
 //Immediate Value??
-assign aluIn1=(aluSrc==1'b0)?readData1:immediateValue;
-assign ALUImmediateOperation=(aluSrc==1'b0)?1'b0:1'b1;
+assign aluIn1=(aluSrc==0)?readData1:immediateValue;
+assign ALUImmediateOperation=(aluSrc==0)?1'b0:1'b1;
 
 //Alu Control Instance
 // ALUControl ALUControlModule(.ALUOp(aluOp),.Funct(func),.Operation(aluOperation));
 
 //Alu Instance
-ALU ALUModule (.in1(aluIn1),.in2(readData2),.aluControl(func & ~{{3{branch}},branch}),.out(aluResult),.flag(aluFlagOut));
+ALU ALUModule (.in1(aluIn1),.in2(readData2),.aluControl((func & ~{{3{branch}},branch})),.out(aluResult),.flag(aluFlagOut));
 
 //Branch Logic
 output branch_output;
@@ -59,16 +59,15 @@ BranchLogic BranchLogic_inst (.zf(flagReg[0]),.cf(flagReg[1]),.nf(flagReg[2]),.s
 //Sequential
 always @(negedge clk)
 begin
-if(reset !== 1'b0) begin
-  if(branch) begin
-    flagReg=branch_flag_out;
+ if(reset===1'b1)
+   flagReg=3'b000;
+ else begin  
+  if(branch==1'b1) begin
+     flagReg=branch_flag_out;
   end else begin
-    flagReg=aluFlagOut;
+    flagReg=((aluFlagOut===3'bxxx)?3'b000:aluFlagOut);
   end
-end else begin
-  flagReg=3'b000;
-end
-
+ end
 end
 
 endmodule

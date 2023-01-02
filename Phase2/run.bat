@@ -14,4 +14,4 @@ vsim -c -do "do Inetgration.do; quit -f"
 python Test.py %1
 
 :: Draw Wave Form
-:: vsim -do "vsim -view vsim.wlf; add wave -r *"
+vsim -do "vsim -view vsim.wlf; add wave -r *"
