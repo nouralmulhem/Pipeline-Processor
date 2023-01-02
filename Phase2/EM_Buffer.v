@@ -11,11 +11,11 @@ output:
   -PC
 
 */
-module EM_Buffer (controlSignals_in,reset_ret,ALUData_in,ReadData2_in,WriteAdd_in,interrupt,clk,PC_in,flush,controlSignals_out,ALUData_out,ReadData2_out,WriteAdd_out,PC_out,interrupt_out,reset_ret_out);
+module EM_Buffer (controlSignals_in,reset_ret,reset_rti,ALUData_in,ReadData2_in,WriteAdd_in,interrupt,clk,PC_in,flush,controlSignals_out,ALUData_out,ReadData2_out,WriteAdd_out,PC_out,interrupt_out,reset_ret_out, reset_rti_out);
   input[9:0] controlSignals_in;
   input [15:0] ALUData_in,ReadData2_in;
   input [2:0] WriteAdd_in;
-  input clk, interrupt, flush, reset_ret;
+  input clk, interrupt, flush, reset_ret, reset_rti;
   input [47:0]PC_in;
 
 
@@ -25,6 +25,7 @@ module EM_Buffer (controlSignals_in,reset_ret,ALUData_in,ReadData2_in,WriteAdd_i
   output reg [47:0]PC_out;
   output reg interrupt_out;
   output reg reset_ret_out;
+  output reg reset_rti_out;
 
 
   always @(posedge clk)begin
@@ -39,6 +40,7 @@ module EM_Buffer (controlSignals_in,reset_ret,ALUData_in,ReadData2_in,WriteAdd_i
       ReadData2_out = ReadData2_in;
       WriteAdd_out = WriteAdd_in;
       reset_ret_out = reset_ret;
+      reset_rti_out = reset_rti;
     end
 
     end

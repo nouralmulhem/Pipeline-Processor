@@ -1,0 +1,15 @@
+.org 0
+inc r6
+dec r4
+.org 20
+ldm r2 h2a
+push r2
+push r0
+inc r7
+inc r7
+inc r7
+ret
+inc r0
+inc r0
+dec r4
+inc r6

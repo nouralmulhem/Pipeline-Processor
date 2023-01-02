@@ -19,13 +19,14 @@ Edges:
 Assign Flag Reg (pending)
 
 */
-module Execute (clk,aluOp,branch,aluSrc,readData1,readData2,func,immediateValue,aluResult,branch_output, flagReg);
+module Execute (clk,aluOp,change_reg,new_flag,branch,aluSrc,readData1,readData2,func,immediateValue,aluResult,branch_output, flagReg);
 
 //inputs and outputs
 input aluOp, branch, aluSrc; //will bw used in phase 2 
 input [15:0] readData1, readData2;
 input [3:0] func;
-input clk;
+input [2:0] new_flag;
+input clk, change_reg;
 input [15:0] immediateValue;
 
 output [15:0] aluResult;
@@ -57,7 +58,9 @@ BranchLogic BranchLogic_inst (.zf(flagReg[0]),.cf(flagReg[1]),.nf(flagReg[2]),.s
 //Sequential
 always @(negedge clk)
 begin
-if(branch) begin
+if(change_reg) begin
+  flagReg = new_flag;
+end else if(branch) begin
   flagReg=branch_flag_out;
 end else begin
   flagReg=aluFlagOut;

@@ -170,7 +170,7 @@ string getOperation(string opCode, string& func)
 	}
 	if (opCode == "in")
 	{
-		func = "0000";
+		func = "1111";
 		return "0100";
 	}
 	if (opCode == "mov")
@@ -265,10 +265,10 @@ string getOperation(string opCode, string& func)
 	}
 	if (opCode == "rti")
 	{
-		func = "xxxx";
+		func = "0000";
 		return "1110";
 	}
-	return "xxxx";
+	return "0000";
 }
 
 string getRegister(string reg)

@@ -8,12 +8,12 @@ ADD R7,R4
 STD R4,(R7)
 RTI
 .ORG 200 #this is the instructions code
-IN R6   #R6=300
+ldm R6 h300   #R6=300
 Push R6   #SP=000007FE, M[000007FF]=300
-IN R1     #R1=40
-IN R2     #R2=500
-IN R3     #R3=100
-IN R4     #R4=07FE
+ldm R1 h40     #R1=40
+ldm R2 h500     #R2=500
+ldm R3 h100    #R3=100
+ldm R4 h07FE    #R4=07FE
 LDD R5,R4
 call R5 
 INC R1	  # this statement shouldn't be executed
@@ -34,3 +34,4 @@ MOV R5,R6 #R5=700, flag no change
 INC R1     
 ret
 
+#edit in to ldm
