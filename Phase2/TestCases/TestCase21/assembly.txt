@@ -1,0 +1,6 @@
+.org 0
+inc r6
+dec r4
+.org 20
+inc r3
+pop r0
