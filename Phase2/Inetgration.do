@@ -590,7 +590,15 @@ mem load -i {./TestCases/TestCase23/codeMemory.mem} /Processor_TB/ProcessorModul
 mem load -i {./TestCases/TestCase23/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
 
 #input port
-force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
+force -freeze sim:/Processor_TB/inputPort 0000000000011001 0
+run 15
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 0000000000001111 0
+run 15
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1111001100100000 0
 run 700
 
 # Export Data Memory Results
