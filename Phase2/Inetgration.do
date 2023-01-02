@@ -92,6 +92,27 @@ mem save -o ./TestCases/TestCase1/dataMemoryOut.mem -f mti -data symbolic -addr 
 #Export RegFile
 mem save -o ./TestCases/TestCase1/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
 
+
+#-------------------------------------------------TestCase1----------------------------------------------------
+# read initial Code Memory
+
+#fetch Reset
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 2
+
+mem load -i {./TestCases/TestCase1/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+
+# read initial Data Memory
+mem load -i {./TestCases/TestCase1/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+run 1000
+
+# Export Data Memory Results
+mem save -o ./TestCases/TestCase1/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#Export RegFile
+mem save -o ./TestCases/TestCase1/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
 #-------------------------------------------------TestCase2----------------------------------------------------
 # read initial Code Memory
 

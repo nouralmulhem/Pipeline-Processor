@@ -19,7 +19,8 @@ module Processor(clk1, clk2, interrupt, fetchResetIn , inputPort, outputPort, St
     output StackOverFlow;
 
     wire fetchReset;
-    assign fetchReset=(fetchResetIn==1'b1||StackOverFlow==1'b1)?1'b1:1'b0;
+    assign fetchReset=fetchResetIn;
+    // assign fetchReset=(fetchResetIn==1'b1||StackOverFlow==1'b1)?1'b1:1'b0;
 /*-------------------------------------------------------------------------------------------------------------------------*/
     // Hazard Detection Unit
 

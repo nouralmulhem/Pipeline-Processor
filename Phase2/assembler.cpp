@@ -170,7 +170,7 @@ string getOperation(string opCode, string& func)
 	}
 	if (opCode == "in")
 	{
-		func = "0000";
+		func = "1111";
 		return "0100";
 	}
 	if (opCode == "mov")
