@@ -260,7 +260,7 @@ string getOperation(string opCode, string& func)
 	}
 	if (opCode == "ret")
 	{
-		func = "xxxx";
+		func = "0000";
 		return "1010";
 	}
 	if (opCode == "rti")
@@ -321,6 +321,32 @@ void mergeFiles(string path){
 	remove(filenameMemory);
 }
 
+int hexadecimalToDecimal(string hexVal)
+{
+    int len = hexVal.size();
+ 
+    // Initializing base value to 1, i.e 16^0
+    int base = 1;
+ 
+    int dec_val = 0;
+
+    for (int i = len - 1; i >= 0; i--) {
+        if (hexVal[i] >= '0' && hexVal[i] <= '9') {
+            dec_val += (int(hexVal[i]) - 48) * base;
+ 
+            // incrementing base by power
+            base = base * 16;
+        }
+ 
+        else if (hexVal[i] >= 'A' && hexVal[i] <= 'F') {
+            dec_val += (int(hexVal[i]) - 55) * base;
+
+            base = base * 16;
+        }
+    }
+    return dec_val;
+}
+
 void ReadFile(int number, string& path)
 {
 	// creating an obj of ifstream and reading the file name then opening it
@@ -338,10 +364,19 @@ void ReadFile(int number, string& path)
 	// ofstream out2;
 	// out2.open(path + "/code.mem");
 
-	interrupt_code += "// memory data file (do not edit the following line - required for mem load use)\n";
-	interrupt_code += "// instance=/Fetch_TB/FetchModule/instMemory/memory\n";
-	interrupt_code += "// format=mti addressradix=h dataradix=s version=1.0 wordsperline=1\n";
+	out << "// memory data file (do not edit the following line - required for mem load use)\n";
+	out <<"// instance=/Fetch_TB/FetchModule/instMemory/memory\n";
+	out << "// format=mti addressradix=h dataradix=s version=1.0 wordsperline=1\n";
 	int index = 0;
+	string* arr_s = new string[1048576]; 
+	string add_k = ": 0000000000000000\n";
+	for (int i = 0; i < 1048576; i++)
+	{
+		char hex_string[100];
+		sprintf_s(hex_string, "%x", i);
+		arr_s[i] = hex_string + add_k;
+	}
+	
 	if (file.is_open())
 	{
 		int index2=0;
@@ -356,17 +391,22 @@ void ReadFile(int number, string& path)
 			getline(file, line);
 			std::transform(line.begin(), line.end(), line.begin(), ::tolower);
 			if (line[0] == '#') continue;
-			if (line.substr(0,6) == ".org 0")  {
-				index = 0;
-				interrupt = true;
+			// if (line.substr(0,6) == ".org 0")  {
+			// 	index = 0;
+			// 	interrupt = true;
+			// 	continue;
+			// }
+			// else if(line.substr(0,7) == ".org 20")  {
+			// 	index = 32;
+			// 	interrupt = false;
+			// 	continue;
+			// }
+			if (line.substr(0,4) == ".org")  {
+				vector<string> arr = removeDupWord(line);
+				index = hexadecimalToDecimal(arr[1]);
 				continue;
 			}
-			else if(line.substr(0,7) == ".org 20")  {
-				index = 32;
-				interrupt = false;
-				continue;
-			}
-			(interrupt) && index2++;
+			// (interrupt) && index2++;
 			vector<string> arr = removeDupWord(line);
 			sprintf_s(hex_string, "%x", index);
 			inst = (string)hex_string + ": ";
@@ -404,7 +444,8 @@ void ReadFile(int number, string& path)
 				inst = (string)hex_string + ": " + "1100" + reg2 + reg;
 			}
 			inst += "00" + func;
-			(interrupt == true)? interrupt_code += inst + "\n": program_code += inst + "\n";
+			//(interrupt == true)? interrupt_code += inst + "\n": 
+			arr_s[index] = inst + "\n";
 			if (inst2 != "")
 			{
 				char hex_string[100];
@@ -416,28 +457,34 @@ void ReadFile(int number, string& path)
 					inst2 = decToBinary(stoi(inst2));
 				}
 				string meen = (string)hex_string + ": ";
-				(interrupt == true)? interrupt_code += meen + inst2 + "\n" : program_code += meen + inst2 + "\n";
+				//(interrupt == true)? interrupt_code += meen + inst2 + "\n" : 
+				arr_s[index] = meen + inst2 + "\n";
 			}
 			index++;
 		}
-		string add = ": xxxxxxxxxxxxxxxx\n";
-		for (index; index < 1048576; index++)
+		// string add = ": xxxxxxxxxxxxxxxx\n";
+		// for (index; index < 1048576; index++)
+		// {
+		// 	char hex_string[100];
+		// 	sprintf_s(hex_string, "%x", index);
+		// 	program_code += hex_string + add;
+		// }
+
+
+		// string add = ": 0000000000000000\n";
+		// for (index2; index2 < 32; index2++)
+		// {
+		// 	char hex_string[100];
+		// 	sprintf_s(hex_string, "%x", index2);
+		// 	interrupt_code += hex_string + add;
+		// }
+
+		for (int i=0; i < 1048576; i++)
 		{
-			char hex_string[100];
-			sprintf_s(hex_string, "%x", index);
-			program_code += hex_string + add;
+			out<<arr_s[i];
 		}
 
-
-		add = ": 0000000000000000\n";
-		for (index2; index2 < 32; index2++)
-		{
-			char hex_string[100];
-			sprintf_s(hex_string, "%x", index2);
-			interrupt_code += hex_string + add;
-		}
-
-		out<<interrupt_code<<program_code;
+		// out<<interrupt_code<<program_code;
 		file.close(); // closing the file
 		// out.close(); // closing the file
 		// out2.close(); // closing the file

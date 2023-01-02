@@ -1,52 +1,52 @@
 # do Inetgration.do
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:33 on Jan 01,2023
+# Start time: 11:00:21 on Jan 02,2023
 # vlog Buffer.v 
 # -- Compiling module Buffer
 # 
 # Top level modules:
 # 	Buffer
-# End time: 22:31:33 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:21 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:33 on Jan 01,2023
+# Start time: 11:00:21 on Jan 02,2023
 # vlog HDU.v 
 # -- Compiling module HDU
 # 
 # Top level modules:
 # 	HDU
-# End time: 22:31:34 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:22 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:34 on Jan 01,2023
+# Start time: 11:00:22 on Jan 02,2023
 # vlog Fetch.v 
 # -- Compiling module MemoInst
 # -- Compiling module Fetch
 # 
 # Top level modules:
 # 	Fetch
-# End time: 22:31:35 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:23 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:35 on Jan 01,2023
+# Start time: 11:00:23 on Jan 02,2023
 # vlog MemoInst.v 
 # -- Compiling module MemoInst
 # 
 # Top level modules:
 # 	MemoInst
-# End time: 22:31:35 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:23 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:36 on Jan 01,2023
+# Start time: 11:00:23 on Jan 02,2023
 # vlog FD_Buffer.v 
 # -- Compiling module FD_Buffer
 # 
 # Top level modules:
 # 	FD_Buffer
-# End time: 22:31:36 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:24 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:36 on Jan 01,2023
+# Start time: 11:00:24 on Jan 02,2023
 # vlog Decode.v 
 # -- Compiling module CU
 # -- Compiling module RegFile
@@ -54,92 +54,110 @@
 # 
 # Top level modules:
 # 	Decode
-# End time: 22:31:37 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:24 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:37 on Jan 01,2023
+# Start time: 11:00:24 on Jan 02,2023
 # vlog Controle_Signal.v 
 # -- Compiling module CU
 # 
 # Top level modules:
 # 	CU
-# End time: 22:31:38 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:25 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:38 on Jan 01,2023
+# Start time: 11:00:25 on Jan 02,2023
 # vlog DE_Buffer.v 
 # -- Compiling module DE_Buffer
 # 
 # Top level modules:
 # 	DE_Buffer
-# End time: 22:31:39 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:26 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:39 on Jan 01,2023
+# Start time: 11:00:26 on Jan 02,2023
 # vlog Execute.v 
 # -- Compiling module ALU
 # -- Compiling module Execute
 # 
 # Top level modules:
 # 	Execute
-# End time: 22:31:40 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:26 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:40 on Jan 01,2023
+# Start time: 11:00:26 on Jan 02,2023
 # vlog ALU.v 
 # -- Compiling module ALU
 # 
 # Top level modules:
 # 	ALU
-# End time: 22:31:40 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:27 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:40 on Jan 01,2023
+# Start time: 11:00:27 on Jan 02,2023
 # vlog EM_Buffer.v 
 # -- Compiling module EM_Buffer
 # 
 # Top level modules:
 # 	EM_Buffer
-# End time: 22:31:41 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:28 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:41 on Jan 01,2023
+# Start time: 11:00:28 on Jan 02,2023
 # vlog BranchLogic.v 
 # -- Compiling module BranchLogic
 # 
 # Top level modules:
 # 	BranchLogic
-# End time: 22:31:41 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:28 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:42 on Jan 01,2023
+# Start time: 11:00:28 on Jan 02,2023
 # vlog FU.v 
 # -- Compiling module FU
 # 
 # Top level modules:
 # 	FU
-# End time: 22:31:42 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:29 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:42 on Jan 01,2023
+# Start time: 11:00:29 on Jan 02,2023
 # vlog FU_integration.v 
 # -- Compiling module FU_integration
 # 
 # Top level modules:
 # 	FU_integration
-# End time: 22:31:43 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:30 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:43 on Jan 01,2023
-# vlog HosnyStateMachine.v 
-# -- Compiling module HonsyCallStateMachine
+# Start time: 11:00:30 on Jan 02,2023
+# vlog HosnyCallMachine.v 
+# -- Compiling module HosnyCallStateMachine
 # 
 # Top level modules:
-# 	HonsyCallStateMachine
-# End time: 22:31:43 on Jan 01,2023, Elapsed time: 0:00:00
+# 	HosnyCallStateMachine
+# End time: 11:00:30 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:43 on Jan 01,2023
+# Start time: 11:00:30 on Jan 02,2023
+# vlog HosnyRetMachine.v 
+# -- Compiling module HosnyRetStateMachine
+# 
+# Top level modules:
+# 	HosnyRetStateMachine
+# End time: 11:00:31 on Jan 02,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:00:31 on Jan 02,2023
+# vlog BlackBox.v 
+# -- Compiling module BlackBox
+# 
+# Top level modules:
+# 	BlackBox
+# End time: 11:00:32 on Jan 02,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:00:32 on Jan 02,2023
 # vlog MemoryStage.v 
 # -- Compiling module DataMemo
 # -- Compiling module StackPointer
@@ -149,37 +167,37 @@
 # 
 # Top level modules:
 # 	MemoryStage
-# End time: 22:31:44 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:33 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:44 on Jan 01,2023
+# Start time: 11:00:33 on Jan 02,2023
 # vlog Memory.v 
 # -- Compiling module DataMemo
 # 
 # Top level modules:
 # 	DataMemo
-# End time: 22:31:45 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:33 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:45 on Jan 01,2023
+# Start time: 11:00:33 on Jan 02,2023
 # vlog MW_Buffer.v 
 # -- Compiling module MW_Buffer
 # 
 # Top level modules:
 # 	MW_Buffer
-# End time: 22:31:45 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:34 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:45 on Jan 01,2023
+# Start time: 11:00:34 on Jan 02,2023
 # vlog StackPointer.v 
 # -- Compiling module StackPointer
 # 
 # Top level modules:
 # 	StackPointer
-# End time: 22:31:46 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:34 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:46 on Jan 01,2023
+# Start time: 11:00:35 on Jan 02,2023
 # vlog PushPopLogic.v 
 # -- Compiling module StackPointer
 # -- Compiling module SpALU
@@ -187,19 +205,19 @@
 # 
 # Top level modules:
 # 	PushPopLogic
-# End time: 22:31:46 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:35 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:47 on Jan 01,2023
+# Start time: 11:00:35 on Jan 02,2023
 # vlog WriteBack.v 
 # -- Compiling module WriteBack
 # 
 # Top level modules:
 # 	WriteBack
-# End time: 22:31:47 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:36 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:47 on Jan 01,2023
+# Start time: 11:00:36 on Jan 02,2023
 # vlog Processor.v 
 # -- Compiling module Buffer
 # -- Compiling module MemoInst
@@ -223,10 +241,10 @@
 # 
 # Top level modules:
 # 	Processor
-# End time: 22:31:48 on Jan 01,2023, Elapsed time: 0:00:01
+# End time: 11:00:36 on Jan 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:31:48 on Jan 01,2023
+# Start time: 11:00:36 on Jan 02,2023
 # vlog Processor_TB.v 
 # -- Compiling module Buffer
 # -- Compiling module MemoInst
@@ -251,10 +269,10 @@
 # 
 # Top level modules:
 # 	Processor_TB
-# End time: 22:31:48 on Jan 01,2023, Elapsed time: 0:00:00
+# End time: 11:00:37 on Jan 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim Processor_TB 
-# Start time: 22:31:48 on Jan 01,2023
+# Start time: 11:00:37 on Jan 02,2023
 # Loading work.Processor_TB
 # Loading work.Processor
 # Loading work.HDU
@@ -272,14 +290,21 @@
 # Loading work.ALU
 # Loading work.BranchLogic
 # Loading work.EM_Buffer
-# Loading work.HonsyCallStateMachine
+# Loading work.HosnyCallStateMachine
+# Loading work.HosnyRetStateMachine
 # Loading work.MemoryStage
 # Loading work.PushPopLogic
 # Loading work.SpALU
 # Loading work.StackPointer
 # Loading work.DataMemo
+# Loading work.BlackBox
 # Loading work.MW_Buffer
 # Loading work.WriteBack
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Asus  Hostname: LAPTOP-C17A6RKP  ProcessID: 54204
+#           Attempting to use alternate WLF file "./wlftkqeqt4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftkqeqt4
 #  quit -f
-# End time: 22:31:59 on Jan 01,2023, Elapsed time: 0:00:11
-# Errors: 0, Warnings: 0
+# End time: 11:00:49 on Jan 02,2023, Elapsed time: 0:00:12
+# Errors: 0, Warnings: 2

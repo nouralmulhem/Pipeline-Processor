@@ -27,15 +27,19 @@ branch_out,
 ret,
 flush_FD,
 flush_DE,
+flush_EM,
+flush_MW,
 stall
 );
 input clk,mem_read,int,branch_out,ret;
 input [2:0]write_add,src,dst;
-output reg flush_FD, flush_DE, stall;
+output reg flush_FD, flush_DE, flush_EM,flush_MW, stall;
 
 always @(negedge clk) begin
   flush_DE = 1'b0;
   flush_FD = 1'b0;
+  flush_EM=1'b0;       
+  flush_MW=1'b0;       
   stall = 1'b0;
   if(mem_read === 1'b1 && stall === 1'b0) begin   
     //load use case
@@ -48,13 +52,31 @@ always @(negedge clk) begin
     flush_DE=1'b1;
     flush_FD=1'b1; 
     // in case of ret and rti need to flush all buffers before EX_buff on count
-  end else if(branch_out === 1'b1 ||  // jmp
-	        ret===1'b1         // ret rti
+  end else if(ret===1'b1 ) begin  // ret rti
+    // flush_FD=1'b1; 
+    flush_DE=1'b1;       
+    flush_EM=1'b1;       
+    flush_MW=1'b1;       
+  end else if(branch_out === 1'b1  // jmp      
 	        ) begin
       // ret - rti - jmp - interupt
     flush_DE=1'b1;
   end
 
 end
+
+// always @(posedge clk) begin
+//   flush_DE = 1'b0;
+//   flush_FD = 1'b0;
+//   flush_EM=1'b0;       
+//   stall = 1'b0;
+//   if(ret===1'b1 ) begin  // ret rti
+//     flush_FD=1'b1; 
+//     flush_DE=1'b1;       
+//     flush_EM=1'b1;       
+//   end 
+// end
+
+
 
 endmodule

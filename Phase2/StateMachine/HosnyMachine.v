@@ -3,7 +3,7 @@
 // push other 16 bit from pc
 // enter here count will be 0 take the second instruction
 // case rti count start with 3 to push flag
-module HonsyMachine(clk,count,continue,newCount);
+module HosnyMachine(clk,count,continue,newCount);
 input clk;
 input[1:0] count;
 output reg continue;

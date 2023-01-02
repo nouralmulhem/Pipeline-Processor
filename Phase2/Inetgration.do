@@ -21,7 +21,9 @@ vlog BranchLogic.v
 vlog FU.v
 vlog FU_integration.v
 
-vlog HosnyStateMachine.v
+vlog HosnyCallMachine.v
+vlog HosnyRetMachine.v
+vlog BlackBox.v
 
 # Memory
 vlog MemoryStage.v
@@ -56,7 +58,9 @@ add wave -position end sim:/Processor_TB/ProcessorModule/EM_BufferModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/MW_BufferModule/*
 add wave -position end sim:/Processor_TB/ProcessorModule/HDUModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/HonsyMachineModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/HosnyCallModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/HosnyRetModule/*
+add wave -position end sim:/Processor_TB/ProcessorModule/BlackBoxModule/*
 
 
 
@@ -448,3 +452,25 @@ mem save -o ./TestCases/TestCase17/dataMemoryOut.mem -f mti -data symbolic -addr
 
 #Export RegFile
 mem save -o ./TestCases/TestCase17/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+
+#-------------------------------------------------TestCase18----------------------------------------------------
+# read initial Code Memory
+
+#fetch Reset
+force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
+force -freeze sim:/Processor_TB/fetchReset 0 2
+
+mem load -i {./TestCases/TestCase18/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
+
+# read initial Data Memory
+mem load -i {./TestCases/TestCase18/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#input port
+force -freeze sim:/Processor_TB/inputPort 1010101010101010 0
+run 700
+
+# Export Data Memory Results
+mem save -o ./TestCases/TestCase18/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
+
+#Export RegFile
+mem save -o ./TestCases/TestCase18/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory

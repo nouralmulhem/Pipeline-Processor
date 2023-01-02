@@ -20,7 +20,7 @@ output:
 
 */
 module DE_Buffer(clk, controlSignals_in, PC_in, interrupt, readData1_in, readData2_in, writeAdd_in1, writeAdd_in2, function_in, flush, controlSignals_out, readData1_out, readData2_out, writeAdd_out1, writeAdd_out2,function_out, PC_out,interrupt_out);
-    input [13:0] controlSignals_in;
+    input [14:0] controlSignals_in;
     input [31:0]PC_in;
     input [15:0] readData1_in, readData2_in;
     input [2:0] writeAdd_in1, writeAdd_in2;
@@ -28,7 +28,7 @@ module DE_Buffer(clk, controlSignals_in, PC_in, interrupt, readData1_in, readDat
     input clk, flush, interrupt;
     // input stall;
 
-    output reg [13:0] controlSignals_out;
+    output reg [14:0] controlSignals_out;
     output reg [15:0] readData1_out, readData2_out;
     output reg [2:0] writeAdd_out1, writeAdd_out2;
     output reg [3:0] function_out;

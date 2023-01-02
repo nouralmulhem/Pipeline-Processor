@@ -1,13 +1,13 @@
 `include "Memory.v"
 `include "PushPopLogic.v"
 
-module MemoryStage (clk, mem_read, mem_write,pushPC, stackOp, pushPop, reset, in, out, PC, read_add, write_data, alu_data, mem_to_reg, data_to_write);
+module MemoryStage (clk, mem_read, mem_write,pushPC, popPC, stackOp, pushPop, reset, in, out, PC, read_add, write_data, alu_data, mem_to_reg, data_to_write);
 
 	input clk;
 
 	//control signals
 	input mem_read,mem_write,mem_to_reg,pushPC;
-	input stackOp, pushPop, reset, in, out;
+	input stackOp, pushPop, popPC, reset, in, out;
 	input [15:0]PC; // CALL
 
 	input [15:0] read_add;
@@ -37,7 +37,7 @@ module MemoryStage (clk, mem_read, mem_write,pushPC, stackOp, pushPop, reset, in
 	read_data);
 
 	always @* begin
-		if(mem_to_reg) begin
+		if(mem_to_reg || popPC) begin
 			data_to_write = read_data;
 		end else begin
 			data_to_write = alu_in_mux_out;

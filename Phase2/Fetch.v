@@ -16,11 +16,12 @@ Edges:
 -ve=>PC
 +ve=>Code Memory    
 */
-module Fetch (branch,branchAdd,reset,interrupt,clk,stall,instruction, PC);
+module Fetch (branch,sel,branchAdd,PopedPC,reset,interrupt,clk,stall,instruction, PC);
 
 //inputs and outputs
-input branch, stall;
+input branch, stall, sel;
 input [15:0] branchAdd;
+input [31:0] PopedPC;
 input reset,clk,interrupt;
 output [15:0] instruction;
 
@@ -42,7 +43,9 @@ assign Adder_Out=PC+1;
 //Address Sign Extend
 assign Branch_Address_32bit={{16{branchAdd[15]}},branchAdd};
 //Branch Multiplixer
-assign PC_Mux_Out=(branch===1'b1)?Branch_Address_32bit:Adder_Out;
+assign PC_Mux_Out=(sel === 1'b1)? PopedPC :
+                  (branch===1'b1)? Branch_Address_32bit :
+                  Adder_Out;
 
 //Sequential
 //-ve Edge clk or reset (Upadate PC)
