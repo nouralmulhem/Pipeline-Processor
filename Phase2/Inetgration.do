@@ -44,23 +44,25 @@ vsim Processor_TB
 add wave *
 add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/ALUModule/flag
 add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/PushPopLogicModule/SP
-# add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
 add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
-add wave -position end sim:/Processor_TB/ProcessorModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/FetchModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/FD_BufferModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/DecodeBufferModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/DE_BufferModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/FUModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/EM_BufferModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/MW_BufferModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/HDUModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/HosnyCallModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/HosnyRetModule/*
-add wave -position end sim:/Processor_TB/ProcessorModule/BlackBoxModule/*
+add wave -position end  sim:/Processor_TB/ProcessorModule/PC
+# add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/ControlUnitModule/*
+# add wave -position end  /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
+# add wave -position end sim:/Processor_TB/ProcessorModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/FetchModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/FD_BufferModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/DecodeModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/DecodeBufferModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/DE_BufferModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/FUModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/ExecuteModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/EM_BufferModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/MemoryModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/MW_BufferModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/HDUModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/HosnyCallModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/HosnyRetModule/*
+# add wave -position end sim:/Processor_TB/ProcessorModule/BlackBoxModule/*
 
 
 
@@ -649,7 +651,7 @@ run 15
 
 #input port
 force -freeze sim:/Processor_TB/inputPort 0000000001000000 0
-run 30
+run 15
 
 #input port
 force -freeze sim:/Processor_TB/inputPort 0000010100000000 0
@@ -668,48 +670,3 @@ mem save -o ./TestCases/TestCase25/dataMemoryOut.mem -f mti -data symbolic -addr
 
 #Export RegFile
 mem save -o ./TestCases/TestCase25/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory
-
-
-#-------------------------------------------------TestCase26----------------------------------------------------
-# read initial Code Memory
-
-#fetch Reset
-force -freeze sim:/Processor_TB/fetchReset 1 0 -cancel 2
-force -freeze sim:/Processor_TB/fetchReset 0 2
-
-mem load -i {./TestCases/TestCase26/codeMemory.mem} /Processor_TB/ProcessorModule/FetchModule/instMemory/memory
-
-# read initial Data Memory
-mem load -i {./TestCases/TestCase26/dataMemory.mem} /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
-
-#input port
-force -freeze sim:/Processor_TB/inputPort 0000000100101100 0
-run 15
-
-
-#input port
-force -freeze sim:/Processor_TB/inputPort 0000000000101000 0
-run 30
-
-#input port
-force -freeze sim:/Processor_TB/inputPort 0000000111110100 0
-run 15
-
-#input port
-force -freeze sim:/Processor_TB/inputPort 0000000001100100 0
-run 15
-
-#input port
-force -freeze sim:/Processor_TB/inputPort 0000011111111111 0
-run 15
-
-#input port
-force -freeze sim:/Processor_TB/inputPort 0000011100000000 0
-run 1000
-
-
-# Export Data Memory Results
-mem save -o ./TestCases/TestCase26/dataMemoryOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/MemoryModule/memory_inst/memory
-
-#Export RegFile
-mem save -o ./TestCases/TestCase26/RegFileOut.mem -f mti -data symbolic -addr decimal -wordsperline 1 /Processor_TB/ProcessorModule/DecodeModule/RegFileModule/memory

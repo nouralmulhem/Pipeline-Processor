@@ -15,7 +15,7 @@ module FU (wr_add, wr_add2, wr_add_alu, wb_alu, wr_add_mem, wb_mem, forward_src,
 
 input [2:0] wr_add, wr_add2, wr_add_alu, wr_add_mem;
 input wb_alu, wb_mem;
-output [1:0] forward_src, forward_des;
+output reg [1:0] forward_src, forward_des;
 
 always @* begin
   if(wr_add == wr_add_alu && wb_alu) begin

@@ -17,14 +17,14 @@ output: Read_Data1_FU: to ALU
         Read_Data2_FU: to ALU
      
 */
-module FU_integration (wr_add, wr_add2, wr_add_alu, wb_alu, wr_add_mem, wb_mem, Read_Data1, Read_Data2, Read_Data1_FU, Read_Data2_FU);
+module FU_integration (wr_add, wr_add2, wr_add_alu, wb_alu, alu_data, wr_add_mem, wb_mem, mem_data, Read_Data1, Read_Data2, Read_Data1_FU, Read_Data2_FU);
 
 input [2:0] wr_add, wr_add2, wr_add_alu, wr_add_mem;
 input wb_alu, wb_mem;
 input [15:0] alu_data, mem_data;
 input [15:0] Read_Data1, Read_Data2;
 
-output [15:0] Read_Data1_FU, Read_Data2_FU;
+output reg [15:0] Read_Data1_FU, Read_Data2_FU;
 
 wire [1:0] forward_src, forward_des;
 
