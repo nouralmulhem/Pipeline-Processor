@@ -47,7 +47,7 @@ def runTestCase(testCaseNo):
     return True
 
 #Run All Test Cases
-def RunTest(TestCasesCount):
+def RunAllTest(TestCasesCount):
     FailedTestCases = []
     for i in range(TestCasesCount):
         result=runTestCase(i+1)
@@ -64,4 +64,5 @@ def RunTest(TestCasesCount):
 
 ############################################################################################################################################
 # python test.py 2
-RunTest(int(sys.argv[1]))
+# RunAllTest(int(sys.argv[1]))
+runTestCase(int(sys.argv[1]))
