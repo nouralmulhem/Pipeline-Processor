@@ -1,5 +1,5 @@
 # Pipeline-Processor
-Five-stages pipeline processor
+Harvard (separate memories for data and instructions), RISC-like, five-stages pipeline processor.
 
 tableofcontent
 overview
@@ -19,9 +19,54 @@ Demo Video
   - <a href ="#GradedSheetFlow">Flow Diagram</a>
   - <a href ="#GradedSheetResults">Results</a>
 - <a href ="#Contributors">Bubble Sheet Model</a> -->
+- <a href ="#overview">Overview</a>
+- <a href ="#started">Get Started</a>
+- <a href ="#Design">Design</a>
+- <a href ="#Demo">Demo</a>
 - <a href ="#Contributors">Contributors</a>
 - <a href ="#License">License</a>
 
+
+## <img  align= center width=50px height=50px src="https://media3.giphy.com/media/dAoHbGjH7k5ZTeQeBI/giphy.gif"> Overview <a id = "overview"></a>
+- <a href="https://github.com/BasmaElhoseny01/Pipeline-Processor/blob/main/Architecture_Project_Fall_2022_Semester.pdf">Project Description</a>
+
+
+## <img  align= center width=50px height=50px src="https://cdn.pixabay.com/animation/2022/07/31/06/27/06-27-17-124_512.gif">Get Started <a id = "started"></a>
+
+<ol>
+<li>Clone the repository
+
+<br>
+
+```
+git clone https://github.com/BasmaElhoseny01/Pipeline-Processor.git
+```
+
+</li>
+
+<li>Change Directory to Phase2
+
+<br>
+
+```
+cd Phase2
+```
+
+</li>
+
+<li>Run the Testcase
+
+<br>
+
+```
+run run.bat %TestCaseNo
+```
+
+</li>
+</ol>
+
+
+## <img  align= center width=50px height=50px src="https://media4.giphy.com/media/dBrimLDKab9TPDQSd8/giphy.gif?cid=6c09b952620udc6fwlifrgx872sn8m0x9famv92i60i8gzcr&rid=giphy.gif&ct=s"> Design <a id = "Design"></a>
 
 ## <img  align= center width=50px height=50px src="https://img.genial.ly/5f91608064ad990c6ee12237/bd7195a3-a8bb-494b-8a6d-af48dd4deb4b.gif?genial&1643587200063"> Demo <a id = "Demo"></a>
 
