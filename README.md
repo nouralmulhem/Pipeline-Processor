@@ -8,17 +8,18 @@ Harvard (separate memories for data and instructions), RISC-like, five-stages pi
   - <a href ="#Incremental Approach">Incremental Approach</a>
   - <a href ="#All in One Batch">All in One Batch</a>
 - <a href ="#started">Get Started</a>
+- <a href ="#Instructions">Instructions</a>
 - <a href ="#Design">Design</a>
 - <a href ="#Flow Diagram">Flow Diagram</a>
-- <a href ="#Instructions">Instructions</a>
 - <a href ="#Demo">Demo</a>
 - <a href ="#Contributors">Contributors</a>
 - <a href ="#License">License</a>
 
 
 ## <img  align= center width=50px height=50px src="https://media3.giphy.com/media/dAoHbGjH7k5ZTeQeBI/giphy.gif"> Overview <a id = "overview"></a>
-- <a href="https://github.com/BasmaElhoseny01/Pipeline-Processor/blob/main/Architecture_Project_Fall_2022_Semester.pdf">Project Description</a>
+#### <a href="https://github.com/BasmaElhoseny01/Pipeline-Processor/blob/main/Architecture_Project_Fall_2022_Semester.pdf">Project Description</a>
 #### <a id = "Assembler">Assembler</a>
+![51-510567_gear-image-png-transparent-png-removebg-preview](https://user-images.githubusercontent.com/72309546/217035168-f4d89166-4105-477f-9e22-a24989cfe546.png)
 
 #### <a id = "Incremental Approach">Incremental Approach</a>
 Following this approach we built our processor incrementally adding small modules every time to run a new instruction type. 
@@ -80,6 +81,8 @@ run.bat %NoOfTestCase
 </li>
 </ol>
 
+## <img  align= center width=50px height=50px src="https://user-images.githubusercontent.com/72309546/217035256-ed3cf050-9e68-4880-beed-7318ad22da07.png"> Instructions <a id = "Instructions"></a>
+nop - setc - clrc - not Rdst - inc Rdst - dec Rdst - out Rdst - in Rdst - mov Rsrc Rdst - add Rsrc Rdst - sub Rsrc Rdst - and Rsrc Rdst - or Rsrc Rdst - add Rsrc Rdst - shl immediateValue Rsrc - shr immediateValue Rsrc - push Rdst - pop Rdst - ldm immediateValue Rdst - ldd Rsrc Rdst - std Rdst - jz Rdst - jn Rdst - jc Rdst - jmp Rdst - call Rdst - ret - rti - reset - interrupt
 
 ## <img  align= center width=50px height=50px src="https://media4.giphy.com/media/dBrimLDKab9TPDQSd8/giphy.gif?cid=6c09b952620udc6fwlifrgx872sn8m0x9famv92i60i8gzcr&rid=giphy.gif&ct=s"> Design <a id = "Design"></a>
 
