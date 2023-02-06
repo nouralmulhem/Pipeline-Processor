@@ -64,5 +64,5 @@ def RunAllTest(TestCasesCount):
 
 ############################################################################################################################################
 # python test.py 2
-# RunAllTest(int(sys.argv[1]))
-runTestCase(int(sys.argv[1]))
+RunAllTest(int(sys.argv[1]))
+# runTestCase(int(sys.argv[1]))
