@@ -19,7 +19,6 @@ Harvard (separate memories for data and instructions), RISC-like, five-stages pi
 ## <img  align= center width=50px height=50px src="https://media3.giphy.com/media/dAoHbGjH7k5ZTeQeBI/giphy.gif"> Overview <a id = "overview"></a>
 #### <a href="https://github.com/BasmaElhoseny01/Pipeline-Processor/blob/main/Architecture_Project_Fall_2022_Semester.pdf">Project Description</a>
 #### <a id = "Assembler">Assembler</a>
-![51-510567_gear-image-png-transparent-png-removebg-preview](https://user-images.githubusercontent.com/72309546/217035168-f4d89166-4105-477f-9e22-a24989cfe546.png)
 
 #### <a id = "Incremental Approach">Incremental Approach</a>
 Following this approach we built our processor incrementally adding small modules every time to run a new instruction type. 
