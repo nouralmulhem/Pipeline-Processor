@@ -86,7 +86,7 @@ nop - setc - clrc - not Rdst - inc Rdst - dec Rdst - out Rdst - in Rdst - mov Rs
 ## <img  align= center width=50px height=50px src="https://media4.giphy.com/media/dBrimLDKab9TPDQSd8/giphy.gif?cid=6c09b952620udc6fwlifrgx872sn8m0x9famv92i60i8gzcr&rid=giphy.gif&ct=s"> Design <a id = "Design"></a>
 
 <p align="center">
-<img src="" width="400px" alt="Design"/>
+<img src="https://user-images.githubusercontent.com/76218033/217362780-348c6185-f730-42c6-98ee-2d2578b84de9.png" width="400px" alt="Design"/>
 </p>
 
 
@@ -99,7 +99,8 @@ nop - setc - clrc - not Rdst - inc Rdst - dec Rdst - out Rdst - in Rdst - mov Rs
 ## <img  align= center width=50px height=50px src="https://img.genial.ly/5f91608064ad990c6ee12237/bd7195a3-a8bb-494b-8a6d-af48dd4deb4b.gif?genial&1643587200063"> Demo <a id = "Demo"></a>
 Temp video
 
-https://user-images.githubusercontent.com/72309546/217022949-786a37a3-784b-4c13-ac7f-64c27b1d07d8.mp4
+https://user-images.githubusercontent.com/76218033/217362172-e44d7dad-2dcd-4ea2-a9d8-dcee47a2c227.mp4
+
 
 ## <img  align= center width=50px height=50px src="https://media1.giphy.com/media/WFZvB7VIXBgiz3oDXE/giphy.gif?cid=6c09b952tmewuarqtlyfot8t8i0kh6ov6vrypnwdrihlsshb&rid=giphy.gif&ct=s"> Contributors <a id = "Contributors"></a>
 
