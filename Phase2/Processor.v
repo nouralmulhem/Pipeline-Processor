@@ -30,7 +30,7 @@ module Processor(clk1, clk2, interrupt, fetchResetIn , inputPort, outputPort, St
 
     wire [15:0] FDBufferInstOut;
 
-    wire  interruptDEout;
+    wire interruptDEout;
     wire branch_output;
 
     wire sel, signal;
@@ -40,21 +40,19 @@ module Processor(clk1, clk2, interrupt, fetchResetIn , inputPort, outputPort, St
 
     wire flush_FD_signal, flush_DE_signal, flush_EM_signal, flush_MW_signal, stall_signal;
 
-    HDU HDUModule(
-        .clk(clk1),
-        .mem_read(controlSignalDecodeOut[3]),
-        .write_add(FDBufferInstOut[8:6]),
-        .src(fetchedInstOut[11:9]),
-        .dst(fetchedInstOut[8:6]),
-        .int(interruptDEout),
-        .branch_out(branch_output), // branch_output
-        .ret(sel),
-        .flush_FD(flush_FD_signal),
-        .flush_DE(flush_DE_signal),
-        .flush_EM(flush_EM_signal),
-        .flush_MW(flush_MW_signal),
-        .stall(stall_signal)
-        );
+    HDU HDUModule(.clk(clk1),
+            .mem_read(controlSignalDecodeOut[3]),
+            .write_add(FDBufferInstOut[8:6]),
+            .src(fetchedInstOut[11:9]),
+            .dst(fetchedInstOut[8:6]),
+            .int(interruptDEout),
+            .branch_out(branch_output), // branch_output
+            .ret(sel),
+            .flush_FD(flush_FD_signal),
+            .flush_DE(flush_DE_signal),
+            .flush_EM(flush_EM_signal),
+            .flush_MW(flush_MW_signal),
+            .stall(stall_signal));
 
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
@@ -66,7 +64,15 @@ module Processor(clk1, clk2, interrupt, fetchResetIn , inputPort, outputPort, St
     wire [15:0] readDataFU1, readDataFU2; 
 
 
-    Fetch FetchModule(.branch(branch_output),.sel(sel),.branchAdd(readDataFU1),.PopedPC(BB_PC[31:0]),.reset(fetchReset),.interrupt(interrupt),.clk(clk1),.stall(stall_signal),.instruction(fetchedInstOut),.PC(PC));
+    Fetch FetchModule(.branch(branch_output),
+                .sel(sel),.branchAdd(readDataFU1),
+                .PopedPC(BB_PC[31:0]),
+                .reset(fetchReset),
+                .interrupt(interrupt),
+                .clk(clk1),
+                .stall(stall_signal),
+                .instruction(fetchedInstOut),
+                .PC(PC));
 
     wire [31:0] fetchBufferOut;
 
@@ -163,19 +169,18 @@ module Processor(clk1, clk2, interrupt, fetchResetIn , inputPort, outputPort, St
 
     // wire [15:0] readDataFU1, readDataFU2;  // moved up
 
-    FU_integration FUModule(
-    .wr_add(writeAddressDEOut1), 
-    .wr_add2(writeAddressDEOut2), 
-    .wr_add_alu(writeAddressEMOut), 
-    .wb_alu(controlSignalEMOut[0]), 
-    .alu_data(aluResultEMOut),
-    .wr_add_mem(writeAddressMWOut),
-    .wb_mem(controlSignalMWOut[0]), 
-    .mem_data(memoryDataMWOut),
-    .Read_Data1(readDataDEOut1), 
-    .Read_Data2(readDataDEOut2),
-    .Read_Data1_FU(readDataFU1),
-    .Read_Data2_FU(readDataFU2));
+    FU_integration FUModule(.wr_add(writeAddressDEOut1), 
+                        .wr_add2(writeAddressDEOut2), 
+                        .wr_add_alu(writeAddressEMOut), 
+                        .wb_alu(controlSignalEMOut[0]), 
+                        .alu_data(aluResultEMOut),
+                        .wr_add_mem(writeAddressMWOut),
+                        .wb_mem(controlSignalMWOut[0]), 
+                        .mem_data(memoryDataMWOut),
+                        .Read_Data1(readDataDEOut1), 
+                        .Read_Data2(readDataDEOut2),
+                        .Read_Data1_FU(readDataFU1),
+                        .Read_Data2_FU(readDataFU2));
 
     Execute ExecuteModule(.aluOp(controlSignalDEOut[0]),
                         .branch(controlSignalDEOut[6]),
@@ -282,7 +287,7 @@ module Processor(clk1, clk2, interrupt, fetchResetIn , inputPort, outputPort, St
                             .interrupt(memoryBufferOut[7]),
                             .PC_out(BB_PC),
                             .sel(sel),
-                                .signal(signal));
+                            .signal(signal));
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
     
