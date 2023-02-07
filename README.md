@@ -86,7 +86,7 @@ nop - setc - clrc - not Rdst - inc Rdst - dec Rdst - out Rdst - in Rdst - mov Rs
 ## <img  align= center width=50px height=50px src="https://media4.giphy.com/media/dBrimLDKab9TPDQSd8/giphy.gif?cid=6c09b952620udc6fwlifrgx872sn8m0x9famv92i60i8gzcr&rid=giphy.gif&ct=s"> Design <a id = "Design"></a>
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/76218033/217362780-348c6185-f730-42c6-98ee-2d2578b84de9.png" width="400px" alt="Design"/>
+<img src="https://user-images.githubusercontent.com/76218033/217362780-348c6185-f730-42c6-98ee-2d2578b84de9.png" width="700px" alt="Design"/>
 </p>
 
 
