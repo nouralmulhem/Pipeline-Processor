@@ -97,8 +97,6 @@ nop - setc - clrc - not Rdst - inc Rdst - dec Rdst - out Rdst - in Rdst - mov Rs
 </p>
 
 ## <img  align= center width=50px height=50px src="https://img.genial.ly/5f91608064ad990c6ee12237/bd7195a3-a8bb-494b-8a6d-af48dd4deb4b.gif?genial&1643587200063"> Demo <a id = "Demo"></a>
-Temp video
-
 https://user-images.githubusercontent.com/76218033/217362172-e44d7dad-2dcd-4ea2-a9d8-dcee47a2c227.mp4
 
 
